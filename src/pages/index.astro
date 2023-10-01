@@ -1,10 +1,19 @@
 ---
 
----
+import Header from '../components/Header/Header.astro';
+import Banner from '../components/Banner/Banner.astro';
+import Services from '../components/Services/Services.astro';
+import WhatWeDo from '../components/WhatWeDo/WhatWeDo.astro';
+import WhoWeAre from '../components/WhoWeAre/WhoWeAre.astro';
+import ContactForm from '../components/ContactForm/ContactForm.astro';
+import Acreditations from '../components/Acreditations/Acreditations.astro';
+import Footer from '../components/Footer/Footer.astro';
 
+---
 
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -26,337 +35,40 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
   </head>
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-	<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+		<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 		
-	<header id="header" role="button">
-		<nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="/">
-						<section class="navBarCompanyLogo">
-							<img src="images/brain.png" alt="Making Sense Of It Ltd Logo">
-						</section>
-						<section class="navbarCompanyName">
-							<span class="companyNamePart1">Making</span><br />
-							<span class="companyNamePart2">Sense Of It</span>
-						</section>
-					</a>
-				</div>
-				<div class="collapse navbar-collapse navbar-right">
-					<ul id="Toolbar">
-						<li>
-							<a style="color: #3b5998" class="clickableIcon" target="_blank" href="https://www.facebook.com/sharer.php?u=http://www.makingsenseofit.org.uk/" title="Like us on Facebook">
-								<i class="fa fa-facebook-square"></i>
-								<span class="sr-only">Like us on Facebook</span>
-							</a>
-						</li>
-						<li>
-							<a style="color: #0084b4" class="clickableIcon" target="_blank" href="https://twitter.com/intent/tweet?text=Hello%20world" title="Tweet about us">
-								<i class="fa fa-twitter-square"></i>
-								<span class="sr-only">Tweet about us</span>
-							</a>
-						</li>
-						<li>
-							<a style="color: #E50F18" class="clickableIcon" target="_blank" href="mailto:info@makingsenseofit.org.uk" title="Send us an email">
-								<i class="fa fa-envelope"></i>
-								<span class="sr-only">Send us an email</span>
-							</a>
-						</li>
-					</ul>
-					<ul class="nav navbar-nav">
-						<li class="scroll"><a href="#Banner">Home</a></li>
-						<li class="scroll"><a href="#Services">Services</a></li>
-						<li class="scroll"><a href="#WhatWeDo">About Us</a></li>
-						<li class="scroll"><a href="#WhoWeAre">Who We Are</a></li>
-						<li class="scroll"><a href="#Contact">Contact Us</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
-	
-	<div id="content">
-		
+		<Header />
 
-		<div id="Banner" class="container-fluid pageSection">
-			<div id="InnerBanner">
-				<div class="container BannerText">
-					<div class="innerBannerText">
-						<h1>Psychology Services for children, families and schools</h1> 
-						<p class="bannerText">Based in Worthing, West Sussex, Making Sense Of It Ltd provide Clinical Psychology services to children, families and schools in the Sussex area. Specialising in autism assessments in Sussex.</p> 
-						<a href="#Services" class="btn btn-primary bannerBtn">Find out more...</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div id="Services" class="container-fluid text-center pageSection">
-		
-			<div class="container">
-						
-				<h2>Services</h2>
-				
-				<p id="ServicesIntroText">At Making Sense Of It we offer a range of services. The following sections give some brief detail about each of these services we offer.</p>
-				
-				<div class="row">
-					
-					<div class="col-sm-4">
-					<div id="Schools" class="innerServiceContainer">
-					  <a href="services.htm?serviceId=1">
-						<img src="images/SchoolImage2508131722Square.jpg" class="img-responsive"  alt="Child reading a book" />
-					  </a>
-					  <h3>Schools</h3>
-					  <p>At Making Sense Of It we work closely with schools to think about how we could help. This could include consultations to teachers/<abbr title="Special Educational Needs Co-ordinator">SENCOs</abbr>/teaching assistants, training in large/small groups or more direct work with individuals or small groups of children</p>
-					  <a href="services.htm?serviceId=1" class="btn btn-secondary">Find out more...</a>
-					</div>
-					</div>
-					
-					<div class="col-sm-4">
-						<div class="innerServiceContainer">
-							<a href="services.htm?serviceId=2">
-							<img src="images/familyUnderUmbrella.jpg" class="img-responsive" alt="Family sitting under an umbrella" />
-							</a>
-						  <h3>Child and Family Mental Health</h3>
-						  <p>Children and families throughout their lives can struggle with a range of different issues. It might be that you are worried that your child or teenager is becoming withdrawn or seems overly anxious, and you would like to either talk to someone yourself, or seek some help for them directly.</p>
-						  <a href="services.htm?serviceId=2" class="btn btn-secondary">Find out more...</a>
-						</div>
-					</div>
-					
-					<div class="col-sm-4">
-					<div class="innerServiceContainer">
-					  <a href="services.htm?serviceId=3">
-						<img src="images/ChildrenWithLearningDisabilitiesCropped.jpg" class="img-responsive"  alt="Child with paint all over her hands" />
-					</a>
-					  <h3>Children with Learning Disabilities</h3>
-					  <p>Caring for a child/young person with a disability can be both rewarding and challenging. The needs of the family and the child can be different and need a tailored or specialist approach. At Making Sense Of It, we have extensive experience of supporting families, children and schools.</p>
-					  <a href="services.htm?serviceId=3" class="btn btn-secondary">Find out more...</a>
-					</div>
-					</div>
-					
-				</div>
-				  
-				<div class="row">
-
-					<!-- Start Cognitive Assessments Section -->
-					<div class="col-sm-4">
-						<div class="innerServiceContainer">
-							<a href="services.htm?serviceId=4">
-								<img src="images/girl-with-glasses.jpg" class="img-responsive" alt="A girl with glasses reading a book with a drawn lighbulb over her head" />
-							</a>
-							<h3>Cognitive Assessments</h3>
-							<p>A cognitive assessment can be helpful when a young person is struggling with learning in school or having difficulties in specific areas. The young person will engage in a series of activities/puzzles/tasks which have been specifically designed to gain a fuller understanding of a young person’s strengths and weaknesses in a variety of areas.</p>
-							<a href="services.htm?serviceId=4" class="btn btn-secondary">Find out more...</a>
-						</div>
-					</div>
-					<!-- End Cognitive Assessments Section -->
-					
-										<div class="col-sm-4">
-					<div class="innerServiceContainer">
-						<a href="services.htm?serviceId=5">
-					  <img src="images/autism.jpg" class="img-responsive" alt="Autism Acronym - Always Unique totally intelligent sometimes mysterious" />
-					  </a>
-					  <h3> Autism Assessment and Diagnosis Service in Sussex</h3>
-					  <p>At Making Sense Of It, we have joined with Speech and Language Therapists (SALT) to offer a multidisciplinary assessment and diagnosis service. Giving an autism diagnosis to a child involves detailed and comprehensive assessment of all areas of their life. Our assessments follow NICE guidelines as closely as possible.</p>
-					  <a href="services.htm?serviceId=5" class="btn btn-secondary">Find out more...</a>
-					</div>
-					</div>
-					
-					<div class="col-sm-4 Serviceslast-child">
-					<div class="innerServiceContainer">
-						<a href="services.htm?serviceId=6">
-					  <img src="images/SupervisionAndTraining.jpg" class="img-responsive"  alt="Signpost" />
-					  </a>
-					  <h3>Supervision &amp; Training</h3>
-					  <p>We have extensive experience of providing supervision both to other clinical psychologists and other health professionals. We also offer a variety of training packages which can be tailored to your needs. This could include training into educational settings, training for other health professionals or training for parents.</p>
-					  <a href="services.htm?serviceId=6" class="btn btn-secondary">Find out more...</a>
-					</div>
-					</div>
-					
-				  </div>
-				
-				</div>
-			</div>
-		</div>
-
-		<!--  style="background-color: #F5F5F5" -->
-		<div id="WhatWeDo" class="container text-center pageSection">
-		
-
-			<h2>About Us</h2>
-
-			<div class="row">
-
-				<div class="col-sm-8 media-blurb">
-					<p>Dr Bligh and Dr Tilley have established Making Sense Of It Ltd as a partnership providing Clinical Psychology services to children, families and schools in the Sussex area. We are both passionate about supporting children to live fulfilling lives.  At the heart of our practice, we believe in the importance of relationships and work with the whole family or network surrounding a child. We both have significant experience working with children and adolescents with a range of difficulties including those with mental health problems, learning disabilities and autism, and other neurodevelopmental conditions. We have learnt through our practice that providing the right support as early as possible is essential.</p>
-					<p>We work in partnership with families and schools. By partnership, we mean that everyone involved brings their own expertise. As a parent, you will know your child better than anyone else. You will know what makes them worried, scared, excited, happy or sad. You carry their story and hopes for their future.  Your child’s teacher will hold knowledge about different parts of their life, including how they learn, how they relate to others, and what they find hard within the school setting.  At Making Sense Of It, we will be interested in all of these areas, and will bring our knowledge and understanding of children’s development, mental health, emotional well-being and ideas about how to help children in these areas.</p>
-					<p>If you would like to find out more about the services we offer, or discuss an enquiry please contact us via email. We look forward to hearing from you. A guide to our fees can be found on our <a href="pdfs/Fees.pdf" title="A guide to our fees">Fees Structure page</a></p>
-				</div>
-				
-				<div class="col-sm-4">	
-				  <img class="img-responsive" src="images/familyInHands.png" alt="Family Hands">
-				</div>
-				
-			</div>
-		  
-		</div>
-		
-		<div id="WhoWeAre" class="container pageSection">
+		<main id="content">
 			
-			<h2 class="text-center">Who We Are</h2>
+			<Banner />
 			
-			<div class="row">
-				<div class="col-sm-4">	
-				  <img class="profileImage img-responsive" src="images/jodie.jpg" alt="Dr Jodie Tilley Profile Picture">
-				</div>
-				<div class="col-sm-8 media-blurb">
-					<h3 class="media-heading">Dr Jodie Tilley (<abbr title="Chartered Member of the British Psychological Society">C. Psychol</abbr>, <abbr title="Associate Fellow of the British Psychological Society">AFBPsS</abbr>)</h3>
-					<p>Dr. Jodie Tilley is a Chartered Clinical Psychologist, with over 15 years post qualification specialist experience working with children, adolescents and their families in the NHS and private settings.  After achieving a First Class Degree in Applied Psychology, Jodie completed a doctorate in Clinical Psychology, which covered a range of psychological disorders, therapeutic models and training in working with people across the life span. Dr. Tilley values working with the whole family and wider system when supporting children and young people.</p>
-					<p>Since qualifying Dr. Tilley has worked within the NHS in Specialist Child and Adolescent Mental Health Services (CAMHS) supporting children and families with a range of emotional, psychological and behavioural difficulties. Working with children with learning disabilities, autistic spectrum conditions, attachment difficulties, and those who have experienced trauma, are areas of specialism for Dr Tilley.  She enjoys working in close partnership with families and with young people of all ages. Dr Tilley is a registered Practitioner Psychologist with the Health and Care Professions Council HCPC (Registration PYL22261) and an Associate Fellow of the British Psychological Society (Membership number 130338).</p>
-				</div>
-				
-			</div>
+			<Services />
+
+			<WhatWeDo />
 			
-			<div class="row">
-				<div class="col-sm-4">
-				  <img class="profileImage img-responsive" src="images/helena.jpg" alt="Dr Helena Bligh Profile Picture">
-				</div>
-				<div class="col-sm-8 media-blurb">
-					<h3 class="media-heading">Dr Helena Bligh (<abbr title="Chartered Member of the British Psychological Society">C. Psychol,</abbr> <abbr title="Associate Fellow of the British Psychological Society">AFBPsS</abbr>)</h3>
-					<p>Dr Helena Bligh is a Chartered Clinical Psychologist specialising in working with children and adolescents. She has twenty years clinical experience working both in the <abbr title="National Health Service">NHS</abbr> and private settings.  Dr Bligh has extensive clinical experience in assessment and therapeutic interventions with children, young people and their families, having worked in education, health and care settings.  She has over 15 years experience working in <abbr title="National Health Service">NHS</abbr> Child and Adolescent Mental Health Services, supporting children with emotional, behavioural and learning needs.  She regularly enjoys the opportunity to consult with, and offer training to, residential and education teams. Dr Bligh is passionate about working with systems, networks and directly with children and families to achieve the best possible outcomes for young people.  Working with children with autism and learning disabilities are areas of specialism for Dr Bligh. She is a Chartered Clinical Psychologist, and an Associate Fellow of the British Psychological Society, and has Practitioner status with the Health Professions Council.</p>
-				</div>
-			</div>
-			
-		</div>
+			<WhoWeAre />
 
-		<div id="Contact" class="container text-center pageSection">
+			<ContactForm />
 
-			<h2>Contact Us</h2>
+			<Acreditations />
 
-			<p>If you would like to find out more about the services we offer, or discuss an enquiry please contact us via the email below. Alternatively you can complete the form below with some brief details about your enquiry and we will contact you for a brief telephone consultation which is free of charge. This will allow us to find out a bit more about the areas of concern and discuss how we can help.</p>
-
-			<p>We will not pass your details onto third parties and will only use the information supplied for the purposes of handling your query. Please refer to our <a href="pdfs/PrivacyPolicy.pdf" target="_blank" title="Privacy Policy (opens in a new tab)">privacy policy</a> for further information about how we handle your data.</p>
-
-			<div id="ContactForm" style="padding: 40px 0;">
-
-				<div id="ContactFormErrorContainer" class="errorMessage Message hideMe" role="alert">
-					<p>There are some issues with the data you entered:</p>
-					<ul class="formIssues">
-						<li id="nameRequired" class="hideMe">Name is a required field</li>
-						<li id="emailRequired" class="hideMe">Email is a required field</li>
-						<li id="emailInvalid" class="hideMe">The email given is not in the correct format</li>
-						<li id="messageRequired" class="hideMe">Message is a required field</li>
-					</ul>
-				</div>
-
-				<div id="ContactFormSendSuccessContainer" class="successMessage Message hideMe" role="alert">
-					<p>Thank you for your enquiry. We aim to reply within 3 working days. Please check your junk mail if you have not received a reply after this time. Thank you for contacting us.</p>
-				</div>
-
-				<div id="ContactFormSendFailureContainer" class="errorMessage Message hideMe" role="alert">
-					<p>The enquiry form failed to send, please try again later.</p>
-				</div>
-
-				<form onsubmit="return SendMail(this);" novalidate>
-
-					<div class="col-sm-6 text-left">
-						<div class="ContactFormSmallFields">
-							<label for="Name">Name: (Required)</label>
-							<input id="Name" type="text" name="name" placeholder="Enter your name" maxlength="250" aria-required="true">
-
-							<label for="email">Email: (Required)</label>
-							<input id="email" type="email" name="email" placeholder="Enter your email address" maxlength="250" aria-required="true">
-
-							<label for="tel">Telephone:</label>
-							<input id="tel" type="tel" name="tel" placeholder="Enter your telephone number" maxlength="14" aria-required="false">
-						</div>
-					</div>
-
-
-					<div class="col-sm-6 text-left">
-						<label for="message">Message: (Required)</label>
-						<textarea id="message" rows="5" name="message" cols="30" placeholder="Enter a short message about you enquiry" maxlength="5000" aria-required="true"></textarea>
-					</div>
-
-					<div class="col-sm-12 text-center">
-						<input id="submitBtn" type="submit" name="submit" value="Submit" class="btn btn-primary contactUsBtn">
-					</div>
-				</form>
-
-			</div>
-
-		</div> 
-
-		<div id="acreditations" class="container text-center pageSection">
+		</main>
 		
-			<h2 class="sr-only text-center">Acreditations</h2>
+		<Footer />
 
-			<p class="sr-only">Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
-		
-			<div class="row">
-			
-				<div class="col-sm-6 logoContainer">
-					<a href="http://www.hcpc-uk.org">
-						<img id="HCPCLogo" src="images/hcpc.jpg" alt="Health and Care Profesions Council Logo" />
-					</a>
-				</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-				<div class="col-sm-6 logoContainer">
-					<a href="http://www.bps.org.uk">
-						<img id="bpsLogo" src="images/bpslogo.svg" alt="British Psychological Society Logo" />
-					</a>
-				</div>
-				
-			</div>
-			
-		</div>
-	
-	</div>
-	
-	<div id="FooterContainer" class="container-fluid">
-		
-		<div id="FooterSocialMediaIconsContainer" class="text-center">
-				<a class="clickableIcon" target="_blank" href="https://www.facebook.com/sharer.php?u=http://www.makingsenseofit.org.uk/" title="Like us on Facebook">
-					<i class="fa fa-facebook-square"></i>
-					<span class="sr-only">Like us on Facebook</span>
-				</a>
-				<a class="clickableIcon" target="_blank" href="https://twitter.com/intent/tweet?text=Hello%20world" title="Tweet about us">
-					<i class="fa fa-twitter-square"></i>
-					<span class="sr-only">Tweet about us</span>
-				</a>
-				<a class="clickableIcon" target="_blank" href="mailto:info@makingsenseofit.org.uk" title="Send us an email">
-					<i class="fa fa-envelope"></i>
-					<span class="sr-only">Send us an email</span>
-				</a>
-				<a class="clickableIcon" target="_blank" href="javascript: print()" title="Print this page">
-					<i class="fa fa-print"></i>
-					<span class="sr-only">Print this page</span>
-				</a>
-		</div>
-		
-		<p id="copyright">&copy; Copyright 2023 - Making Sense Of It Ltd</p>
-        
-        <nav id="footerNav">
-            <a href="pdfs/PrivacyPolicy.pdf" target="_blank" title="Privacy Policy (opens in a new tab)">Privacy Policy</a>
-        </nav>
-		
-	</div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
 		<!-- <script src="scripts/scripts.js"></script> -->
-  
+
 	</body>
+
 </html>
 

@@ -1,0 +1,53 @@
+---
+
+const icons = [
+  {
+    url: 'https://www.facebook.com/sharer.php?u=http://www.makingsenseofit.org.uk/',
+    icon: 'fa fa-facebook-square',
+    title: 'Like us on Facebook',
+    text: 'Like us on Facebook'
+  },
+  {
+    url: 'https://twitter.com/intent/tweet?text=Hello%20world',
+    icon: 'fa fa-twitter-square',
+    title: 'Tweet about us',
+    text: 'Tweet about us'
+  },
+  {
+    url: 'mailto:info@makingsenseofit.org.uk',
+    icon: 'fa fa-envelope',
+    title: 'Send us an email',
+    text: 'Send us an email',
+  },
+  {
+    url: 'javascript: print()',
+    icon: 'fa fa-print',
+    title: 'Print this page',
+    text: 'Print this page',
+  }
+];
+
+---
+
+<footer id="FooterContainer" class="container-fluid">
+		
+  <div id="FooterSocialMediaIconsContainer" class="text-center">
+    
+    {
+      icons.map(icon => (
+        <a class="clickableIcon" target="_blank" href={icon.url} title={icon.title}>
+          <i class={icon.icon}></i>
+          <span class="sr-only">{icon.text}</span>
+        </a>
+      ))
+    }
+
+  </div>
+  
+  <p id="copyright">&copy; Copyright { new Date().getFullYear() } - Making Sense Of It Ltd</p>
+      
+  <nav id="footerNav">
+      <a href="pdfs/PrivacyPolicy.pdf" target="_blank" title="Privacy Policy (opens in a new tab)">Privacy Policy</a>
+  </nav>
+  
+</footer>

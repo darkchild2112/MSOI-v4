@@ -1,0 +1,38 @@
+---
+
+const owners = [
+  {
+    image: "images/jodie.jpg",
+    imageAlt: "Dr Jodie Tilley Profile Picture",
+    name: 'Dr Jodie Tilley (<abbr title="Chartered Member of the British Psychological Society">C. Psychol</abbr>, <abbr title="Associate Fellow of the British Psychological Society">AFBPsS</abbr>)',
+    blurb: '<p>Dr. Jodie Tilley is a Chartered Clinical Psychologist, with over 15 years post qualification specialist experience working with children, adolescents and their families in the NHS and private settings.  After achieving a First Class Degree in Applied Psychology, Jodie completed a doctorate in Clinical Psychology, which covered a range of psychological disorders, therapeutic models and training in working with people across the life span. Dr. Tilley values working with the whole family and wider system when supporting children and young people.</p><p>Since qualifying Dr. Tilley has worked within the NHS in Specialist Child and Adolescent Mental Health Services (CAMHS) supporting children and families with a range of emotional, psychological and behavioural difficulties. Working with children with learning disabilities, autistic spectrum conditions, attachment difficulties, and those who have experienced trauma, are areas of specialism for Dr Tilley.  She enjoys working in close partnership with families and with young people of all ages. Dr Tilley is a registered Practitioner Psychologist with the Health and Care Professions Council HCPC (Registration PYL22261) and an Associate Fellow of the British Psychological Society (Membership number 130338).</p>'
+  },
+  {
+    image: "images/helena.jpg",
+    imageAlt: "Dr Helena Bligh Profile Picture",
+    name: 'Dr Helena Bligh (<abbr title="Chartered Member of the British Psychological Society">C. Psychol,</abbr> <abbr title="Associate Fellow of the British Psychological Society">AFBPsS</abbr>)',
+    blurb: '<p>Dr Helena Bligh is a Chartered Clinical Psychologist specialising in working with children and adolescents. She has twenty years clinical experience working both in the <abbr title="National Health Service">NHS</abbr> and private settings.  Dr Bligh has extensive clinical experience in assessment and therapeutic interventions with children, young people and their families, having worked in education, health and care settings.  She has over 15 years experience working in <abbr title="National Health Service">NHS</abbr> Child and Adolescent Mental Health Services, supporting children with emotional, behavioural and learning needs.  She regularly enjoys the opportunity to consult with, and offer training to, residential and education teams. Dr Bligh is passionate about working with systems, networks and directly with children and families to achieve the best possible outcomes for young people.  Working with children with autism and learning disabilities are areas of specialism for Dr Bligh. She is a Chartered Clinical Psychologist, and an Associate Fellow of the British Psychological Society, and has Practitioner status with the Health Professions Council.</p>'
+  }
+];
+
+---
+
+<div id="WhoWeAre" class="container pageSection">
+			
+  <h2 class="text-center">Who We Are</h2>
+
+    {
+      owners.map((owner) => (
+          <div class="row">
+            <div class="col-sm-4">	
+              <img class="profileImage img-responsive" src={ owner.image } alt={ owner.imageAlt }>
+            </div>
+            <div class="col-sm-8 media-blurb">
+              <h3 class="media-heading" set:html={owner.name}></h3>
+              <div set:html={owner.blurb}></div>
+            </div>
+          </div>
+      ))
+    }
+  
+</div>

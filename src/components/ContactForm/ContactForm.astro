@@ -1,0 +1,57 @@
+<div id="Contact" class="container text-center pageSection">
+
+  <h2>Contact Us</h2>
+
+  <p>If you would like to find out more about the services we offer, or discuss an enquiry please contact us via the email below. Alternatively you can complete the form below with some brief details about your enquiry and we will contact you for a brief telephone consultation which is free of charge. This will allow us to find out a bit more about the areas of concern and discuss how we can help.</p>
+
+  <p>We will not pass your details onto third parties and will only use the information supplied for the purposes of handling your query. Please refer to our <a href="pdfs/PrivacyPolicy.pdf" target="_blank" title="Privacy Policy (opens in a new tab)">privacy policy</a> for further information about how we handle your data.</p>
+
+  <div id="ContactForm" style="padding: 40px 0;">
+
+    <div id="ContactFormErrorContainer" class="errorMessage Message hideMe" role="alert">
+      <p>There are some issues with the data you entered:</p>
+      <ul class="formIssues">
+        <li id="nameRequired" class="hideMe">Name is a required field</li>
+        <li id="emailRequired" class="hideMe">Email is a required field</li>
+        <li id="emailInvalid" class="hideMe">The email given is not in the correct format</li>
+        <li id="messageRequired" class="hideMe">Message is a required field</li>
+      </ul>
+    </div>
+
+    <div id="ContactFormSendSuccessContainer" class="successMessage Message hideMe" role="alert">
+      <p>Thank you for your enquiry. We aim to reply within 3 working days. Please check your junk mail if you have not received a reply after this time. Thank you for contacting us.</p>
+    </div>
+
+    <div id="ContactFormSendFailureContainer" class="errorMessage Message hideMe" role="alert">
+      <p>The enquiry form failed to send, please try again later.</p>
+    </div>
+
+    <form onsubmit="return SendMail(this);" novalidate>
+
+      <div class="col-sm-6 text-left">
+        <div class="ContactFormSmallFields">
+          <label for="Name">Name: (Required)</label>
+          <input id="Name" type="text" name="name" placeholder="Enter your name" maxlength="250" aria-required="true">
+
+          <label for="email">Email: (Required)</label>
+          <input id="email" type="email" name="email" placeholder="Enter your email address" maxlength="250" aria-required="true">
+
+          <label for="tel">Telephone:</label>
+          <input id="tel" type="tel" name="tel" placeholder="Enter your telephone number" maxlength="14" aria-required="false">
+        </div>
+      </div>
+
+
+      <div class="col-sm-6 text-left">
+        <label for="message">Message: (Required)</label>
+        <textarea id="message" rows="5" name="message" cols="30" placeholder="Enter a short message about you enquiry" maxlength="5000" aria-required="true"></textarea>
+      </div>
+
+      <div class="col-sm-12 text-center">
+        <input id="submitBtn" type="submit" name="submit" value="Submit" class="btn btn-primary contactUsBtn">
+      </div>
+    </form>
+
+  </div>
+
+</div> 

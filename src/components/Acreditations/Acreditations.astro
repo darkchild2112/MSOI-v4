@@ -1,0 +1,40 @@
+---
+
+const acreditations = [
+  {
+    id: 'HCPCLogo',
+    url: 'http://www.hcpc-uk.org',
+    logo: 'images/hcpc.jpg',
+    alt: 'Health and Care Profesions Council Logo'
+  },
+  {
+    id: 'bpsLogo',
+    url: 'http://www.bps.org.uk',
+    logo: 'images/bpslogo.svg',
+    alt: 'British Psychological Society Logo'
+  }
+]
+
+---
+
+<div id="acreditations" class="container text-center pageSection">
+		
+  <h2 class="sr-only text-center">Acreditations</h2>
+
+  <p class="sr-only">Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
+
+  <div class="row">
+
+    {
+      acreditations.map(item => (
+        <div class="col-sm-6 logoContainer">
+          <a href={item.url}>
+            <img id={item.id} src={item.logo} alt={item.alt} />
+          </a>
+        </div>
+      ))
+    }
+
+  </div>
+
+</div>
