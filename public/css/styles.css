@@ -96,16 +96,7 @@ textarea
 
 /**************************** Generic Company Name Styles */
 
-.companyNamePart1
-{
-	color:#27bbdf;
-}
 
-.companyNamePart2
-{
-
-		color:#2d3286;
-}
 
 /**************************** Buttons */
 
@@ -373,32 +364,6 @@ textarea
 	.navbar-toggle 
 	{
 		border-radius: 0px;
-	}
-	
-	.navbar-brand
-	{
-		padding:0px;
-	}
-	
-	.navbarCompanyName
-	{
-		font-weight: bold;
-		font-size: 1.3em;
-		padding-left: 10px;
-		line-height: 25px;
-	}
-	
-	.navBarCompanyLogo
-	{
-		display: inline;
-		float: left;
-	}
-	
-	.navBarCompanyLogo img
-	{
-		height:50px;
-		width: 50px;
-		float: left;
 	}
 	
 	/*.stay-open {display:block !important;}*/
@@ -852,7 +817,7 @@ textarea
 	
 	/************************************************************************/
 	
-	.navbar 
+	/* .navbar 
 	{
 		padding: 5px 0 0px 0;
 	}
@@ -860,14 +825,14 @@ textarea
 	.navbar-brand
 	{
 		padding:0px;
-	}
+	} */
 	
-	.navBarCompanyLogo
+	/* .navBarCompanyLogo
 	{
 		display: inline;
 		float: left;
 		padding-bottom: 2px;
-	}
+	} */
 	
 	.navbar-nav li a 
 	{
@@ -875,29 +840,16 @@ textarea
 		padding-bottom: 13px;
 	}
 	
-	.navBarCompanyLogo img
-	{
-		height:68px;
-		width: 68px;
-	}
+
 	
-	.navbarCompanyName
-	{
-		font-weight: bold;
-		font-size: 1.2em;
-		padding-left: 8px;
-		/*line-height: 35px;*/
-		display: inline;
-		float: left;
-		padding-top: 32px;
-	}
+
 	
-		#ServiceMobileNavItem
+	#ServiceMobileNavItem
 	{
 		display: none;
 	}
 	
-		#Toolbar
+	#Toolbar
 	{
 		list-style: none;
 		text-align: right;
@@ -1316,7 +1268,7 @@ textarea
 		*/
 	}
 	
-	.navbar 
+	/* .navbar 
 	{
 		padding: 5px 0 0px 0;
 	}
@@ -1331,7 +1283,7 @@ textarea
 	.navbar-brand img
 	{
 		display: inline;
-	}
+	} */
 
 	.navbar-nav li a 
 	{
@@ -1339,29 +1291,28 @@ textarea
 		padding-bottom: 15px;
 	}
 	
-	.navBarCompanyLogo
+	/* .navBarCompanyLogo
 	{
 		display: inline;
 		float: left;
 		padding-bottom: 2px;
-	}
+	} */
 	
-	.navBarCompanyLogo img
+	/* .navBarCompanyLogo img
 	{
 		height:68px;
 		width: 68px;
-	}
+	} */
 	
-	.navbarCompanyName
+	/* .navbarCompanyName
 	{
 		font-weight: bold;
 		font-size: 1.2em;
 		padding-left: 8px;
-		/*line-height: 35px;*/
 		display: inline;
 		float: left;
 		padding-top: 32px;
-	}
+	} */
 	
 	#ServiceMobileNavItem
 	{
