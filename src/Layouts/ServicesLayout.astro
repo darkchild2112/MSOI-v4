@@ -1,0 +1,24 @@
+---
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+---
+
+<BaseLayout>
+  <div class="container" style="margin-top: 100px;">
+    <div id="ServicesSecondaryNav" class="col-sm-3" style="padding: 0;">	
+      <ul class="SecondaryNavigation">
+        <li><a href="/services/schools">Schools</a></li>
+        <li><a href="/services/family-mental-health">Child and Family Mental Health</a></li>
+        <li><a href="/services/learning-disabilities">Children with Learning Disabilities</a></li>
+        <li><a href="/services/cognitive-assessments">Cognitive Assessments</a></li>
+        <li><a href="/services/autism-assessments">Autism Diagnostic Service</a></li>
+        <li><a href="/services/supervision-and-training">Supervision & Training</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9">
+      <h1 class="sr-only">Services</h1>
+      <slot />
+    </div>
+  </div>
+</BaseLayout>
