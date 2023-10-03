@@ -6,93 +6,13 @@ Medium devices (desktops, 992px and up)
 Large devices (large desktops, 1200px and up)
 */
 
-body
-{
-	font-size: 16px;
-	/*letter-spacing: 0.5px;*/
-}
-
-h1, h2
-{
-}
-
-h1, h2, h3, h4
-{
-	font-weight: bold;
-	color: #000;
-}
-
-a
-{
-	color: blue;
-	color: #2D3286;
-	text-decoration: none;
-}
-
-a:hover
-{
-	color: blue;
-	color: #2F3184;
-	text-decoration: none;
-}
-
-a:visited
-{
-	color: blue;
-	color: #2D3286;
-	text-decoration: none;
-}
-
-a:active
-{
-	color: blue;
-	color: #2F3184;
-	text-decoration: none;
-}
-
 .pageSection a
 {
 	text-decoration: underline;
 }
 
-p:last-child
-{
-	margin-bottom: 0;
-}
 
-label
-{
-	display: block;
-}
 
-input
-{
-	border-radius: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-input[type="submit"]
-{
-	display: block;
-}
-
-input[type="text"], input[type="email"], input[type="tel"]
-{
-	padding: 5px;
-	border: 1px solid #ccc;
-}
-
-textarea
-{
-	padding: 5px;
-	border: 1px solid #ccc;
-	border-radius: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
 
 /**************************** Generic Company Name Styles */
 
@@ -158,44 +78,6 @@ textarea
 /**************************** Footer */
 
 
-#FooterContainer
-{
-	background-color: #2E2E2E; 
-	color: white; 
-	padding: 30px;
-}
-
-#FooterSocialMediaIconsContainer
-{
-	margin-bottom: 10px;
-}
-
-
-#FooterContainer a, #FooterContainer a:hover
-{
-	color: white; 
-}
-
-
-#FooterContainer .clickableIcon
-{
-	padding-right: 10px;
-}
-
-#FooterContainer .clickableIcon:last-child
-{
-	padding-right: 0px;
-}
-
-#footerNav a
-{
-    text-decoration: underline !important;
-}
-
-#footerNav a:visited
-{
-    text-decoration: underline !important;
-}
 
 
 /***********************************/
@@ -1506,34 +1388,7 @@ textarea
 	
 	/*******************************************************/
 	
-	#FooterContainer
-	{
-		margin-top: 90px;
-	}
 	
-	#FooterContainer .clickableIcon
-	{
-		font-size: 3.0em;
-	}
-	
-	.footerDisclaimerText
-	{
-		font-size: 0.85em;
-	}
-    
-    #copyright
-    {
-        float: left;
-        
-    }
-    
-    #footerNav
-    {
-        float: right;
-        
-    }
-    
-    
 	
 	/*****************************************************/
 	

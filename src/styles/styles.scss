@@ -1,0 +1,46 @@
+@import'./fonts.scss';
+@import'./forms.scss';
+
+body
+{
+	font-size: 16px;
+	/*letter-spacing: 0.5px;*/
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+	color: #000;
+}
+
+a {
+	color: blue;
+	color: #2D3286;
+	text-decoration: none;
+
+  &:hover {
+    color: blue;
+    color: #2F3184;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: blue;
+    color: #2D3286;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: blue;
+    color: #2F3184;
+    text-decoration: none;
+  }
+}
+
+p {
+  border: 1px solid red;
+}
+
+// p:last-child
+// {
+// 	margin-bottom: 0;
+// }
