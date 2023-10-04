@@ -442,29 +442,7 @@ Large devices (large desktops, 1200px and up)
 		margin-bottom: 30px;
 		height: 207px;
 	}
-		
-	/********************************************************/
-	
-	#FooterContainer
-	{
-		margin-top: 50px;
-	}
-	
-	#FooterContainer .clickableIcon
-	{
-		font-size: 3.0em;
-	}
-	
-	.footerDisclaimerText
-	{
-		font-size: 0.85em;
-	}
-	
-	#FooterContainer
-	{
-		text-align: center;
-	}
-	
+
 	/***********************************************************/
 	
 		.Service
@@ -896,22 +874,6 @@ Large devices (large desktops, 1200px and up)
 	#acreditations
 	{
 		padding-top: 40px; /* extra padding to account for no h1 or h2 */
-	}
-	
-	/********************************************************/
-	
-	#FooterContainer
-	{
-	}
-	
-	#FooterContainer .clickableIcon
-	{
-		font-size: 3.0em;
-	}
-	
-	.footerDisclaimerText
-	{
-		font-size: 0.85em;
 	}
 	
 	/*********************************************************/

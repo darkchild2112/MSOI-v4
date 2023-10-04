@@ -72,6 +72,39 @@ const icons = [
     }
   }
 
+  /*Mobile Only Styles */
+  @media (max-width: 767px) {
+    .FooterContainer
+    {
+      margin-top: 50px;
+      text-align: center;
+
+      .social-media-icons {
+        font-size: 3.0em;
+      }
+
+      .copyright {
+        font-size: 0.85em;
+      }
+    }
+  }
+
+  /* all tablets */
+  /* Duplicated with Mobile so need to amalgamate */
+  @media screen and (min-width: 768px) and (max-width: 1199px) 
+  {
+    .FooterContainer
+    {
+      .social-media-icons {
+        font-size: 3.0em;
+      }
+
+      .copyright {
+        font-size: 0.85em;
+      }
+    }
+  }
+
 </style>
 
 <footer class="container-fluid footer-container">
