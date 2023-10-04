@@ -1,0 +1,51 @@
+.btn 
+{
+  border-radius: 0;
+  text-decoration: none !important;
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 5px #ccc;
+  padding: 12px 31px; 
+	font-size: 1.5rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
+
+  @media (max-width: 767px) {
+    & {
+      width: 92%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.btn-primary
+{
+  background-color: #27bbdf;
+  border-color: #27bbdf;
+  font-weight: bold;
+  color: white;
+
+  &:hover {
+    background-color: #2d3286;
+    border-color: #2d3286;
+  }
+
+  &:visited {
+    color: white;
+  }
+}
+
+.btn-secondary
+{
+  border-color: #27bbdf;
+  font-weight: bold;
+  background-color: white;
+  color: #27bbdf;
+
+  &:hover {
+    border-color: #2d3286;
+    color: #2d3286;
+  }
+
+  &:visited {
+    color: #27bbdf;
+  }
+}

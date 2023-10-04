@@ -20,60 +20,10 @@ Large devices (large desktops, 1200px and up)
 
 /**************************** Buttons */
 
-.btn 
-{
-	border-radius: 0;
-	text-decoration: none !important;
-		letter-spacing: 1px;
-}
 
-.btn-primary
-{
-	background-color: #27bbdf;
-	border-color: #27bbdf;
-	font-weight: bold;
-	color: white;
-}
-
-.btn-primary:hover
-{
-	background-color: #2d3286;
-	border-color: #2d3286;
-}
-
-.btn-primary:visited
-{
-	color: white;
-	
-}
-
-.btn-secondary
-{
-	border-color: #27bbdf;
-	font-weight: bold;
-	background-color: white;
-	color: #27bbdf;
-}
-
-.btn-secondary:hover
-{
-	border-color: #2d3286;
-	color: #2d3286 !important;
-
-}
-
-.btn-secondary:visited
-{
-	color: #27bbdf;
-}
 
 /****/
 
-.bannerBtn
-{
-
-		box-shadow: 5px 5px 10px #999;
-}
 
 /**************************** Footer */
 
@@ -174,19 +124,11 @@ Large devices (large desktops, 1200px and up)
 
 @media (max-width: 767px) {
 	
-	.btn 
-	{
-		box-shadow: none;
-		width: 92%;
-		margin: 0 auto;
-	}
-	
 	#main-menu
 	{
 		/*background-color: green;*/
 	}
-	
-	
+
 	#Banner
 	{
 		padding: 0;
@@ -199,36 +141,9 @@ Large devices (large desktops, 1200px and up)
 		text-align: center;
 	}
 	
-	#InnerBanner
-	{
-	}
-	
-	#InnerBanner h1
-	{
-
-	}
-	
-	#InnerBanner .bannerText
-	{
-	}
-	
 	#InnerBanner .bannerBtn
 	{
 		margin-top: 20px;
-	}
-	
-	.BannerText
-	{
-
-	}
-
-	.BannerText h1
-	{
-
-	}
-	
-	.BannerText p
-	{
 	}
 	
 	/****************************************************************/
@@ -292,9 +207,7 @@ Large devices (large desktops, 1200px and up)
 		display: none;
 	}
 
-
-	
-		/*********************************************************************/
+  /*********************************************************************/
 	
 	.pageSection:first-child 
 	{
@@ -308,7 +221,6 @@ Large devices (large desktops, 1200px and up)
 		padding-top: 90px;
 		padding-bottom: 50px;
 		
-
 		background-image: url('../images/Divider.png');
 		background-repeat: no-repeat;
 		background-position: center 19px;
@@ -332,13 +244,7 @@ Large devices (large desktops, 1200px and up)
 		margin-right: 5px;
 	}
 	
-	/*********************************************************************/
-	
-	#Services
-	{
-
-	}
-	
+	/*********************************************************************/	
 		
 	#Services .row .col-sm-4
 	{
@@ -551,8 +457,6 @@ Large devices (large desktops, 1200px and up)
 		.SecondaryNavigation li
 		{
 			list-style: none;
-
-
 		}
 		
 		.SecondaryNavigation li a
@@ -569,7 +473,7 @@ Large devices (large desktops, 1200px and up)
 			text-decoration: none !important;
 		}
 		
-				.Service ul ul {
+		.Service ul ul {
 		  margin-top: 15px;
 		}
 		
@@ -615,11 +519,6 @@ Large devices (large desktops, 1200px and up)
 
 @media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
 {
-	#main-menu
-	{
-		/*background-color: green;*/
-	}
-	
 	#Banner
 	{
 		padding: 0;
@@ -647,13 +546,6 @@ Large devices (large desktops, 1200px and up)
 		padding-bottom: 10px;
 	}
 	
-	#InnerBanner .bannerBtn
-	{
-		padding: 12px 31px; 
-		font-size: 1.2em;
-
-	}
-	
 	.BannerText
 	{
 
@@ -664,10 +556,6 @@ Large devices (large desktops, 1200px and up)
 	.BannerText h1
 	{
 		font-weight: bold;
-	}
-	
-	.BannerText p
-	{
 	}
 	
 	#BannerDivider
@@ -699,11 +587,7 @@ Large devices (large desktops, 1200px and up)
 		padding-top: 13px;
 		padding-bottom: 13px;
 	}
-	
 
-	
-
-	
 	#ServiceMobileNavItem
 	{
 		display: none;
@@ -758,11 +642,6 @@ Large devices (large desktops, 1200px and up)
 	}
 	
 	/*********************************************************************/
-	
-	#Services
-	{
-		
-	}
 	
 	#Services .row
 	{
@@ -1051,13 +930,6 @@ Large devices (large desktops, 1200px and up)
 	#InnerBanner .bannerText
 	{
 		padding-bottom: 10px;
-	}
-	
-	#InnerBanner .bannerBtn
-	{
-		padding: 12px 31px; 
-		font-size: 1.2em;
-		text-decoration: none;
 	}
 	
 	.BannerText

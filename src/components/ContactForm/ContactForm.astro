@@ -1,3 +1,8 @@
+---
+import Button from '../Button/Button.astro'
+import { ButtonStyles, ButtonTypes } from '../Button/ButtonTypes'
+---
+
 <div id="Contact" class="container text-center pageSection">
 
   <h2>Contact Us</h2>
@@ -48,7 +53,8 @@
       </div>
 
       <div class="col-sm-12 text-center">
-        <input id="submitBtn" type="submit" name="submit" value="Submit" class="btn btn-primary contactUsBtn">
+        <!-- <input id="submitBtn" type="submit" name="submit" value="Submit" class="btn btn-primary contactUsBtn"> -->
+        <Button type={ButtonTypes.Button} style={ButtonStyles.PRIMARY}>Submit</Button>
       </div>
     </form>
 

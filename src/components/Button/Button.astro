@@ -1,0 +1,15 @@
+---
+
+import './ButtonStyles.scss';
+import { ButtonTypes, ButtonStyles } from './ButtonTypes'
+
+const { buttonType, buttonStyle } = Astro.props;
+
+const btnType = buttonType || ButtonTypes.BUTTON;
+const btnStyle = buttonStyle || ButtonStyles.PRIMARY;
+
+---
+
+<button type={btnType} class={`btn ${btnStyle}`}>
+  <slot />
+</button>

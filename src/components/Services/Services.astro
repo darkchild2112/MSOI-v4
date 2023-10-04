@@ -1,6 +1,8 @@
 ---
 
 import { services } from './services.js'
+import ButtonLink from '../Button/ButtonLink.astro'
+import { ButtonStyles } from '../Button/ButtonTypes'
 
 ---
 
@@ -23,7 +25,7 @@ import { services } from './services.js'
               </a>
               <h3>{item.heading}</h3>
               <p>{item.text}</p>
-              <a href={item.link} class="btn btn-secondary">Find out more...</a>
+              <ButtonLink buttonStyle={ButtonStyles.SECONDARY} destination={item.link}>Find out more...</ButtonLink>
             </div>
           </div>
         ))
