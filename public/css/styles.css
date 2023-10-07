@@ -1,3 +1,61 @@
+/* GLOBAL STYLES */
+
+.pageSection:first-child 
+{
+	padding-top: 87px !important;
+}
+
+.pageSection
+{
+	padding-top: 120px;
+}
+
+.pageSection h1,h2
+{
+	padding-bottom: 25px;
+}
+
+/* Quote */
+
+.Service blockquote i
+{
+	font-size: 25px;
+}
+
+.Service blockquote i:first-child
+{
+	padding-right: 8px;
+}
+
+.Service blockquote i:last-child
+{
+	padding-left: 8px;
+}
+
+.Service .quoteSource
+{
+	font-size: 8px;
+	width: 60%;
+
+	color: #666;
+	font-style: italic;
+}
+
+.Service .HalfWidthQuote .quoteSource
+{
+	float: right;
+}
+
+.Service .FullWidthQuote .quoteSource
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+/*************************/
+
+
+
 
 /*
 Extra small devices (phones, less than 768px)
@@ -6,10 +64,10 @@ Medium devices (desktops, 992px and up)
 Large devices (large desktops, 1200px and up)
 */
 
-.pageSection a
+/* .pageSection a
 {
 	text-decoration: underline;
-}
+} */
 
 
 
@@ -32,38 +90,28 @@ Large devices (large desktops, 1200px and up)
 
 /***********************************/
 
-.divider
+/* .divider
 {
 	width: 90%;
 	height: 2px;
 	border-bottom: 1px solid #ccc;
 	margin: 0 auto;
-}
+} */
 
-.navbarCompanyName
+/* .navbarCompanyName
 {
 	vertical-align: middle;
 	display: inline-block;
 	font-family: sans-serif;
-}
+} */
 
-.navbar 
-{
-	background-color: #fff;
-	border: 0;
-	margin-bottom: 0;
-	border-bottom: 2px solid #27BBDF;
-}
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover 
-{
-    background-color: #27BBDF;
-	color: white;
-}
+
+
 
 /*************************************************/
 
-	.contactList
+	/* .contactList
 	{
 		list-style: none;
 		padding: 0;
@@ -79,93 +127,36 @@ Large devices (large desktops, 1200px and up)
 	.contactList li:last-child
 	{
 		margin-bottom: 0px;
-	}
+	} */
 	
 /*************************************************/
 
-.hideMe
-{
-	display: none;
-}
+
 	
 /*************************************************/
 
-.erroredFormEl
-{
-	border: 1px solid red !important;
-}
 
-.successMessage
-{
-	border: 2px solid green;
-	background-color: #E8F4E8;
-}
-
-.errorMessage
-{
-	border: 2px solid red;
-	background-color: #FFDEDE;
-}
-
-.Message
-{
-	margin-bottom: 40px;
-	padding: 20px;
-}
-
-.formIssues
-{
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
 
 /**************************** Mobile Only Styles */
 
 @media (max-width: 767px) {
 	
-	#main-menu
+	/* #main-menu
 	{
-		/*background-color: green;*/
-	}
+		background-color: green;
+	} */
 
-	#Banner
-	{
-		padding: 0;
-		padding-top: 50px;
-		padding-bottom: 50px;
-	    padding-right: 15px;
-		padding-left: 15px;
-		margin-right: auto;
-		margin-left: auto;
-		text-align: center;
-	}
+
 	
-	#InnerBanner .bannerBtn
-	{
-		margin-top: 20px;
-	}
+
 	
 	/****************************************************************/
 	
-	.navbar 
-	{
-		padding: 10px 0 10px 10px;
-	}
-	
-	.nav>li 
-	{
-		margin-right: 10px;
-	}
-	
-	.navbar-toggle 
-	{
-		border-radius: 0px;
-	}
+
 	
 	/*.stay-open {display:block !important;}*/
 	
-	#ServiceDesktopNavItem
+	/* #ServiceDesktopNavItem
 	{
 		display: none;
 	}
@@ -173,7 +164,7 @@ Large devices (large desktops, 1200px and up)
 	#ServicesSecondaryNav
 	{
 		display: none;
-	}
+	} */
 	
 	/****************
 	
@@ -202,10 +193,10 @@ Large devices (large desktops, 1200px and up)
 	
 	***************/
 	
-	#Toolbar
+	/* #Toolbar
 	{
 		display: none;
-	}
+	} */
 
   /*********************************************************************/
 	
@@ -896,65 +887,11 @@ Large devices (large desktops, 1200px and up)
 
 @media screen and (min-width: 1200px)
 {
-	#main-menu
-	{
-		/*background-color: red;*/
-	}
-	
-	#Banner
-	{
-		/*background-image: url(../images/ChildrenWithLearningDisabilitiesBannerBg.jpg);*/
-		background-color: #F9FDFE;
-		padding: 0;
-	}
-	
-	#InnerBanner
-	{
-		/*background-image: url(../images/stock-photo-beautiful-little-girl-with-hands-in-the-paint-74822080.jpg);*/
-		/*background-image: url('../images/stock-photo-child-on-the-beach-flying-a-kite-in-the-clear-blue-windy-skies-620200295.jpg');*/
-		background-image: url('../images/stock-photo-many-colorful-hands-with-smileys-204520951.jpg');
-		height: 550px;
-		background-position: center 62px;
-		background-repeat: no-repeat;
-		border-bottom: 3px solid #27bbdf;
-		/*background-size: 100% 100%;*/
-		background-size: auto;
-		background-color: #fff;
-	}
-	
-	#InnerBanner h1
-	{
-		padding-bottom: 5px;
-	}
-	
-	#InnerBanner .bannerText
-	{
-		padding-bottom: 10px;
-	}
-	
-	.BannerText
-	{
-		padding: 30px 0 0 50px;
-	}
 
-	.BannerText h1
-	{
-		font-weight: bold;
-	}
 	
-	.BannerText p
-	{
-	}
+
 	
-	.innerBannerText
-	{
-		width: 60%;
-	}
-	
-		#BannerDivider
-	{
-		display: none;
-	}
+
 	
 	/***************************************************************************/
 
@@ -975,15 +912,15 @@ Large devices (large desktops, 1200px and up)
 	*/
 	
 	/*************************************************************/
-	
+	/*
 	.nav
 	{
-		/*
+		
 		float: right;
 		clear: both;
-		*/
+		
 	}
-	
+	*/
 	/* .navbar 
 	{
 		padding: 5px 0 0px 0;
@@ -1001,11 +938,7 @@ Large devices (large desktops, 1200px and up)
 		display: inline;
 	} */
 
-	.navbar-nav li a 
-	{
-		padding-top: 15px;
-		padding-bottom: 15px;
-	}
+
 	
 	/* .navBarCompanyLogo
 	{
@@ -1030,53 +963,19 @@ Large devices (large desktops, 1200px and up)
 		padding-top: 32px;
 	} */
 	
-	#ServiceMobileNavItem
+	/* #ServiceMobileNavItem
 	{
 		display: none;
-	}
+	} */
 	
-	#Toolbar
-	{
-		list-style: none;
-		text-align: right;
-		margin-right: 13px;
-		font-size: 0.9em; 
-		/*
-		float: right;
-		clear: both;
-		*/
-	}
+
 	
-	#Toolbar li
-	{
-		display: inline;
-	}
-	
-	#Toolbar a
-	{
-		text-decoration: none;
-	}
+	/*********************************************************************/
+
 	
 	/*********************************************************************/
 	
-	.pageSection:first-child 
-	{
-		padding-top: 87px !important;
-	}
-	
-	.pageSection
-	{
-		padding-top: 120px;
-	}
-	
-	.pageSection h1,h2
-	{
-		padding-bottom: 25px;
-	}
-	
-	/*********************************************************************/
-	
-	.contactList li
+	/* .contactList li
 	{
 		font-size: 1.4em;
 	}
@@ -1084,140 +983,28 @@ Large devices (large desktops, 1200px and up)
 	.contactList i
 	{
 		margin-right: 5px;
-	}
+	} */
 	
 	/*********************************************************************/
 	
-	#Services
-	{	
-		/*background-color: #eeeeee;*/
-	}
-	
-	#Services .row
-	{
-		margin-bottom: 40px;
-	}
-	
-	#Services .row:last-child
-	{
-		margin-bottom: 0px;
-	}
-	
-	#Services .row .col-sm-4 h3
-	{
-		padding: 10px 0px 10px 0px;
-		font-size: 18px;
-	}
-	
-	#Services .row .col-sm-4 .innerServiceContainer
-	{
-		padding: 20px;
-		height: 630px;
-		overflow: hidden;
-	}
-	
-	/*
-	#Services .row .col-sm-4 .innerServiceContainer:hover
-	{
-		background-color: #eee;
-		cursor: cursor;
-	}
-	*/
-	
-	#Services .row .col-sm-4 img
-	{
-		border: 1px solid #eee;
-		width: 300px !important;
-		height: 300px !important;
-		margin: 0 auto;
-	}
-	
-	#Services .row .col-sm-4 .btn
-	{
-		width: 100%;
-	}
-	
-	#Services #ServicesIntroText
-	{
-		margin-bottom: 30px;
-	}
+
 	
 	
 	/********************************************************************/
 	
-	#WhoWeAre .row
-	{
-		margin-bottom: 60px;
-	}
+
 	
-	#WhoWeAre .row:last-child
-	{
-		margin-bottom: 0px;
-	}
+
 	
-	.media-blurb h3
-	{
-		margin-bottom: 10px;
-		border-bottom: 1px solid #E50D17;
-		float: left;
-		clear: right;
-		padding: 0 30px 5px 0;
-	}
-	
-	.media-blurb p
-	{
-		clear: both;
-	}
-	
-	.profileImage
-	{
-	    width: 200px;
-		margin: 0 auto;
-	}
+
 	
 	/********************************************************************/
 	
-	#acreditations
-	{
-		border-bottom: none;
-	}
-	
-	#bpsLogo
-	{
-		width: 300px;
-		padding-top: 13px;
-	}
-	
-	#HCPCLogo
-	{
-		width: 139px;
-	}
+
 	
 	/******************************************************/
 	
-	.ContactFormSmallFields
-	{
-		float: right;
-	}
-	
-	.contactUsBtn
-	{
-		width: 300px; 
-		margin: 0 auto;
-	}
-	
-	input[type="text"], input[type="email"], input[type="tel"]
-	{
-		width: 400px;
-		margin-bottom: 30px;
-	}
 
-	textarea
-	{
-		width: 400px;
-		margin-bottom: 30px;
-		height: 216px;
-	}
 
 	
 	/*******************************************************/
@@ -1225,134 +1012,5 @@ Large devices (large desktops, 1200px and up)
 	
 	
 	/*****************************************************/
-	
-			.Service
-		{
-			padding-left: 0px;
-		}
-		
-		.Service h2
-		{
-			text-align: center;
-			/*
-			border-bottom: 1px solid #3EAB34;
-			margin-bottom: 40px;
-			margin-left: 15px;
-			margin-right: 15px;
-			*/
-		}
-		
-		.Service h3, h4
-		{
-			margin-top: 40px !important;
-		}
-		
-				.MainServiceContent ul
-		{
-			margin-top: 30px;
-		}
-		
-		.Service blockquote
-		{
-			color: #ff8f00;
-			border-left: none;
-			margin-bottom: 0;
-			font-style: italic;
-		}
-		
-			.Service .col-sm-6, .col-sm-12 
-	{
-		padding: 0px 5px !important;
-	}
-		
-		.Service blockquote i
-		{
-			font-size: 25px;
-		}
-		
-		.Service blockquote i:first-child
-		{
-			padding-right: 8px;
-		}
-		
-		.Service blockquote i:last-child
-		{
-			padding-left: 8px;
-		}
-		
-		.Service .quoteSource
-		{
-			font-size: 8px;
-			width: 60%;
 
-			color: #666;
-			font-style: italic;
-		}
-		
-		.Service .HalfWidthQuote .quoteSource
-		{
-			float: right;
-		}
-		
-		.Service .FullWidthQuote .quoteSource
-		{
-			width: 100%;
-			margin-bottom: 20px;
-		}
-		
-		.Service .row
-		{
-			margin: 40px 0;
-		}
-		
-		
-		.SecondaryNavigation
-		{
-			margin: 15px 0 0 0;
-			padding: 0;
-		}
-		
-		.SecondaryNavigation li
-		{
-			list-style: none;
-
-
-		}
-		
-		.SecondaryNavigation li a
-		{
-			float: left;
-			width: 100%;
-			margin-bottom: 0;
-			padding: 5px;
-		}
-		
-		.activeServiceLink
-		{
-			color: #fff !important;
-			text-decoration: none !important;
-		}
-		
-		.Service ul ul {
-		  margin-top: 15px;
-		}
-		
-		.Service ul {
-		  list-style: none;
-		  padding: 0;
-		  padding-left: 15px;
-		}
-		.Service li {
-		  padding-left: 1.3em;
-		  padding-bottom: 10px;
-		  
-		}
-		.Service li:before {
-		  content: "\f054"; 
-		  font-family: FontAwesome;
-		  display: inline-block;
-		  margin-left: -1.3em; /* same as padding-left set on li */
-		  width: 1.3em; /* same as padding-left set on li */
-		  color: #E50E17;
-		}
 }

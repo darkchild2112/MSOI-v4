@@ -3,6 +3,81 @@ import ButtonLink from '../Button/ButtonLink.astro'
 import { ButtonStyles } from '../Button/ButtonTypes'
 ---
 
+<style lang="scss">
+
+  #Banner
+	{
+		background-color: #F9FDFE;
+		padding: 0;
+	}
+
+  #InnerBanner h1
+	{
+		padding-bottom: 5px;
+	}
+	
+	#InnerBanner .bannerText
+	{
+		padding-bottom: 10px;
+	}
+	
+	.BannerText
+	{
+		padding: 30px 0 0 50px;
+	}
+
+	.BannerText h1
+	{
+		font-weight: bold;
+	}
+	
+	.BannerText p
+	{
+	}
+	
+	.innerBannerText
+	{
+		width: 60%;
+	}
+	
+	#BannerDivider
+	{
+		display: none;
+	}
+
+  #InnerBanner
+	{
+		/*background-image: url(../images/stock-photo-beautiful-little-girl-with-hands-in-the-paint-74822080.jpg);*/
+		/*background-image: url('../images/stock-photo-child-on-the-beach-flying-a-kite-in-the-clear-blue-windy-skies-620200295.jpg');*/
+		background-image: url('../images/stock-photo-many-colorful-hands-with-smileys-204520951.jpg');
+		height: 550px;
+		background-position: center 62px;
+		background-repeat: no-repeat;
+		border-bottom: 3px solid #27bbdf;
+		/*background-size: 100% 100%;*/
+		background-size: auto;
+		background-color: #fff;
+	}
+  
+  @media (max-width: 767px) {
+  	#Banner
+    {
+      padding: 0;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    #InnerBanner .bannerBtn
+    {
+      margin-top: 20px;
+    }
+  }
+</style>
 
 <div id="Banner" class="container-fluid pageSection">
   <div id="InnerBanner">

@@ -3,6 +3,67 @@ import Button from '../Button/Button.astro'
 import { ButtonStyles, ButtonTypes } from '../Button/ButtonTypes'
 ---
 
+<style>
+  .hideMe
+  {
+    display: none;
+  }
+
+  .erroredFormEl
+  {
+    border: 1px solid red !important;
+  }
+
+  .successMessage
+  {
+    border: 2px solid green;
+    background-color: #E8F4E8;
+  }
+
+  .errorMessage
+  {
+    border: 2px solid red;
+    background-color: #FFDEDE;
+  }
+
+  .Message
+  {
+    margin-bottom: 40px;
+    padding: 20px;
+  }
+
+  .formIssues
+  {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ContactFormSmallFields
+	{
+		float: right;
+	}
+	
+	.contactUsBtn
+	{
+		width: 300px; 
+		margin: 0 auto;
+	}
+	
+	input[type="text"], input[type="email"], input[type="tel"]
+	{
+		width: 400px;
+		margin-bottom: 30px;
+	}
+
+	textarea
+	{
+		width: 400px;
+		margin-bottom: 30px;
+		height: 216px;
+	}
+</style>
+
 <div id="Contact" class="container text-center pageSection">
 
   <h2>Contact Us</h2>
