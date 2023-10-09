@@ -54,89 +54,6 @@
 
 /*************************/
 
-
-
-
-/*
-Extra small devices (phones, less than 768px)
-Small devices (tablets, 768px and up)
-Medium devices (desktops, 992px and up)
-Large devices (large desktops, 1200px and up)
-*/
-
-/* .pageSection a
-{
-	text-decoration: underline;
-} */
-
-
-
-
-/**************************** Generic Company Name Styles */
-
-
-
-/**************************** Buttons */
-
-
-
-/****/
-
-
-/**************************** Footer */
-
-
-
-
-/***********************************/
-
-/* .divider
-{
-	width: 90%;
-	height: 2px;
-	border-bottom: 1px solid #ccc;
-	margin: 0 auto;
-} */
-
-/* .navbarCompanyName
-{
-	vertical-align: middle;
-	display: inline-block;
-	font-family: sans-serif;
-} */
-
-
-
-
-
-/*************************************************/
-
-	/* .contactList
-	{
-		list-style: none;
-		padding: 0;
-		padding-top: 10px;
-	}
-	
-	.contactList li
-	{
-		padding: 0;
-		margin-bottom: 10px;
-	}
-	
-	.contactList li:last-child
-	{
-		margin-bottom: 0px;
-	} */
-	
-/*************************************************/
-
-
-	
-/*************************************************/
-
-
-
 /**************************** Mobile Only Styles */
 
 @media (max-width: 767px) {
@@ -490,27 +407,29 @@ Large devices (large desktops, 1200px and up)
 
 /**************************** Tablet Only Styles */
 
-@media screen and (min-width: 768px) and (max-width: 1000px) /* mini tablet */
+ /* mini tablet */
+/* @media screen and (min-width: 768px) and (max-width: 1000px)
 {
 	.BannerText
 	{
 		margin: 30px 0 0 30px;
 		width: 80%;
 	}
-}
+} */
 
-@media screen and (min-width: 1001px) and (max-width: 1199px) /* big tablet */
+ /* big tablet */
+/* @media screen and (min-width: 1001px) and (max-width: 1199px)
 {
 	.BannerText
 	{
 		margin: 30px 0 0 50px;
 		width: 70%;
 	}
-}
+} */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
 {
-	#Banner
+	/* #Banner
 	{
 		padding: 0;
 	}
@@ -541,7 +460,6 @@ Large devices (large desktops, 1200px and up)
 	{
 
 		float: left;
-		/* border: 1px solid blue; */
 	}
 
 	.BannerText h1
@@ -552,7 +470,7 @@ Large devices (large desktops, 1200px and up)
 	#BannerDivider
 	{
 		display: none;
-	}
+	} */
 	
 	/************************************************************************/
 	
@@ -881,136 +799,4 @@ Large devices (large desktops, 1200px and up)
 		{
 			margin-top: 20px;
 		}
-}
-
-/**************************** Desktop Only Styles */
-
-@media screen and (min-width: 1200px)
-{
-
-	
-
-	
-
-	
-	/***************************************************************************/
-
-	
-	/*
-	.homePageSection
-	{
-		padding-top: 90px;
-		padding-bottom: 90px;
-	}
-	
-	.homePageSection h2
-	{
-		padding-bottom: 20px;
-		font-weight: bold;
-	}
-	
-	*/
-	
-	/*************************************************************/
-	/*
-	.nav
-	{
-		
-		float: right;
-		clear: both;
-		
-	}
-	*/
-	/* .navbar 
-	{
-		padding: 5px 0 0px 0;
-	}
-
-	.navbar-brand
-	{
-		height: auto;
-		padding: 0;
-		margin-top: 4px;
-	}
-
-	.navbar-brand img
-	{
-		display: inline;
-	} */
-
-
-	
-	/* .navBarCompanyLogo
-	{
-		display: inline;
-		float: left;
-		padding-bottom: 2px;
-	} */
-	
-	/* .navBarCompanyLogo img
-	{
-		height:68px;
-		width: 68px;
-	} */
-	
-	/* .navbarCompanyName
-	{
-		font-weight: bold;
-		font-size: 1.2em;
-		padding-left: 8px;
-		display: inline;
-		float: left;
-		padding-top: 32px;
-	} */
-	
-	/* #ServiceMobileNavItem
-	{
-		display: none;
-	} */
-	
-
-	
-	/*********************************************************************/
-
-	
-	/*********************************************************************/
-	
-	/* .contactList li
-	{
-		font-size: 1.4em;
-	}
-	
-	.contactList i
-	{
-		margin-right: 5px;
-	} */
-	
-	/*********************************************************************/
-	
-
-	
-	
-	/********************************************************************/
-	
-
-	
-
-	
-
-	
-	/********************************************************************/
-	
-
-	
-	/******************************************************/
-	
-
-
-	
-	/*******************************************************/
-	
-	
-	
-	/*****************************************************/
-
 }

@@ -4,65 +4,35 @@ import { ButtonStyles } from '../Button/ButtonTypes'
 ---
 
 <style lang="scss">
-
-  #Banner
+  .banner
 	{
 		background-color: #F9FDFE;
-		padding: 0;
-	}
-
-  #InnerBanner h1
-	{
-		padding-bottom: 5px;
-	}
-	
-	#InnerBanner .bannerText
-	{
-		padding-bottom: 10px;
-	}
-	
-	.BannerText
-	{
-		padding: 30px 0 0 50px;
-	}
-
-	.BannerText h1
-	{
-		font-weight: bold;
-	}
-	
-	.BannerText p
-	{
-	}
-	
-	.innerBannerText
-	{
-		width: 60%;
-	}
-	
-	#BannerDivider
-	{
-		display: none;
-	}
-
-  #InnerBanner
-	{
-		/*background-image: url(../images/stock-photo-beautiful-little-girl-with-hands-in-the-paint-74822080.jpg);*/
-		/*background-image: url('../images/stock-photo-child-on-the-beach-flying-a-kite-in-the-clear-blue-windy-skies-620200295.jpg');*/
+		padding-top: 80px;
 		background-image: url('../images/stock-photo-many-colorful-hands-with-smileys-204520951.jpg');
-		height: 550px;
 		background-position: center 62px;
 		background-repeat: no-repeat;
-		border-bottom: 3px solid #27bbdf;
-		/*background-size: 100% 100%;*/
 		background-size: auto;
 		background-color: #fff;
+		border-bottom: 3px solid #27bbdf;
+		height: 550px;
+
+		.text-container
+		{
+			h1 {
+				padding-bottom: 5px;
+				text-wrap: pretty;
+			}
+
+			p {
+				padding-bottom: 10px;
+			}
+		}
 	}
   
+	/* Mobile */
   @media (max-width: 767px) {
-  	#Banner
+  	.banner
     {
-      padding: 0;
       padding-top: 50px;
       padding-bottom: 50px;
       padding-right: 15px;
@@ -71,23 +41,34 @@ import { ButtonStyles } from '../Button/ButtonTypes'
       margin-left: auto;
       text-align: center;
     }
-
-    #InnerBanner .bannerBtn
-    {
-      margin-top: 20px;
-    }
   }
+
+	/* Tablets */
+	@media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
+	{
+		.banner
+		{
+			padding-top: 80px;
+			height: 520px;
+
+			.text-container
+			{
+				h1 {
+					padding-bottom: 5px;
+				}
+
+				p {
+					padding-bottom: 10px;
+				}
+			}
+		}
+	}
 </style>
 
-<div id="Banner" class="container-fluid pageSection">
-  <div id="InnerBanner">
-    <div class="container BannerText">
-      <div class="innerBannerText">
-        <h1>Psychology Services for children, families and schools</h1> 
-        <p class="bannerText">Based in Worthing, West Sussex, Making Sense Of It Ltd provide Clinical Psychology services to children, families and schools in the Sussex area. Specialising in autism assessments in Sussex.</p> 
-        <!-- <a href="#Services" class="btn btn-primary bannerBtn">Find out more...</a> -->
-        <ButtonLink buttonStyle={ButtonStyles.PRIMARY} destination="#Services">Find out more...</ButtonLink>
-      </div>
-    </div>
+<div id="Banner" class="container-fluid banner">
+  <div class="container text-container">
+		<h1>Psychology Services for children, families and schools</h1> 
+		<p>Based in Worthing, West Sussex, Making Sense Of It Ltd provide Clinical Psychology services to children, families and schools in the Sussex area. Specialising in autism assessments in Sussex.</p> 
+		<ButtonLink buttonStyle={ButtonStyles.PRIMARY} destination="#Services">Find out more...</ButtonLink>
   </div>
 </div>
