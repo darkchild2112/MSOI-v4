@@ -16,48 +16,36 @@ import { ButtonStyles } from '../Button/ButtonTypes'
 		border-bottom: 3px solid #27bbdf;
 		height: 550px;
 
+		@media (max-width: 767px) {
+			padding-top: 50px;
+			padding-bottom: 50px;
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 1199px) {
+			padding-top: 80px;
+			height: 520px;
+		}
+
 		.text-container
 		{
 			h1 {
 				padding-bottom: 5px;
 				text-wrap: pretty;
+
+				@media screen and (min-width: 768px) and (max-width: 1199px) {
+					padding-bottom: 5px;
+				}
 			}
 
 			p {
 				padding-bottom: 10px;
-			}
-		}
-	}
-  
-	/* Mobile */
-  @media (max-width: 767px) {
-  	.banner
-    {
-      padding-top: 50px;
-      padding-bottom: 50px;
-      padding-right: 15px;
-      padding-left: 15px;
-      margin-right: auto;
-      margin-left: auto;
-      text-align: center;
-    }
-  }
 
-	/* Tablets */
-	@media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
-	{
-		.banner
-		{
-			padding-top: 80px;
-			height: 520px;
-
-			.text-container
-			{
-				h1 {
-					padding-bottom: 5px;
-				}
-
-				p {
+				@media screen and (min-width: 768px) and (max-width: 1199px) {
 					padding-bottom: 10px;
 				}
 			}
