@@ -18,51 +18,55 @@ const acreditations = [
 ---
 
 <style lang="scss">
-  #acreditations
+  .acreditations
 	{
 		border-bottom: none;
-	}
-	
-	#bpsLogo
-	{
-		width: 300px;
-		padding-top: 13px;
-	}
-	
-	#HCPCLogo
-	{
-		width: 139px;
-	}
 
-  
-  @media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
-  {
+    @media (max-width: 767px) {
+      padding-top: 140px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      padding-top: 40px;
+    }
+
     #bpsLogo
     {
       width: 300px;
       padding-top: 13px;
+
+      @media (max-width: 767px) {
+        width: 80%;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        width: 300px;
+        padding-top: 13px;
+      }
     }
     
     #HCPCLogo
     {
       width: 139px;
+
+      @media (max-width: 767px) {
+        width: 80%;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        width: 139px;
+      }
     }
-    
-    #acreditations
-    {
-      padding-top: 40px; /* extra padding to account for no h1 or h2 */
-    }
-  }
+	}
 </style>
 
-<div id="acreditations" class="container text-center">
+<div id="acreditations" class="container text-center acreditations">
 		
-  <h2 class="sr-only text-center">Acreditations</h2>
+  <h2 class="sr-only">Acreditations</h2>
 
   <p class="sr-only">Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
 
   <div class="row">
-
     {
       acreditations.map(item => (
         <div class="col-sm-6 logoContainer">
@@ -72,7 +76,6 @@ const acreditations = [
         </div>
       ))
     }
-
   </div>
 
 </div>
