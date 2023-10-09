@@ -62,9 +62,31 @@ import { ButtonStyles, ButtonTypes } from '../Button/ButtonTypes'
 		margin-bottom: 30px;
 		height: 216px;
 	}
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
+  {    
+    .contactUsBtn
+    {
+      width: 300px; 
+      margin: 0 auto;
+    }
+    
+    input[type="text"], input[type="email"], input[type="tel"]
+    {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    textarea
+    {
+      width: 100%;
+      margin-bottom: 30px;
+      height: 216px;
+    }
+  }
 </style>
 
-<div id="Contact" class="container text-center pageSection">
+<div id="Contact" class="container text-center">
 
   <h2>Contact Us</h2>
 
@@ -107,14 +129,12 @@ import { ButtonStyles, ButtonTypes } from '../Button/ButtonTypes'
         </div>
       </div>
 
-
       <div class="col-sm-6 text-left">
         <label for="message">Message: (Required)</label>
         <textarea id="message" rows="5" name="message" cols="30" placeholder="Enter a short message about you enquiry" maxlength="5000" aria-required="true"></textarea>
       </div>
 
       <div class="col-sm-12 text-center">
-        <!-- <input id="submitBtn" type="submit" name="submit" value="Submit" class="btn btn-primary contactUsBtn"> -->
         <Button type={ButtonTypes.Button} style={ButtonStyles.PRIMARY}>Submit</Button>
       </div>
     </form>

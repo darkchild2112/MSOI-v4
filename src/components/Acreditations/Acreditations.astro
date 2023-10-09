@@ -33,9 +33,29 @@ const acreditations = [
 	{
 		width: 139px;
 	}
+
+  
+  @media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
+  {
+    #bpsLogo
+    {
+      width: 300px;
+      padding-top: 13px;
+    }
+    
+    #HCPCLogo
+    {
+      width: 139px;
+    }
+    
+    #acreditations
+    {
+      padding-top: 40px; /* extra padding to account for no h1 or h2 */
+    }
+  }
 </style>
 
-<div id="acreditations" class="container text-center pageSection">
+<div id="acreditations" class="container text-center">
 		
   <h2 class="sr-only text-center">Acreditations</h2>
 
