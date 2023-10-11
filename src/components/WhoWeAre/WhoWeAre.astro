@@ -18,119 +18,59 @@ const owners = [
 ---
 
 <style lang="scss">
-  #WhoWeAre .row
-	{
-		margin-bottom: 60px;
-	}
-	
-	#WhoWeAre .row:last-child
-	{
-		margin-bottom: 0px;
-	}
 
-  .media-blurb h3
-	{
-		margin-bottom: 10px;
-		border-bottom: 1px solid #E50D17;
-		float: left;
-		clear: right;
-		padding: 0 30px 5px 0;
-	}
-	
-	.media-blurb p
-	{
-		clear: both;
-	}
+  .who-container {
+    .row:not(:last-child) {
+    	margin-bottom: 60px;
 
-  .profileImage
-	{
+      @media (max-width: 767px) {
+        margin-bottom: 40px;
+      }
+    }
+
+    .profile-picture	{
 	    width: 200px;
-		margin: 0 auto;
-	}
+		  margin: 0 auto;
 
-  @media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
-  {  
-    #WhoWeAre .row
-    {
-      margin-bottom: 60px;
-    }
-    
-    #WhoWeAre .row:last-child
-    {
-      margin-bottom: 0px;
-    }
-    
-    .media-blurb h3
-    {
-      margin-bottom: 10px;
-      border-bottom: 1px solid #E50D17;
-      float: left;
-      clear: right;
-      padding: 0 30px 5px 0;
-      font-size: 1.5em;
-    }
-    
-    .media-blurb p
-    {
-      clear: both;
-    }
-    
-    .profileImage
-    {
-        width: 200px;
-      margin: 0 auto;
-    }
-  }
-
-  /* Mobile */
-  @media (max-width: 767px) {
-    #WhoWeAre .row
-    {
-      margin-bottom: 40px;
-    }
-    
-    #WhoWeAre .row:last-child
-    {
-      margin-bottom: 0px;
-    }
-    
-    .media-blurb h3
-    {
-      border-bottom: 1px solid #E50D17;
-      padding: 15px 0px 10px 0;
-      text-align: center;
-      margin-bottom: 16px;
-    }
-    
-    .media-blurb p
-    {
-      clear: both;
-          text-align: center;
-    }
-    
-    .profileImage
-    {
+      @media (max-width: 767px) {  
         width: 70%;
-      margin: 0 auto 25px auto;
+        margin: 0 auto 25px auto;
+      }
+	  }
+
+    h3 {
+    	margin-bottom: 10px;
+    	padding: 0 30px 5px 0;
+
+      @media (max-width: 767px) {  
+        padding: 15px 0px 10px 0;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1199px) {     
+        margin-bottom: 10px;
+        padding: 0 30px 5px 0;
+        font-size: 1.5em;
+      }
     }
   }
+
 </style>
 
-<div id="WhoWeAre" class="container">
-			
+<div id="whoWeAre" class="container who-container">
   <h2 class="text-center">Who We Are</h2>
     {
       owners.map((owner) => (
           <div class="row">
             <div class="col-sm-4">	
-              <img class="profileImage img-responsive" src={ owner.image } alt={ owner.imageAlt }>
+              <img class="profile-picture img-responsive" src={ owner.image } alt={ owner.imageAlt }>
             </div>
             <div class="col-sm-8 media-blurb">
-              <h3 class="media-heading" set:html={owner.name}></h3>
+              <h3 set:html={owner.name}></h3>
               <div set:html={owner.blurb}></div>
             </div>
           </div>
       ))
     }
-  
 </div>
