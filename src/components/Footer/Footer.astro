@@ -37,9 +37,22 @@ const icons = [
     padding: 2rem 2rem 4rem 2rem;
     margin-top: 3rem;
 
+    @media (max-width: 767px) {
+      margin-top: 50px;
+      text-align: center;
+    }
+
     .social-media-icons {
       text-align: center;
       font-size: 3rem;
+
+      @media (max-width: 767px) {
+        font-size: 3.0em;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        font-size: 3.0em;
+      }
 
       a {
         padding-right: 1rem;
@@ -52,6 +65,14 @@ const icons = [
 
     .copyright {
       float: left;
+
+      @media (max-width: 767px) {
+        font-size: 0.85em;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        font-size: 0.85em;
+      }
     }
     
     .footerNav {
@@ -69,39 +90,6 @@ const icons = [
 
     a {
        color: white;
-    }
-  }
-
-  /*Mobile Only Styles */
-  @media (max-width: 767px) {
-    .FooterContainer
-    {
-      margin-top: 50px;
-      text-align: center;
-
-      .social-media-icons {
-        font-size: 3.0em;
-      }
-
-      .copyright {
-        font-size: 0.85em;
-      }
-    }
-  }
-
-  /* all tablets */
-  /* Duplicated with Mobile so need to amalgamate */
-  @media screen and (min-width: 768px) and (max-width: 1199px) 
-  {
-    .FooterContainer
-    {
-      .social-media-icons {
-        font-size: 3.0em;
-      }
-
-      .copyright {
-        font-size: 0.85em;
-      }
     }
   }
 

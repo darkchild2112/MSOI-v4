@@ -1,43 +1,42 @@
 <style lang="scss">
-  .navbar-brand {
-		padding:0px;
+  .logo-container {
+		padding: 0;
+    margin: .5rem 0 .5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
 
-    .navBarCompanyLogo {
-      display: inline;
-      float: left;
-
-      img {
-        height:68px;
-        width: 68px;
-      }
+    .logo img {
+      height:68px;
+      width: auto;
     }
 
-    .navbarCompanyName {
-      font-weight: bold;
-      font-size: 1.2em;
+    .company-name {
+      font-weight: 700;
+      font-size: 2rem;
       padding-left: 8px;
-      /*line-height: 35px;*/
-      display: inline;
-      float: left;
-      padding-top: 32px;
+      line-height: 2rem;
+      display: flex;
+      flex-direction: column;
 
-      .companyNamePart1 {
+      .top {
         color:#27bbdf;
       }
 
-      .companyNamePart2 {
+      .bottom {
         color:#2d3286;
       }
     }
 	}
 </style>
 
-<a class="navbar-brand" href="/">
-  <section class="navBarCompanyLogo">
+<a class="logo-container" href="/">
+  <section class="logo">
     <img src="/images/brain.png" alt="Making Sense Of It Ltd Logo">
   </section>
-  <section class="navbarCompanyName">
-    <span class="companyNamePart1">Making</span><br />
-    <span class="companyNamePart2">Sense Of It</span>
+  <section class="company-name">
+    <span class="top">Making</span>
+    <span class="bottom">Sense Of It</span>
   </section>
 </a>
