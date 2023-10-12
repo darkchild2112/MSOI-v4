@@ -1,11 +1,11 @@
 ---
 import ButtonLink from '../Button/ButtonLink.astro'
 import { ButtonStyles } from '../Button/ButtonTypes'
+import Container from '../HOC/Container.astro'
 ---
 
 <style lang="scss">
-  .banner
-	{
+  .banner	{
 		background-color: #F9FDFE;
 		padding-top: 80px;
 		background-image: url('../images/stock-photo-many-colorful-hands-with-smileys-204520951.jpg');
@@ -31,8 +31,7 @@ import { ButtonStyles } from '../Button/ButtonTypes'
 			height: 520px;
 		}
 
-		.text-container
-		{
+		.text-container	{
 			h1 {
 				padding-bottom: 5px;
 				text-wrap: pretty;
@@ -53,10 +52,10 @@ import { ButtonStyles } from '../Button/ButtonTypes'
 	}
 </style>
 
-<div id="banner" class="container-fluid banner">
-  <div class="container text-container">
+<div id="banner" class="banner">
+  <Container>
 		<h1>Psychology Services for children, families and schools</h1> 
 		<p>Based in Worthing, West Sussex, Making Sense Of It Ltd provide Clinical Psychology services to children, families and schools in the Sussex area. Specialising in autism assessments in Sussex.</p> 
 		<ButtonLink buttonStyle={ButtonStyles.PRIMARY} destination="#Services">Find out more...</ButtonLink>
-  </div>
+  </Container>
 </div>

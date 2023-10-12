@@ -4,154 +4,66 @@ import { services } from './services.js'
 import ButtonLink from '../Button/ButtonLink.astro'
 import { ButtonStyles } from '../Button/ButtonTypes'
 
+import Container from '../HOC/Container.astro';
+
 ---
 
 <style lang="scss">
-
-	// This is also fucked, rebuild!
-
-	#Services .row
-	{
-		margin-bottom: 40px;
-	}
-	
-	#Services .row:last-child
-	{
-		margin-bottom: 0px;
-	}
-	
-	#Services .row .col-sm-4 h3
-	{
-		padding: 10px 0px 10px 0px;
-		font-size: 18px;
-	}
-	
-	#Services .row .col-sm-4 .innerServiceContainer
-	{
+	.services-container {
+		border: 1px solid blue;
+		display: flex;
+		flex-direction: row;
+		gap: 40px;
+		flex-wrap: wrap;
 		padding: 20px;
-		height: 630px;
-		overflow: hidden;
-	}
-	
-	/*
-	#Services .row .col-sm-4 .innerServiceContainer:hover
-	{
-		background-color: #eee;
-		cursor: cursor;
-	}
-	
-	#Services .row .col-sm-4 img
-	{
-		border: 1px solid #eee;
-		width: 300px !important;
-		height: 300px !important;
-		margin: 0 auto;
-	} 
-	
-	#Services .row .col-sm-4 .btn
-	{
-		width: 100%;
-	}
-	
-	#Services #ServicesIntroText
-	{
-		margin-bottom: 30px;
-	}
-  */
-	@media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
-	{
-		#Services .row
-		{
-			margin-bottom: 40px;
-		}
-		
-		#Services .row:last-child
-		{
-			margin-bottom: 0px;
-		}
-		
-		#Services .row .col-sm-4 h3
-		{
-			padding: 10px 0px 10px 0px;
-			height: 58px;
-			font-size: 18px;
-		}
-		
-		#Services .row .col-sm-4 .innerServiceContainer
-		{
-			padding: 5px;
-		}
-		
-		#Services .row .col-sm-4 img
-		{
-			border: 1px solid #eee;
-			width: 220px !important;
-			height: 220px !important;
-			margin: 0 auto;
-		}
-		
-		#Services .row .col-sm-4 .btn
-		{
-			width: 100%;
-		}
-		
-		#Services #ServicesIntroText
-		{
-			margin-bottom: 30px;
-		}
-	}
+		justify-content: center;
 
-	/* Mobile */
-	@media (max-width: 767px) {
-		#Services .row .col-sm-4
-		{
-			margin-bottom: 60px;
-			padding: 10px 0;
-		}
-		
-		#Services .row .col-sm-4 h3
-		{
-			padding: 10px 0px 10px 0px;
-					font-size: 18px;
-		}
-		
-		#Services #ServicesIntroText
-		{
-			margin-bottom: 30px;
-		}
-		
-		.Serviceslast-child
-		{
-			margin-bottom: 0px !important;
+
+		.service {
+			width: 360px;
+			border: 1px solid pink;
+			
+			img {
+				border: 1px solid #eee;
+				width: 300px;
+				height: 300px;
+				margin: 0 auto;
+				max-width: 100%;
+				vertical-align: middle;
+				box-sizing: border-box;
+				display: block;
+			}
+
+			h3 {
+				text-align: center;
+			}
+
+			p {
+				text-align: center;
+			}
+
+			.btn {
+				border: 1px solid black;
+			}
 		}
 	}
 </style>
 
-<div id="Services" class="container-fluid text-center">
-		
-  <div class="container">
-        
-    <h2>Services</h2>
-    
-    <p id="ServicesIntroText">At Making Sense Of It we offer a range of services. The following sections give some brief detail about each of these services we offer.</p>
-    
-    <div class="row">
-
-      { 
-        services.map((item) => (
-          <div class="col-sm-4">
-            <div class="innerServiceContainer">
-              <a href={item.link}>
-                <img src={item.image} class="img-responsive"  alt={item.imageAlt} />
-              </a>
-              <h3>{item.heading}</h3>
-              <p>{item.text}</p>
-              <ButtonLink buttonStyle={ButtonStyles.SECONDARY} destination={item.link}>Find out more...</ButtonLink>
-            </div>
-          </div>
-        ))
-      }
-      
-    </div>
-  </div>
-</div>
+<Container id="Services">	  
+	<h2>Services</h2>
+	<p id="ServicesIntroText">At Making Sense Of It we offer a range of services. The following sections give some brief detail about each of these services we offer.</p>
+	<section class="services-container">
+		{ 
+			services.map((item) => (
+				<section class="service">
+					<a href={item.link}>
+						<img src={item.image} class="img-responsive" alt={item.imageAlt} />
+					</a>
+					<h3>{item.heading}</h3>
+					<p>{item.text}</p>
+					<ButtonLink buttonStyle={ButtonStyles.SECONDARY} destination={item.link}>Find out more...</ButtonLink>
+				</section>
+			))
+		}
+	</section>
+</Container>

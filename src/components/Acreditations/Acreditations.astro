@@ -1,5 +1,7 @@
 ---
 
+import Container from '../HOC/Container.astro';
+
 const acreditations = [
   {
     id: 'HCPCLogo',
@@ -60,22 +62,23 @@ const acreditations = [
 	}
 </style>
 
-<div id="acreditations" class="container text-center acreditations">
-		
-  <h2 class="sr-only">Acreditations</h2>
+<Container id="acreditations">
+  <div class="acreditations">
+      
+    <h2 class="sr-only">Acreditations</h2>
 
-  <p class="sr-only">Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
+    <p class="sr-only">Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
 
-  <div class="row">
-    {
-      acreditations.map(item => (
-        <div class="col-sm-6 logoContainer">
-          <a href={item.url}>
-            <img id={item.id} src={item.logo} alt={item.alt} />
-          </a>
-        </div>
-      ))
-    }
+    <div class="row">
+      {
+        acreditations.map(item => (
+          <div class="col-sm-6 logoContainer">
+            <a href={item.url}>
+              <img id={item.id} src={item.logo} alt={item.alt} />
+            </a>
+          </div>
+        ))
+      }
+    </div>
   </div>
-
-</div>
+</Container>

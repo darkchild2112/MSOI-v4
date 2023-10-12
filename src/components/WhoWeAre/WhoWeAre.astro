@@ -1,5 +1,7 @@
 ---
 
+import Container from '../HOC/Container.astro';
+
 const owners = [
   {
     image: "images/jodie.jpg",
@@ -19,14 +21,9 @@ const owners = [
 
 <style lang="scss">
 
-  .who-container {
-    .row:not(:last-child) {
-    	margin-bottom: 60px;
-
-      @media (max-width: 767px) {
-        margin-bottom: 40px;
-      }
-    }
+  .owner-container {
+    border: 1px solid red;
+    display: flex;
 
     .profile-picture	{
 	    width: 200px;
@@ -58,19 +55,17 @@ const owners = [
 
 </style>
 
-<div id="whoWeAre" class="container who-container">
+<Container id="whoWeAre">
   <h2 class="text-center">Who We Are</h2>
-    {
-      owners.map((owner) => (
-          <div class="row">
-            <div class="col-sm-4">	
-              <img class="profile-picture img-responsive" src={ owner.image } alt={ owner.imageAlt }>
-            </div>
-            <div class="col-sm-8 media-blurb">
-              <h3 set:html={owner.name}></h3>
-              <div set:html={owner.blurb}></div>
-            </div>
-          </div>
-      ))
-    }
-</div>
+  {
+    owners.map((owner) => (
+      <section class="owner-container">
+        <img class="profile-picture img-responsive" src={ owner.image } alt={ owner.imageAlt }>
+        <section class="col-sm-8 media-blurb">
+          <h3 set:html={owner.name}></h3>
+          <section set:html={owner.blurb}></section>
+        </section>
+      </section>
+    ))
+  }
+</Container>
