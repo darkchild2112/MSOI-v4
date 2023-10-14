@@ -3,7 +3,9 @@
 import '../../node_modules/bootstrap-reboot/dist/reboot.min.css';
 import '../styles/styles.scss';
 
+import Viewport from '../components/Viewport/Viewport.astro';
 import Header from '../components/Header/Header.astro';
+import Main from '../components/Main/Main.astro';
 import Footer from '../components/Footer/Footer.astro';
 
 ---
@@ -27,15 +29,15 @@ import Footer from '../components/Footer/Footer.astro';
 
   <body>
 
+		<Viewport />
+
 		<a href="#content" class="visually-hidden-focusable">Skip to main content</a>
 		
 		<Header />
 
-		<main id="content">
-			
-      <slot />
-
-		</main>
+		<Main>
+			<slot />
+		</Main>
 		
 		<Footer />
 

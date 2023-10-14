@@ -4,12 +4,7 @@ const { id } = Astro.props;
 
 <style lang="scss">
 
-  $breakpoint-xxxl: 1640px;
-  $breakpoint-xxl: 1440px;
-  $breakpoint-xl: 1200px;
-  $breakpoint-lg: 992px;
-  $breakpoint-md: 768px;
-  $breakpoint-sm: 576px;
+  @import '../../styles/dimensions.scss';
 
   // Container Class - used to replicate Bootstrap's container class.
   // It contains, pads, and centers the content within and also handles the breakpoints for each devive
@@ -19,7 +14,7 @@ const { id } = Astro.props;
     box-sizing: border-box;
     padding-left: 15px;
     padding-right: 15px;
-    border: 1px solid red;
+    // border: 1px solid red;
 
     @media screen and (min-width: $breakpoint-xxxl) {
       & {
@@ -33,21 +28,27 @@ const { id } = Astro.props;
       }
     }
 
+    @media screen and (min-width: $breakpoint-xl) and (max-width: $breakpoint-xxl){
+      & {
+        width: 1200px;
+      }
+    }
+
     @media screen and (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl){
       & {
-        width: 960px;
+        width: 1000px;
       }
     }
 
     @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
       & {
-        width: 720px;
+        width: 800px;
       }
     }
 
     @media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md){
       & {
-        width: 540px;
+        width: 600px;
       }
     }
 
@@ -55,6 +56,8 @@ const { id } = Astro.props;
     @media screen and (max-width: $breakpoint-sm){
       & {
         width: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
       }
     }
   }
