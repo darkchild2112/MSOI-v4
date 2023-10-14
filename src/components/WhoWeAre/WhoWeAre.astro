@@ -3,7 +3,9 @@
 import Container from '../HOC/Container.astro';
 import HomePageContentSection from '../HOC/HomePageContentSection.astro';
 
-const owners = [
+import Profile from './Profile.astro';
+
+const profiles = [
   {
     image: "images/jodie.jpg",
     imageAlt: "Dr Jodie Tilley Profile Picture",
@@ -22,52 +24,12 @@ const owners = [
 
 <style lang="scss">
 
-  .owner-container {
-    border: 1px solid red;
-    display: flex;
-
-    .profile-picture	{
-	    width: 200px;
-		  margin: 0 auto;
-
-      @media (max-width: 767px) {  
-        width: 70%;
-        margin: 0 auto 25px auto;
-      }
-	  }
-
-    h3 {
-    	margin-bottom: 10px;
-    	padding: 0 30px 5px 0;
-
-      @media (max-width: 767px) {  
-        padding: 15px 0px 10px 0;
-        text-align: center;
-        margin-bottom: 16px;
-      }
-
-      @media screen and (min-width: 768px) and (max-width: 1199px) {     
-        margin-bottom: 10px;
-        padding: 0 30px 5px 0;
-        font-size: 1.5em;
-      }
-    }
-  }
-
 </style>
 
 <Container id="whoWeAre">
   <HomePageContentSection title="Who We Are">
     {
-      owners.map((owner) => (
-        <section class="owner-container">
-          <img class="profile-picture img-responsive" src={ owner.image } alt={ owner.imageAlt }>
-          <section class="col-sm-8 media-blurb">
-            <h3 set:html={owner.name}></h3>
-            <section set:html={owner.blurb}></section>
-          </section>
-        </section>
-      ))
+      profiles.map(profile => (<Profile profile={profile} />))
     }
   </HomePageContentSection>
 </Container>

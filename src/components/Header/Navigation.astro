@@ -1,7 +1,14 @@
 <style lang="scss">
+
+	@import '../../styles/dimensions.scss';
+
 	nav {
 		display: flex;
 		gap: 5px;
+
+		@media (max-width: $breakpoint-sm) {  
+      display: none;
+    }
 
 		a {
 			color: #777;
