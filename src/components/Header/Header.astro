@@ -10,12 +10,20 @@ import Navigation from './Navigation.astro'
   header {
     border: 0;
     border-bottom: 2px solid #27BBDF;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
   }  
 </style>
 
 <header>
   <Container>
-    <Logo />
-    <Navigation />
+    <div>
+      <Logo />
+      <Navigation />
+    </div>
   </Container>
 </header>
