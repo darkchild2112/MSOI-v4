@@ -1,0 +1,87 @@
+---
+import Button from '../Button/Button.astro'
+import { ButtonStyles, ButtonTypes } from '../Button/ButtonTypes'
+---
+
+<style lang="scss">
+  .hideMe {
+    /*display: none;*/
+  }
+
+  form {
+
+    // Desktop Only
+    @media screen and (min-width: 1199px) {
+      .input-control-group{
+        float: right;
+      }
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"] {
+      width: 400px;
+      margin-bottom: 30px;
+
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1199px) {       
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+
+    textarea {
+      width: 400px;
+      margin-bottom: 30px;
+      height: 216px;
+
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 30px;
+        height: 207px;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
+      {       
+        width: 100%;
+        margin-bottom: 30px;
+        height: 216px;
+      }
+    }
+  }
+</style>
+
+<div class="alerts">
+  <div id="ContactFormErrorContainer" class="alert alert-warning hideMe" role="alert">
+    <p>There are some issues with the data you entered:</p>
+  </div>
+  <div id="ContactFormSendFailureContainer" class="alert alert-danger hideMe" role="alert">
+    <p>The enquiry form failed to send, please try again later.</p>
+  </div>
+  <div id="ContactFormSendSuccessContainer" class="alert alert-success hideMe" role="alert">
+    <p>Thank you for your enquiry. We aim to reply within 3 working days. Please check your junk mail if you have not received a reply after this time. Thank you for contacting us.</p>
+  </div>
+</div>
+<form>
+  <div>
+    <label for="Name">Name: (Required)</label>
+    <input id="name" type="text" name="name" placeholder="Enter your name" maxlength="250" aria-required="true">
+
+    <label for="email">Email: (Required)</label>
+    <input id="email" type="email" name="email" placeholder="Enter your email address" maxlength="250" aria-required="true">
+
+    <label for="tel">Telephone:</label>
+    <input id="tel" type="tel" name="tel" placeholder="Enter your telephone number" maxlength="14" aria-required="false">
+  </div>
+
+  <div>
+    <label for="message">Message: (Required)</label>
+    <textarea id="message" rows="5" name="message" cols="30" placeholder="Enter a short message about you enquiry" maxlength="5000" aria-required="true"></textarea>
+  </div>
+
+  <div>
+    <Button type={ButtonTypes.Button} style={ButtonStyles.PRIMARY}>Submit</Button>
+  </div>
+</form>

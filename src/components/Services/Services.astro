@@ -5,6 +5,7 @@ import ButtonLink from '../Button/ButtonLink.astro'
 import { ButtonStyles } from '../Button/ButtonTypes'
 
 import Container from '../HOC/Container.astro';
+import HomePageContentSection from '../HOC/HomePageContentSection.astro';
 
 ---
 
@@ -49,21 +50,22 @@ import Container from '../HOC/Container.astro';
 	}
 </style>
 
-<Container id="Services">	  
-	<h2>Services</h2>
-	<p id="ServicesIntroText">At Making Sense Of It we offer a range of services. The following sections give some brief detail about each of these services we offer.</p>
-	<section class="services-container">
-		{ 
-			services.map((item) => (
-				<section class="service">
-					<a href={item.link}>
-						<img src={item.image} class="img-responsive" alt={item.imageAlt} />
-					</a>
-					<h3>{item.heading}</h3>
-					<p>{item.text}</p>
-					<ButtonLink buttonStyle={ButtonStyles.SECONDARY} destination={item.link}>Find out more...</ButtonLink>
-				</section>
-			))
-		}
-	</section>
+<Container id="services">	
+	<HomePageContentSection title="services">
+		<p id="ServicesIntroText">At Making Sense Of It we offer a range of services. The following sections give some brief detail about each of these services we offer.</p>
+		<section class="services-container">
+			{ 
+				services.map((item) => (
+					<section class="service">
+						<a href={item.link}>
+							<img src={item.image} class="img-responsive" alt={item.imageAlt} />
+						</a>
+						<h3>{item.heading}</h3>
+						<p>{item.text}</p>
+						<ButtonLink buttonStyle={ButtonStyles.SECONDARY} destination={item.link}>Find out more...</ButtonLink>
+					</section>
+				))
+			}
+		</section>
+	</HomePageContentSection>  
 </Container>

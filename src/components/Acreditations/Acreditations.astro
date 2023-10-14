@@ -1,6 +1,7 @@
 ---
 
 import Container from '../HOC/Container.astro';
+import HomePageContentSection from '../HOC/HomePageContentSection.astro';
 
 const acreditations = [
   {
@@ -20,17 +21,6 @@ const acreditations = [
 ---
 
 <style lang="scss">
-  .acreditations
-	{
-		border-bottom: none;
-
-    @media (max-width: 767px) {
-      padding-top: 140px;
-    }
-
-    @media screen and (min-width: 768px) and (max-width: 1199px) {
-      padding-top: 40px;
-    }
 
     #bpsLogo
     {
@@ -59,16 +49,12 @@ const acreditations = [
         width: 139px;
       }
     }
-	}
 </style>
 
 <Container id="acreditations">
-  <div class="acreditations">
-      
-    <h2 class="sr-only">Acreditations</h2>
-
-    <p class="sr-only">Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
-
+  <HomePageContentSection>
+    <h2>Acreditations</h2>
+    <p>Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
     <div class="row">
       {
         acreditations.map(item => (
@@ -80,5 +66,5 @@ const acreditations = [
         ))
       }
     </div>
-  </div>
+  </HomePageContentSection>
 </Container>

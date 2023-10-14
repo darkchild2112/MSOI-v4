@@ -1,6 +1,7 @@
 ---
 
 import Container from '../HOC/Container.astro';
+import HomePageContentSection from '../HOC/HomePageContentSection.astro';
 
 const owners = [
   {
@@ -56,16 +57,17 @@ const owners = [
 </style>
 
 <Container id="whoWeAre">
-  <h2 class="text-center">Who We Are</h2>
-  {
-    owners.map((owner) => (
-      <section class="owner-container">
-        <img class="profile-picture img-responsive" src={ owner.image } alt={ owner.imageAlt }>
-        <section class="col-sm-8 media-blurb">
-          <h3 set:html={owner.name}></h3>
-          <section set:html={owner.blurb}></section>
+  <HomePageContentSection title="Who We Are">
+    {
+      owners.map((owner) => (
+        <section class="owner-container">
+          <img class="profile-picture img-responsive" src={ owner.image } alt={ owner.imageAlt }>
+          <section class="col-sm-8 media-blurb">
+            <h3 set:html={owner.name}></h3>
+            <section set:html={owner.blurb}></section>
+          </section>
         </section>
-      </section>
-    ))
-  }
+      ))
+    }
+  </HomePageContentSection>
 </Container>

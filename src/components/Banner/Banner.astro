@@ -2,12 +2,12 @@
 import ButtonLink from '../Button/ButtonLink.astro'
 import { ButtonStyles } from '../Button/ButtonTypes'
 import Container from '../HOC/Container.astro'
+import HomePageContentSection from '../HOC/HomePageContentSection.astro';
 ---
 
 <style lang="scss">
-  .banner	{
+  #banner	{
 		background-color: #F9FDFE;
-		padding-top: 80px;
 		background-image: url('../images/stock-photo-many-colorful-hands-with-smileys-204520951.jpg');
 		background-position: center 62px;
 		background-repeat: no-repeat;
@@ -52,10 +52,12 @@ import Container from '../HOC/Container.astro'
 	}
 </style>
 
-<div id="banner" class="banner">
+<div id="banner">
   <Container>
-		<h1>Psychology Services for children, families and schools</h1> 
-		<p>Based in Worthing, West Sussex, Making Sense Of It Ltd provide Clinical Psychology services to children, families and schools in the Sussex area. Specialising in autism assessments in Sussex.</p> 
-		<ButtonLink buttonStyle={ButtonStyles.PRIMARY} destination="#Services">Find out more...</ButtonLink>
+		<HomePageContentSection>
+			<h1>Psychology Services for children, families and schools</h1> 
+			<p>Based in Worthing, West Sussex, Making Sense Of It Ltd provide Clinical Psychology services to children, families and schools in the Sussex area. Specialising in autism assessments in Sussex.</p> 
+			<ButtonLink buttonStyle={ButtonStyles.PRIMARY} destination="#Services">Find out more...</ButtonLink>
+		</HomePageContentSection>
   </Container>
 </div>
