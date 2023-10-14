@@ -1,22 +1,16 @@
-.btn 
-{
+.btn {
   border-radius: 0;
   text-decoration: none;
   letter-spacing: 1px;
   box-shadow: 2px 2px 5px #ccc;
-  padding: 12px 31px; 
-	font-size: 19.2px;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border 0.2s ease-in-out;
+  padding: 12px 12px; 
+	font-size: 14px;
   display: inline-block;
   text-align: center;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  transition: color .15s ease-in-out,;
-  transition: background-color .15s ease-in-out;
-  transition: border-color .15s ease-in-out;
-  transition: box-shadow .15s ease-in-out;
 
   @media (max-width: 767px) {
     & {
@@ -26,36 +20,42 @@
   }
 }
 
-.btn-primary
-{
+.btn-primary {
   background-color: #27bbdf;
   border-color: #27bbdf;
   font-weight: bold;
   color: white;
 
+  &:visited {
+    color: white;
+  }
+
   &:hover {
     background-color: #2d3286;
     border-color: #2d3286;
   }
-
-  &:visited {
-    color: white;
-  }
 }
 
-.btn-secondary
-{
+.btn-secondary {
+  border-style: solid;
+  border-width: 1px;
   border-color: #27bbdf;
+  // transition: border-color .5s ease-in-out;
+  // transition: color .5s ease-in-out;
   font-weight: bold;
   background-color: white;
   color: #27bbdf;
+
+  &:visited {
+    color: #27bbdf;
+  }
 
   &:hover {
     border-color: #2d3286;
     color: #2d3286;
   }
+}
 
-  &:visited {
-    color: #27bbdf;
-  }
+.full-width {
+  width: 100%;
 }

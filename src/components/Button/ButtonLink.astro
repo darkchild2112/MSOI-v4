@@ -2,12 +2,12 @@
 import './ButtonStyles.scss';
 import { ButtonStyles } from './ButtonTypes'
 
-const { buttonStyle, destination } = Astro.props;
+const { buttonStyle, destination, fill } = Astro.props;
 
 const btnStyle = buttonStyle || ButtonStyles.PRIMARY;
 
 ---
 
-<a href={destination} class={`btn ${btnStyle}`}>
+<a href={destination} class={`btn ${btnStyle} ${fill ? 'full-width' : null}`}>
   <slot />
 </a>
