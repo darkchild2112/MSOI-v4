@@ -1,5 +1,6 @@
 ---
 const { profile } = Astro.props;
+import { Image } from 'astro:assets';
 ---
 
 <style lang="scss">
@@ -19,8 +20,6 @@ const { profile } = Astro.props;
     }
 
     img	{
-	    width: 200px;
-      height: 245px;
 		  margin: 0 50px;
 
       @media screen and (max-width: $breakpoint-sm){
@@ -41,8 +40,8 @@ const { profile } = Astro.props;
 </style>
 
 <div>
-  <img src={ profile.image } alt={ profile.imageAlt }>
-  <section class="col-sm-8 media-blurb">
+  <Image src={ profile.image } alt={ profile.imageAlt } width={200} height={245} />
+  <section>
     <h3 set:html={profile.name}></h3>
     <section set:html={profile.blurb}></section>
   </section>
