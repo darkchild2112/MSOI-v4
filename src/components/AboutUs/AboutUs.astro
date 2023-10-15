@@ -1,23 +1,30 @@
 ---
 import Container from '../HOC/Container.astro';
 import HomePageContentSection from '../HOC/HomePageContentSection.astro';
+
+import { Image } from 'astro:assets';
+import PaperFamilyImg from '../../assets/images/paper-family-in-hands.png';
 ---
 
 <style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
   div {
-    border: 1px solid red;
     display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $breakpoint-sm) {
+			flex-direction: column-reverse;
+		}
 
     section {
-      width: 66.66666667%;
-      border: 1px solid green;
       padding-right: 20px;
-    }
 
-    img {
-      width: 20px;
-      width: 33.33333333%;
-      border: 1px solid blue;
+      @media screen and (max-width: $breakpoint-sm) {
+        padding-right: 20px;
+        padding-top: 20px;
+		  }
     }
   }
 </style>
@@ -30,7 +37,7 @@ import HomePageContentSection from '../HOC/HomePageContentSection.astro';
         <p>We work in partnership with families and schools. By partnership, we mean that everyone involved brings their own expertise. As a parent, you will know your child better than anyone else. You will know what makes them worried, scared, excited, happy or sad. You carry their story and hopes for their future.  Your child’s teacher will hold knowledge about different parts of their life, including how they learn, how they relate to others, and what they find hard within the school setting.  At Making Sense Of It, we will be interested in all of these areas, and will bring our knowledge and understanding of children’s development, mental health, emotional well-being and ideas about how to help children in these areas.</p>
         <p>If you would like to find out more about the services we offer, or discuss an enquiry please contact us via email. We look forward to hearing from you. A guide to our fees can be found on our <a href="/fees" title="A guide to our fees">Fees Structure page</a></p>
       </section>
-      <img src="/images/familyInHands.png" alt="Family Hands">
+      <Image src={PaperFamilyImg} alt="" width={386} height={338}>
     </div>
   </HomePageContentSection>
 </Container>
