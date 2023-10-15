@@ -11,13 +11,6 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-
-  @media (max-width: 767px) {
-    & {
-      width: 92%;
-      margin: 0 auto;
-    }
-  }
 }
 
 .btn-primary {

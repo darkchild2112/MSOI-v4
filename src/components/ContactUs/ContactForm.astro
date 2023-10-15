@@ -1,54 +1,68 @@
 ---
 import Button from '../Button/Button.astro'
 import { ButtonStyles, ButtonTypes } from '../Button/ButtonTypes'
+
+import TextBox from '../Forms/TextBox.astro'
+import { TextBoxTypes } from '../Forms/TextBoxTypes'
+import MessageBox from '../Forms/MessageBox.astro'
+
 ---
 
 <style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
   .hideMe {
     /*display: none;*/
   }
 
-  form {
+  .form {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 20px 50px;
 
-    // Desktop Only
-    @media screen and (min-width: 1199px) {
-      .input-control-group{
-        float: right;
+    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+			padding: 20px 0px;
+		}
+
+		@media screen and (max-width: $breakpoint-sm){
+			flex-direction: column;
+      padding: 20px 10px;
+      gap: 23px;
+		}
+
+    .text-fields{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+
+      @media screen and (max-width: $breakpoint-sm){
+        width: 100%;
       }
     }
 
-    input[type="text"], input[type="email"], input[type="tel"] {
-      width: 400px;
-      margin-bottom: 30px;
+    .message-box {
+      width: 50%;
 
-      @media (max-width: 767px) {
+      @media screen and (max-width: $breakpoint-sm){
         width: 100%;
-        margin-bottom: 30px;
-      }
-
-      @media screen and (min-width: 768px) and (max-width: 1199px) {       
-        width: 100%;
-        margin-bottom: 30px;
       }
     }
+  }
 
-    textarea {
-      width: 400px;
-      margin-bottom: 30px;
-      height: 216px;
+  .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 20px;
 
-      @media (max-width: 767px) {
-        width: 100%;
-        margin-bottom: 30px;
-        height: 207px;
-      }
-
-      @media screen and (min-width: 768px) and (max-width: 1199px) /* all tablets */
-      {       
-        width: 100%;
-        margin-bottom: 30px;
-        height: 216px;
-      }
+    @media screen and (max-width: $breakpoint-sm){
+      width: 100%;
+      flex-direction: column;
+      padding: 0 10px;
     }
   }
 </style>
@@ -65,23 +79,20 @@ import { ButtonStyles, ButtonTypes } from '../Button/ButtonTypes'
   </div>
 </div>
 <form>
-  <div>
-    <label for="Name">Name: (Required)</label>
-    <input id="name" type="text" name="name" placeholder="Enter your name" maxlength="250" aria-required="true">
+  <div class="form">
+    <div class="text-fields">
+      <TextBox id="name" type={TextBoxTypes.TEXT} label="Name: (Required)"  placeholder="Enter your name" maxlength="250" required="true" />
+      <TextBox id="email" type={TextBoxTypes.EMAIL} label="Email: (Required)" placeholder="Enter your email address" maxlength="250" required="true" />
+      <TextBox id="tel" type={TextBoxTypes.TEL} label="Telephone:" placeholder="Enter your telephone number" maxlength="14" required="false" />
+    </div>
 
-    <label for="email">Email: (Required)</label>
-    <input id="email" type="email" name="email" placeholder="Enter your email address" maxlength="250" aria-required="true">
-
-    <label for="tel">Telephone:</label>
-    <input id="tel" type="tel" name="tel" placeholder="Enter your telephone number" maxlength="14" aria-required="false">
+    <div class="message-box">
+      <MessageBox id="message" rows="5" label="Message: (Required)" cols="30" placeholder="Enter a short message about you enquiry" maxlength="5000" required="true"></MessageBox>
+    </div>
   </div>
 
-  <div>
-    <label for="message">Message: (Required)</label>
-    <textarea id="message" rows="5" name="message" cols="30" placeholder="Enter a short message about you enquiry" maxlength="5000" aria-required="true"></textarea>
-  </div>
-
-  <div>
+  <div class="buttons">
+    <Button type={ButtonTypes.Button} style={ButtonStyles.SECONDARY}>Clear</Button>
     <Button type={ButtonTypes.Button} style={ButtonStyles.PRIMARY}>Submit</Button>
   </div>
 </form>

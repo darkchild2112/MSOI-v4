@@ -3,13 +3,13 @@
 import './ButtonStyles.scss';
 import { ButtonTypes, ButtonStyles } from './ButtonTypes'
 
-const { buttonType, buttonStyle, fill } = Astro.props;
+const { type, style, fill } = Astro.props;
 
-const btnType = buttonType || ButtonTypes.BUTTON;
-const btnStyle = buttonStyle || ButtonStyles.PRIMARY;
+const btnType = type || ButtonTypes.BUTTON;
+const btnStyle = style || ButtonStyles.PRIMARY;
 
 ---
 
-<button type={btnType} class={`btn ${btnStyle} ${fill ? 'full-width' : null}`}>
+<button type={btnType} class={`btn ${btnStyle} ${fill ? 'full-width' : ''}`.trim()}>
   <slot />
 </button>
