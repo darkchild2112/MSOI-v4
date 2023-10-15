@@ -22,48 +22,41 @@ const acreditations = [
 
 <style lang="scss">
 
-    #bpsLogo
-    {
+  @import '../../styles/dimensions.scss';
+
+  section {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    @media screen and (max-width: $breakpoint-sm){
+			flex-direction: column;
+      align-items: center;
+      gap: 50px;
+		}
+
+    #bpsLogo {
       width: 300px;
-      padding-top: 13px;
-
-      @media (max-width: 767px) {
-        width: 80%;
-      }
-
-      @media screen and (min-width: 768px) and (max-width: 1199px) {
-        width: 300px;
-        padding-top: 13px;
-      }
     }
     
-    #HCPCLogo
-    {
+    #HCPCLogo {
       width: 139px;
-
-      @media (max-width: 767px) {
-        width: 80%;
-      }
-
-      @media screen and (min-width: 768px) and (max-width: 1199px) {
-        width: 139px;
-      }
     }
+  }
 </style>
 
 <Container id="acreditations">
   <HomePageContentSection title="Acreditations">
     <p>Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
-    <div class="row">
+    <section>
       {
         acreditations.map(item => (
-          <div class="col-sm-6 logoContainer">
-            <a href={item.url}>
-              <img id={item.id} src={item.logo} alt={item.alt} />
-            </a>
-          </div>
+          <a href={item.url}>
+            <img id={item.id} src={item.logo} alt={item.alt} />
+          </a>
         ))
       }
-    </div>
+    </section>
   </HomePageContentSection>
 </Container>
