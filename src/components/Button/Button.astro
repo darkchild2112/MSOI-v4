@@ -8,8 +8,6 @@ const { buttonType, buttonStyle, fill } = Astro.props;
 const btnType = buttonType || ButtonTypes.BUTTON;
 const btnStyle = buttonStyle || ButtonStyles.PRIMARY;
 
-console.log(fill);
-
 ---
 
 <button type={btnType} class={`btn ${btnStyle} ${fill ? 'full-width' : null}`}>

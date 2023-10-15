@@ -2,19 +2,30 @@
 
 import Container from '../HOC/Container.astro';
 import HomePageContentSection from '../HOC/HomePageContentSection.astro';
+import { Image } from 'astro:assets';
+import hcpcLogo from '../../assets/images/hcpc.jpg';
+import bpsLogo from '../../assets/images/bpslogo.svg';
 
 const acreditations = [
   {
     id: 'HCPCLogo',
     url: 'http://www.hcpc-uk.org',
-    logo: 'images/hcpc.jpg',
-    alt: 'Health and Care Profesions Council Logo'
+    logo: {
+      image: hcpcLogo,
+      alt: 'Health and Care Profesions Council Logo',
+      width: 139,
+      height: 142
+    }
   },
   {
     id: 'bpsLogo',
     url: 'http://www.bps.org.uk',
-    logo: 'images/bpslogo.svg',
-    alt: 'British Psychological Society Logo'
+    logo: {
+      image: bpsLogo,
+      alt: 'British Psychological Society Logo',
+      width: 300,
+      height: 107
+    }
   }
 ]
 
@@ -30,19 +41,11 @@ const acreditations = [
     flex-direction: row;
     justify-content: space-around;
 
-    @media screen and (max-width: $breakpoint-sm){
+    @media screen and (max-width: $breakpoint-sm) {
 			flex-direction: column;
       align-items: center;
       gap: 50px;
 		}
-
-    #bpsLogo {
-      width: 300px;
-    }
-    
-    #HCPCLogo {
-      width: 139px;
-    }
   }
 </style>
 
@@ -53,7 +56,7 @@ const acreditations = [
       {
         acreditations.map(item => (
           <a href={item.url}>
-            <img id={item.id} src={item.logo} alt={item.alt} />
+            <Image src={item.logo.image} alt={item.logo.alt} width={item.logo.width} height={item.logo.height} />
           </a>
         ))
       }
