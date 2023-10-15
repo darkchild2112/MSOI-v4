@@ -6,6 +6,21 @@ import HomePageContentSection from '../HOC/HomePageContentSection.astro';
 
 import Service from './Service.astro';
 
+import schoolsImg from '../../assets/images/child-reading-cropped.jpg';
+import familyUmbrellaImg from "../../assets/images/family-umbrella.jpg";
+import childWithPaintedHandsImg from "../../assets/images/cgild-with-painted-hands-cropped.jpg";
+import girlWithGlassesImg from "../../assets/images/girl-with-glasses.jpg";
+import autismMnemonicImg from "../../assets/images/autism-mnemonic.jpg";
+import supervisionImg from "../../assets/images/supervision-signposts.jpg";
+
+// Add imported images
+services.find(service => service.slug === 'schools').image = schoolsImg;
+services.find(service => service.slug === 'family-mental-health').image = familyUmbrellaImg;
+services.find(service => service.slug === 'learning-disabilities').image = childWithPaintedHandsImg;
+services.find(service => service.slug === 'cognitive-assessments').image = girlWithGlassesImg;
+services.find(service => service.slug === 'autism-assessments').image = autismMnemonicImg;
+services.find(service => service.slug === 'supervision-and-training').image = supervisionImg;
+
 ---
 
 <style lang="scss">

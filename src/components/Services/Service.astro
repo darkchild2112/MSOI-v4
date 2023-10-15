@@ -1,6 +1,7 @@
 ---
 import ButtonLink from '../Button/ButtonLink.astro'
 import { ButtonStyles } from '../Button/ButtonTypes'
+import { Image } from 'astro:assets';
 
 const { service } = Astro.props;
 ---
@@ -16,8 +17,8 @@ const { service } = Astro.props;
     
     img {
       border: 1px solid #eee;
-      width: 300px;
-      height: 300px;
+      padding: 1px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
       margin: 0 auto;
       max-width: 100%;
       vertical-align: middle;
@@ -45,12 +46,12 @@ const { service } = Astro.props;
 </style>
 
 <section>
-  <a href={service.link}>
-    <img src={service.image} class="img-responsive" alt={service.imageAlt} />
+  <a href={`/services/${service.slug}`}>
+    <Image src={service.image} alt={service.imageAlt} width={300} height={300} />
   </a>
   <div>
     <h3>{service.heading}</h3>
   </div>
   <p>{service.text}</p>
-  <ButtonLink buttonStyle={ButtonStyles.SECONDARY} destination={service.link} fill={true}>Find out more...</ButtonLink>
+  <ButtonLink buttonStyle={ButtonStyles.SECONDARY} destination={`/services/${service.slug}`} fill={true}>Find out more...</ButtonLink>
 </section>
