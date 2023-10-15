@@ -1,10 +1,12 @@
 ---
-import Button from '../Button/Button.astro'
-import { ButtonStyles, ButtonTypes } from '../Button/ButtonTypes'
+import Button from '../Button/Button.astro';
+import { ButtonStyles, ButtonTypes } from '../Button/ButtonTypes';
 
-import TextBox from '../Forms/TextBox.astro'
-import { TextBoxTypes } from '../Forms/TextBoxTypes'
-import MessageBox from '../Forms/MessageBox.astro'
+import TextBox from '../Forms/TextBox.astro';
+import { TextBoxTypes } from '../Forms/TextBoxTypes';
+import MessageBox from '../Forms/MessageBox.astro';
+import Alert from '../Alert/Alert.astro';
+import { AlertTypes } from '../Alert/AlertTypes';
 
 ---
 
@@ -12,71 +14,69 @@ import MessageBox from '../Forms/MessageBox.astro'
 
   @import '../../styles/dimensions.scss';
 
-  .hideMe {
-    /*display: none;*/
-  }
-
-  .form {
+  .alerts {
     display: flex;
-    flex-direction: row;
-    gap: 40px;
-    padding: 20px 50px;
-
-    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
-			padding: 20px 0px;
-		}
-
-		@media screen and (max-width: $breakpoint-sm){
-			flex-direction: column;
-      padding: 20px 10px;
-      gap: 23px;
-		}
-
-    .text-fields{
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      gap: 23px;
-
-      @media screen and (max-width: $breakpoint-sm){
-        width: 100%;
-      }
-    }
-
-    .message-box {
-      width: 50%;
-
-      @media screen and (max-width: $breakpoint-sm){
-        width: 100%;
-      }
-    }
-  }
-
-  .buttons {
-    display: flex;
+    flex-direction: column;
     gap: 20px;
-    justify-content: center;
-    flex-direction: row;
-    padding-top: 20px;
+  }
 
-    @media screen and (max-width: $breakpoint-sm){
-      width: 100%;
-      flex-direction: column;
-      padding: 0 10px;
+  form {
+    .form {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      padding: 20px 50px;
+
+      @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+        padding: 20px 0px;
+      }
+
+      @media screen and (max-width: $breakpoint-sm){
+        flex-direction: column;
+        padding: 20px 10px;
+        gap: 23px;
+      }
+
+      .text-fields{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+
+        @media screen and (max-width: $breakpoint-sm){
+          width: 100%;
+        }
+      }
+
+      .message-box {
+        width: 50%;
+
+        @media screen and (max-width: $breakpoint-sm){
+          width: 100%;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-direction: row;
+      padding-top: 20px;
+
+      @media screen and (max-width: $breakpoint-sm){
+        width: 100%;
+        flex-direction: column;
+        padding: 0 10px;
+      }
     }
   }
 </style>
 
 <div class="alerts">
-  <div id="ContactFormErrorContainer" class="alert alert-warning hideMe" role="alert">
-    <p>There are some issues with the data you entered:</p>
-  </div>
-  <div id="ContactFormSendFailureContainer" class="alert alert-danger hideMe" role="alert">
-    <p>The enquiry form failed to send, please try again later.</p>
-  </div>
-  <div id="ContactFormSendSuccessContainer" class="alert alert-success hideMe" role="alert">
-    <p>Thank you for your enquiry. We aim to reply within 3 working days. Please check your junk mail if you have not received a reply after this time. Thank you for contacting us.</p>
-  </div>
+  <Alert type={AlertTypes.ERROR} text="There are some issues with the data you entered" />
+  <Alert type={AlertTypes.ERROR} text="The enquiry form failed to send, please try again later" />
+  <Alert type={AlertTypes.SUCCESS} text="Thank you for your enquiry. We aim to reply within 3 working days. Please check your junk mail if you have not received a reply after this time. Thank you for contacting us." />
 </div>
 <form>
   <div class="form">

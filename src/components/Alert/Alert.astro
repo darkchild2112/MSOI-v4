@@ -1,0 +1,34 @@
+---
+const { id, type, visible, text } = Astro.props;
+---
+
+<style lang="scss">
+  .hide {
+    display: none;
+  }
+
+  div {
+    padding: 16px;
+    border-radius: 5px;
+    border: 1px solid;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    &.alert-success {
+      background-color: rgb(232, 244, 232);
+      border-color: green;
+    }
+
+    &.alert-error {
+      background-color: rgb(255, 222, 222);
+      border-color: red;
+    }
+  }
+</style>
+
+<div id={id} class={`alert alert-${type} ${visible === false ? 'hide' : ''}`} role="alert">
+  <p>{text}</p>
+</div>
