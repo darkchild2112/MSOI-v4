@@ -2,7 +2,7 @@
 
 import Container from '../HOC/Container.astro';
 import HomePageContentSection from '../HOC/HomePageContentSection.astro';
-import { Image } from 'astro:assets';
+
 import hcpcLogo from '../../assets/images/accreditations/hcpc.jpg';
 import bpsLogo from '../../assets/images/accreditations/bpslogo.svg';
 
@@ -56,7 +56,7 @@ const acreditations = [
       {
         acreditations.map(item => (
           <a href={item.url}>
-            <Image src={item.logo.image} alt={item.logo.alt} width={item.logo.width} height={item.logo.height} />
+            <img src={item.logo.image.src} alt={item.logo.alt} width={item.logo.width} height={item.logo.height} />
           </a>
         ))
       }
