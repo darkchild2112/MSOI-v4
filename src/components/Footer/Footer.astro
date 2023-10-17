@@ -1,31 +1,8 @@
 ---
-
-const icons = [
-  {
-    url: 'https://www.facebook.com/sharer.php?u=http://www.makingsenseofit.org.uk/',
-    icon: 'fa fa-facebook-square',
-    title: 'Like us on Facebook',
-    text: 'Like us on Facebook'
-  },
-  {
-    url: 'https://twitter.com/intent/tweet?text=Hello%20world',
-    icon: 'fa fa-twitter-square',
-    title: 'Tweet about us',
-    text: 'Tweet about us'
-  },
-  {
-    url: 'mailto:info@makingsenseofit.org.uk',
-    icon: 'fa fa-envelope',
-    title: 'Send us an email',
-    text: 'Send us an email',
-  },
-  {
-    url: 'javascript: print()',
-    icon: 'fa fa-print',
-    title: 'Print this page',
-    text: 'Print this page',
-  }
-];
+import Facebook from '../Icons/Facebook.astro';
+import Twitter from '../Icons/Twitter.astro';
+import Email from '../Icons/Email.astro';
+import Printer from '../Icons/Printer.astro';
 
 ---
 
@@ -37,42 +14,30 @@ const icons = [
     padding: 2rem 2rem 4rem 2rem;
     margin-top: 3rem;
 
-    @media (max-width: 767px) {
-      margin-top: 50px;
-      text-align: center;
+    a {
+       color: white;
     }
 
     .social-media-icons {
       text-align: center;
       font-size: 3rem;
-
-      @media (max-width: 767px) {
-        font-size: 3.0em;
-      }
-
-      @media screen and (min-width: 768px) and (max-width: 1199px) {
-        font-size: 3.0em;
-      }
-
+      fill: #fff;
+      
       a {
         padding-right: 1rem;
 
         &:last-child {
           padding-right: 0;
         }
+
+        &:visited {
+          fill: #fff;
+        }
       }
     }
 
     .copyright {
       float: left;
-
-      @media (max-width: 767px) {
-        font-size: 0.85em;
-      }
-
-      @media screen and (min-width: 768px) and (max-width: 1199px) {
-        font-size: 0.85em;
-      }
     }
     
     .footerNav {
@@ -87,24 +52,28 @@ const icons = [
         }
       }
     }
-
-    a {
-       color: white;
-    }
   }
 
 </style>
 
 <footer class="container-fluid footer-container">
   <div class="social-media-icons">
-    {
-      icons.map(icon => (
-        <a target="_blank" href={icon.url} title={icon.title}>
-          <i class={icon.icon}></i>
-          <span class="sr-only">{icon.text}</span>
-        </a>
-      ))
-    }
+    <a target="_blank" href="https://www.facebook.com/sharer.php?u=http://www.makingsenseofit.org.uk/" title="Like us on Facebook">
+      <Facebook />
+      <span class="visually-hidden">Like us on Facebook</span>
+    </a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Hello%20world" title="Tweet about us">
+      <Twitter />
+      <span class="visually-hidden">Tweet about us</span>
+    </a>
+    <a target="_blank" href="mailto:info@makingsenseofit.org.uk" title="Send us an email">
+      <Email />
+      <span class="visually-hidden">Send us an email</span>
+    </a>
+    <a target="_blank" href="javascript: print()" title="Print this page">
+      <Printer />
+      <span class="visually-hidden">Print this page</span>
+    </a>
   </div>
   <p class="copyright">&copy; Copyright { new Date().getFullYear() } - Making Sense Of It Ltd</p>
   <nav class="footerNav">
