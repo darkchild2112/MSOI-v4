@@ -1,0 +1,27 @@
+---
+import MobileMenu from '../Icons/MobileMenu.astro'
+
+const { id } = Astro.props;
+---
+
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  button {
+    display: none;
+
+    @media (max-width: $breakpoint-sm) {  
+      display: block;
+      border: none;
+      background-color: transparent;
+      margin: 15px;
+      fill: #27bbdf;
+    }
+  }
+
+</style>
+
+<button id={id} type="button" aria-label="Show Navigation">
+	<MobileMenu />
+</button>

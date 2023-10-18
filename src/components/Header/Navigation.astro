@@ -1,40 +1,105 @@
+---
+import MobileMenuButton from './MobileMenuButton.astro'
+---
+
 <style lang="scss">
 
 	@import '../../styles/dimensions.scss';
 
-	nav {
-		display: flex;
-		gap: 5px;
+	.nav-container {
 
 		@media (max-width: $breakpoint-sm) {  
-      display: none;
-    }
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			display: flex;
+		}
 
-		a {
-			color: #777;
-			padding: 15px 15px 15px 15px;
-			line-height: 20px;
-			background-color: transparent;
-			transition: background-color 0.5s ease-in-out;
-			transition: color 0.1s ease-in-out;
-			border: 1px solid red;
+		nav {
+			display: flex;
+			gap: 5px;
 
-			&:hover {
-				background-color: #27BBDF;		
-				color: #fff;	
+			@media (max-width: $breakpoint-sm) {  
+				flex-direction: column;
+				width: 70%;
+				background-color: #fff;
+				height: 100vh;
 			}
 
-			&:visited {
-				text-decoration: none;
+			a {
+				color: #777;
+				padding: 15px 15px 15px 15px;
+				line-height: 20px;
+				background-color: transparent;
+				transition: background-color 0.5s ease-in-out;
+				transition: color 0.1s ease-in-out;
+				border: 1px solid red;
+
+				&:hover {
+					background-color: #27BBDF;		
+					color: #fff;	
+				}
+
+				&:visited {
+					text-decoration: none;
+				}
 			}
+		}
+
+		.overlay {
+			display: none;
+			@media (max-width: $breakpoint-sm) {  
+				background-color: #666;
+				opacity: 0.5;
+				height: 100vh;
+				display: block;
+				width: 30%;
+			}
+		}
+
+		.hideMe {
+			display: none;
 		}
 	}
 </style>
 
-<nav>
-	<a href="/#">Home</a>
-	<a href="/#services">Services</a>
-	<a href="/#whatWeDo">About Us</a>
-	<a href="/#whoWeAre">Who We Are</a>
-	<a href="/#contact">Contact Us</a>
-</nav>
+<!-- <MobileMenuButton id="menuBtn" /> -->
+<button id="menuBtn">Menu</button>
+
+<div class="nav-container">
+	<nav id="navigation">
+		<a href="/#">Home</a>
+		<a href="/#services">Services</a>
+		<a href="/#whatWeDo">About Us</a>
+		<a href="/#whoWeAre">Who We Are</a>
+		<a href="/#contact">Contact Us</a>
+	</nav>
+	<section id="overlay" class="overlay"></section>
+</div>
+
+<script>
+	let showMenu = false;
+	const menuBtn = document.querySelector('#menuBtn');
+	const overlay = document.querySelector('#overlay');
+	const navigation = document.querySelector('#navigation');
+
+	const toggleMenuEventHandler = () => {
+		showMenu = !showMenu;
+		toggleMenu();
+	}
+
+	const toggleMenu = () => {
+		if (showMenu) {
+			overlay.classList.add('hideMe');
+			navigation.classList.add('hideMe');
+		} else {
+			overlay.classList.remove('hideMe');
+			navigation.classList.remove('hideMe');
+		}
+	}
+
+	menuBtn.addEventListener("click", toggleMenuEventHandler);
+	overlay.addEventListener("click", toggleMenuEventHandler);
+
+</script>

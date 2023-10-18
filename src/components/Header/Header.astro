@@ -7,6 +7,9 @@ import Navigation from './Navigation.astro'
 ---
 
 <style lang="scss">
+
+@import '../../styles/dimensions.scss';
+
   header {
     border: 0;
     border-bottom: 2px solid #27BBDF;
@@ -19,6 +22,9 @@ import Navigation from './Navigation.astro'
       display: flex;
       justify-content: space-between;
       align-items: end;
+      @media (max-width: $breakpoint-sm) {  
+				align-items: center;
+			}
     }
   }  
 </style>
