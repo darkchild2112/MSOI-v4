@@ -12,9 +12,36 @@ import MobileMenuButton from './MobileMenuButton.astro'
 			position: fixed;
 			top: 0;
 			left: 0;
-			width: 100%;
+			width: 0;
 			display: flex;
+
+			&.open-nav-menu {
+				animation: slideOpen .50s forwards;
+			}
+
+			@keyframes slideOpen {
+				0% {
+					width: 0;
+				}
+				100% {
+					width: 100%;
+				}
+			}
+
+			&.close-nav-menu {
+				animation: slideShut .50s forwards;
+			}
+
+			@keyframes slideShut {
+				0% {
+				width: 100%;
+				}
+				100% {
+					width: 0;
+				}
+			}
 		}
+		
 
 		nav {
 			display: flex;
@@ -25,6 +52,7 @@ import MobileMenuButton from './MobileMenuButton.astro'
 				width: 70%;
 				background-color: #fff;
 				height: 100vh;
+				overflow: hidden;
 			}
 
 			a {
@@ -59,43 +87,42 @@ import MobileMenuButton from './MobileMenuButton.astro'
 		}
 
 		.hide-me-mobile {
-			display: none;
+			width: none;
 		}
 	}
 </style>
 
 <MobileMenuButton id="menuBtn" />
-<!-- <button id="menuBtn">Menu</button> -->
 
-<div class="nav-container">
-	<nav id="navigation" class="hide-me-mobile">
+<div id="nav-container" class="nav-container">
+	<nav id="navigation">
 		<a href="/#">Home</a>
 		<a href="/#services">Services</a>
 		<a href="/#whatWeDo">About Us</a>
 		<a href="/#whoWeAre">Who We Are</a>
 		<a href="/#contact">Contact Us</a>
 	</nav>
-	<section id="overlay" class="overlay hide-me-mobile"></section>
+	<section id="overlay" class="overlay"></section>
 </div>
 
 <script>
-	let hideMenu = true;
+	let showMenu = false;
 	const menuBtn = document.querySelector('#menuBtn');
 	const overlay = document.querySelector('#overlay');
-	const navigation = document.querySelector('#navigation');
-
+	const navContainer = document.querySelector('#nav-container');
+	
 	const toggleMenuEventHandler = () => {
-		hideMenu = !hideMenu;
+		showMenu = !showMenu;
 		toggleMenu();
 	}
 
 	const toggleMenu = () => {
-		if (hideMenu) {
-			overlay.classList.add('hide-me-mobile');
-			navigation.classList.add('hide-me-mobile');
+		if (showMenu) {
+			navContainer.classList.add('open-nav-menu');
+			navContainer.classList.remove('close-nav-menu');
 		} else {
-			overlay.classList.remove('hide-me-mobile');
-			navigation.classList.remove('hide-me-mobile');
+			navContainer.classList.add('close-nav-menu');
+			navContainer.classList.remove('open-nav-menu');
 		}
 	}
 
