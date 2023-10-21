@@ -1,0 +1,93 @@
+---
+import MobileMenuButton from './MobileMenuButton.astro'
+import Navigation from './Navigation.astro'
+---
+
+<style lang="scss">
+
+	@import '../../styles/dimensions.scss';
+
+	.nav-container {
+
+		@media (max-width: $breakpoint-sm) {  
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 0;
+			display: flex;
+
+			&.open-nav-menu {
+				animation: slideOpen .50s forwards;
+			}
+
+			@keyframes slideOpen {
+				0% {
+					width: 0;
+				}
+				100% {
+					width: 100%;
+				}
+			}
+
+			&.close-nav-menu {
+				animation: slideShut .50s forwards;
+			}
+
+			@keyframes slideShut {
+				0% {
+				width: 100%;
+				}
+				100% {
+					width: 0;
+				}
+			}
+		}
+
+		.overlay {
+			display: none;
+			@media (max-width: $breakpoint-sm) {  
+				background-color: #666;
+				opacity: 0.5;
+				height: 100vh;
+				display: block;
+				width: 30%;
+			}
+		}
+
+		.hide-me-mobile {
+			width: none;
+		}
+	}
+</style>
+
+<MobileMenuButton id="menuBtn" />
+
+<div id="nav-container" class="nav-container">
+	<Navigation />
+	<section id="overlay" class="overlay"></section>
+</div>
+
+<script>
+	let showMenu = false;
+	const menuBtn = document.querySelector('#menuBtn');
+	const navContainer = document.querySelector('#nav-container');
+	
+	const toggleMenuEventHandler = () => {
+		showMenu = !showMenu;
+		toggleMenu();
+	}
+
+	const toggleMenu = () => {
+		if (showMenu) {
+			navContainer.classList.add('open-nav-menu');
+			navContainer.classList.remove('close-nav-menu');
+		} else {
+			navContainer.classList.add('close-nav-menu');
+			navContainer.classList.remove('open-nav-menu');
+		}
+	}
+
+	menuBtn.addEventListener("click", toggleMenuEventHandler);
+	navContainer.addEventListener("click", toggleMenuEventHandler);
+
+</script>

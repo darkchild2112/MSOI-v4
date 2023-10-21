@@ -1,132 +1,79 @@
----
-import MobileMenuButton from './MobileMenuButton.astro'
----
-
 <style lang="scss">
 
-	@import '../../styles/dimensions.scss';
+  @import '../../styles/dimensions.scss';
 
-	.nav-container {
+  nav {
+    display: flex;
+    gap: 5px;
 
-		@media (max-width: $breakpoint-sm) {  
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 0;
-			display: flex;
+    @media (max-width: $breakpoint-sm) {  
+      flex-direction: column;
+      width: 70%;
+      background-color: #fff;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-			&.open-nav-menu {
-				animation: slideOpen .50s forwards;
-			}
+    a {
+      color: #777;
+      padding: 15px 15px 15px 15px;
+      line-height: 20px;
+      background-color: transparent;
+      transition: background-color 0.5s ease-in-out;
+      transition: color 0.1s ease-in-out;
 
-			@keyframes slideOpen {
-				0% {
-					width: 0;
-				}
-				100% {
-					width: 100%;
-				}
-			}
+      &:hover {
+        background-color: #27BBDF;		
+        color: #fff;	
+        opacity: 0.6;
+      }
 
-			&.close-nav-menu {
-				animation: slideShut .50s forwards;
-			}
+      &:visited {
+        text-decoration: none;
+      }
 
-			@keyframes slideShut {
-				0% {
-				width: 100%;
-				}
-				100% {
-					width: 0;
-				}
-			}
-		}
-		
+      &.active {
+        background-color: #27BBDF;		
+        color: #fff;	
+      }
 
-		nav {
-			display: flex;
-			gap: 5px;
-
-			@media (max-width: $breakpoint-sm) {  
-				flex-direction: column;
-				width: 70%;
-				background-color: #fff;
-				height: 100vh;
-				overflow: hidden;
-			}
-
-			a {
-				color: #777;
-				padding: 15px 15px 15px 15px;
-				line-height: 20px;
-				background-color: transparent;
-				transition: background-color 0.5s ease-in-out;
-				transition: color 0.1s ease-in-out;
-				border: 1px solid red;
-
-				&:hover {
-					background-color: #27BBDF;		
-					color: #fff;	
-				}
-
-				&:visited {
-					text-decoration: none;
-				}
-			}
-		}
-
-		.overlay {
-			display: none;
-			@media (max-width: $breakpoint-sm) {  
-				background-color: #666;
-				opacity: 0.5;
-				height: 100vh;
-				display: block;
-				width: 30%;
-			}
-		}
-
-		.hide-me-mobile {
-			width: none;
-		}
-	}
+      &:focus-visible {
+        outline: 2px solid transparent;
+        background-color: #fd0;
+        color: #000;
+      }
+    }
+  }
 </style>
 
-<MobileMenuButton id="menuBtn" />
-
-<div id="nav-container" class="nav-container">
-	<nav id="navigation">
-		<a href="/#">Home</a>
-		<a href="/#services">Services</a>
-		<a href="/#whatWeDo">About Us</a>
-		<a href="/#whoWeAre">Who We Are</a>
-		<a href="/#contact">Contact Us</a>
-	</nav>
-	<section id="overlay" class="overlay"></section>
-</div>
+<nav id="navigation">
+  <a href="/#">Home</a>
+  <a href="/#services">Services</a>
+  <a href="/#whatWeDo">About Us</a>
+  <a href="/#whoWeAre">Who We Are</a>
+  <a href="/#contact">Contact Us</a>
+</nav>
 
 <script>
-	let showMenu = false;
-	const menuBtn = document.querySelector('#menuBtn');
-	const overlay = document.querySelector('#overlay');
-	const navContainer = document.querySelector('#nav-container');
-	
-	const toggleMenuEventHandler = () => {
-		showMenu = !showMenu;
-		toggleMenu();
-	}
 
-	const toggleMenu = () => {
-		if (showMenu) {
-			navContainer.classList.add('open-nav-menu');
-			navContainer.classList.remove('close-nav-menu');
-		} else {
-			navContainer.classList.add('close-nav-menu');
-			navContainer.classList.remove('open-nav-menu');
-		}
-	}
+  let location = window.location.hash || '';
+  const navigation = document.getElementById('navigation');
 
-	menuBtn.addEventListener("click", toggleMenuEventHandler);
-	overlay.addEventListener("click", toggleMenuEventHandler);
+  updateActiveLink();
 
+  window.addEventListener('popstate', function () {
+    location = window.location.hash || '';
+    updateActiveLink();
+  });
+
+  function updateActiveLink()
+  {
+    navigation.childNodes.forEach((node) => {
+      if (node.hash === location) {
+        node.classList.add('active');
+      } else {
+        node.classList.remove('active');
+      }
+    });
+  }
 </script>

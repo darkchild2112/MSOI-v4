@@ -27,3 +27,21 @@
   white-space: nowrap!important;
   border: 0!important;
 }
+
+a {
+  &:focus-visible{
+    outline: 2px solid #fd0;
+    outline-offset: -1px;
+    background-color: #fd0;
+    color: #000 !important;
+  }
+}
+
+input, textarea {
+  &:focus-visible{
+    outline: 2px solid transparent;
+    background-color: #fd0;
+    color: #000 !important;
+    border-color: #fd0;
+  }
+}
