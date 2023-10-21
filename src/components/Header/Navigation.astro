@@ -58,44 +58,44 @@ import MobileMenuButton from './MobileMenuButton.astro'
 			}
 		}
 
-		.hideMe {
+		.hide-me-mobile {
 			display: none;
 		}
 	}
 </style>
 
-<!-- <MobileMenuButton id="menuBtn" /> -->
-<button id="menuBtn">Menu</button>
+<MobileMenuButton id="menuBtn" />
+<!-- <button id="menuBtn">Menu</button> -->
 
 <div class="nav-container">
-	<nav id="navigation">
+	<nav id="navigation" class="hide-me-mobile">
 		<a href="/#">Home</a>
 		<a href="/#services">Services</a>
 		<a href="/#whatWeDo">About Us</a>
 		<a href="/#whoWeAre">Who We Are</a>
 		<a href="/#contact">Contact Us</a>
 	</nav>
-	<section id="overlay" class="overlay"></section>
+	<section id="overlay" class="overlay hide-me-mobile"></section>
 </div>
 
 <script>
-	let showMenu = false;
+	let hideMenu = true;
 	const menuBtn = document.querySelector('#menuBtn');
 	const overlay = document.querySelector('#overlay');
 	const navigation = document.querySelector('#navigation');
 
 	const toggleMenuEventHandler = () => {
-		showMenu = !showMenu;
+		hideMenu = !hideMenu;
 		toggleMenu();
 	}
 
 	const toggleMenu = () => {
-		if (showMenu) {
-			overlay.classList.add('hideMe');
-			navigation.classList.add('hideMe');
+		if (hideMenu) {
+			overlay.classList.add('hide-me-mobile');
+			navigation.classList.add('hide-me-mobile');
 		} else {
-			overlay.classList.remove('hideMe');
-			navigation.classList.remove('hideMe');
+			overlay.classList.remove('hide-me-mobile');
+			navigation.classList.remove('hide-me-mobile');
 		}
 	}
 
