@@ -1,8 +1,5 @@
----
-const { id, type, visible, text } = Astro.props;
----
-
-<style lang="scss">
+{/* <style lang="scss">
+  
   .hide {
     display: none;
   }
@@ -11,6 +8,8 @@ const { id, type, visible, text } = Astro.props;
     padding: 16px;
     border-radius: 5px;
     border: 1px solid;
+
+
 
     p {
       margin: 0;
@@ -27,8 +26,19 @@ const { id, type, visible, text } = Astro.props;
       border-color: red;
     }
   }
-</style>
+</style> */}
 
-<div id={id} class={`alert alert-${type} ${visible === false ? 'hide' : ''}`} role="alert">
-  <p>{text}</p>
-</div>
+
+const Alert = (props) => (
+  <div id={props.id} class={`alert-${props.type} ${props.visible ? 'hide' : ''}`.trim()} role="alert">
+    <p>{text}</p>
+  </div>
+);
+
+export default Alert
+
+export const AlertTypes = {
+  SUCCESS: 'success',
+  ERROR: 'error',
+}
+

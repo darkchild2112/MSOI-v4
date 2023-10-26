@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   redirects: {
@@ -8,6 +10,7 @@ export default defineConfig({
     '/services.htm?serviceId=3': '/services/learning-disabilities',
     '/services.htm?serviceId=4': '/services/cognitive-assessments',
     '/services.htm?serviceId=5': '/services/autism-assessments',
-    '/services.htm?serviceId=6': '/services/supervision-and-training',
-  }
+    '/services.htm?serviceId=6': '/services/supervision-and-training'
+  },
+  integrations: [react()]
 });
