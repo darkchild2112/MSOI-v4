@@ -1,20 +1,16 @@
+import './Button.scss';
 
+const Button = ({ id, type, style, fill, children }) => {
 
-// import './ButtonStyles.scss';
-// import { ButtonTypes, ButtonStyles } fro../../Button/ButtonTypespes'
+  const btnType = type || ButtonTypes.BUTTON;
+  const btnStyle = style || ButtonStyles.PRIMARY;
 
-// const { id, type, style, fill } = Astro.props;
-
-// const btnType = type || ButtonTypes.BUTTON;
-// const btnStyle = style || ButtonStyles.PRIMARY;
-
-
-
-const Button = ({ id, type, style, fill }) => (
-  <button id={id} type={btnType} class={`btn ${btnStyle} ${fill ? 'full-width' : ''}`.trim()}>
-    <children />
-  </button>
-);
+  return (
+    <button id={id} type={btnType} class={`btn ${btnStyle} ${fill ? 'full-width' : ''}`.trim()}>
+      { children }
+    </button>
+  )
+};
 
 export default Button
 

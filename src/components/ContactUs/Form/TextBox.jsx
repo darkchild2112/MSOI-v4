@@ -1,27 +1,7 @@
-import React from 'react';
-
-export const TextBoxTypes = {
-  TEXT: 'text',
-  EMAIL: 'email',
-  TEL: 'tel',
-}
-
-//const { id, label, placeholder, maxLength, required, type } = Astro.props;
-
-{/* <style lang="scss">
-
-  label {
-    font-weight: 700;
-  }
-  
-  input {
-    width: 100%;
-  }
-
-</style> */}
+import './TextBox.scss'
 
 const TextBox = ({ id, label, placeholder, maxLength, required, type }) => (
-  <section>
+  <section className="text-box">
     <label for={id}>{label}</label>
     <input 
       id={id} 
@@ -35,4 +15,10 @@ const TextBox = ({ id, label, placeholder, maxLength, required, type }) => (
 );
 
 export default TextBox;
+
+export const TextBoxTypes = {
+  TEXT: 'text',
+  EMAIL: 'email',
+  TEL: 'tel',
+}
 

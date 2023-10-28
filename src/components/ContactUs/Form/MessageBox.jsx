@@ -1,16 +1,7 @@
-{/* <style lang="scss">
-  label {
-    font-weight: 700;
-  }
-  
-  textarea {
-    width: 100%;
-    height: 216px;
-  }
-</style> */}
+import './MessageBox.scss';
 
- const MessageBox = ({ id, label, placeholder, maxLength, required, type, rows, cols }) => (
-  <>
+ const MessageBox = ({ id, label, placeholder, maxLength, required, rows, cols }) => (
+  <section className="message-box-container">
     <label for={id}>{label}</label>
     <textarea 
       id={id} 
@@ -22,7 +13,7 @@
       aria-required={required}
       required={required}>
     </textarea>
-  </>
+  </section>
 );
 
 export default MessageBox
