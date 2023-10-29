@@ -1,12 +1,16 @@
 import './Button.scss';
 
-const Button = ({ id, type, style, fill, children }) => {
+const Button = ({ id, type, style, fill, children, clickHandler }) => {
 
   const btnType = type || ButtonTypes.BUTTON;
   const btnStyle = style || ButtonStyles.PRIMARY;
 
   return (
-    <button id={id} type={btnType} class={`btn ${btnStyle} ${fill ? 'full-width' : ''}`.trim()}>
+    <button 
+      id={id} 
+      type={btnType} 
+      className={`btn ${btnStyle} ${fill ? 'full-width' : ''}`.trim()} 
+      onClick={clickHandler}>
       { children }
     </button>
   )
