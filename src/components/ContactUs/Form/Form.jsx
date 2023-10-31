@@ -8,7 +8,7 @@ import LoadingIcon from '../../Icons/LoadingIcon';
 import './Form.scss'
 
 import { sendMail } from '../../../clients/smtp2go';
-
+import { htmlEmailTemplate } from './htmlEmailTemplate';
 import { useState } from 'react';
 
 // https://docs.astro.build/en/recipes/build-forms-api/
@@ -16,27 +16,23 @@ import { useState } from 'react';
 const Form = () => {
 
   const [formData, setFormData] = useState({name: '', email: '', tel: '', message: ''});
-  const [loading, setLoading] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
   const [showError, setShowError] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   
   const submitFormEventHandler = async (event) => {
     event.preventDefault();
 
-    setLoading(true);
+    setIsLoading(true);
     setShowSuccess(false);
     setShowError(false);
 
-    const response = await sendMail(formData);
+    const template = htmlEmailTemplate(formData.name, formData.email, formData.tel, formData.message);
+    const response = await sendMail(template);
 
-    if(response.status === 200) {
-      setShowSuccess(true);
-    }
-    else{
-      setShowError(true);
-    }
-
-    setLoading(false);
+    setShowSuccess(response.status === 200);
+    setShowError(response.status !== 200);
+    setIsLoading(false);
   }
 
   const updateNameEventHandler = (event) => setFormData({...formData, name: event.target.value});
@@ -59,7 +55,7 @@ const Form = () => {
               maxlength="250" 
               required={true}
               updateHandler={updateNameEventHandler}
-              disabled={loading} />
+              disabled={isloading} />
             <TextBox 
               id="email" 
               type={TextBoxTypes.EMAIL} 
@@ -68,7 +64,7 @@ const Form = () => {
               maxlength="250" 
               required={true}
               updateHandler={updateEmailEventHandler}
-              disabled={loading} />
+              disabled={isloading} />
             <TextBox 
               id="tel" 
               type={TextBoxTypes.TEL} 
@@ -77,7 +73,7 @@ const Form = () => {
               maxlength="14" 
               required={false}
               updateHandler={updateTelEventHandler}
-              disabled={loading} />
+              disabled={isloading} />
           </div>
           <div className="message-box">
             <MessageBox 
@@ -89,13 +85,13 @@ const Form = () => {
               maxlength="5000" 
               required={true}
               updateHandler={updateMessageEventHandler}
-              disabled={loading} />
+              disabled={isloading} />
           </div>
         </div>
         
         <div className="buttons">
           { 
-            !loading 
+            !isloading 
             ? <Button type={ButtonTypes.SUBMIT} style={ButtonStyles.PRIMARY}>Submit</Button> 
             : <LoadingIcon />
           }

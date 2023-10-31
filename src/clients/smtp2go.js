@@ -1,11 +1,10 @@
-export const sendMail = async (formData) => {
+export const sendMail = async (htmlTemplate) => {
   const payload = {
     api_key: "api-42FEC8125309494BB3194CA24D35D347",
     to: ["Info <info@ben-abbott.co.uk>"],
-    sender: `Enquiry Form <info@ben-abbott.co.uk>`,
-    subject: "Enquirey Form",
-    text_body: "Making Sense Of It Test Email",
-    html_body: "<h1>Making Sense Of It Test Email</h1>",
+    sender: `MSOI Enquiry Form <info@ben-abbott.co.uk>`,
+    subject: "MSOI Enquiry Form",
+    html_body: htmlTemplate,
     custom_headers: [
       {
         "header": "Reply-To",
