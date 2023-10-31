@@ -1,0 +1,18 @@
+---
+const { cite } = Astro.props;
+---
+
+<style lang="scss">
+  section {
+    display: block;
+    border: 1px solid red;
+    clear: both;
+  }
+</style>
+
+<section>
+  <blockquote cite={cite}>
+    <slot />
+  </blockquote>
+  <cite>{ cite }</cite>
+</section>
