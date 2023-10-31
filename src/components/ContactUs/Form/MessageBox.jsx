@@ -1,6 +1,6 @@
 import './MessageBox.scss';
 
- const MessageBox = ({ id, label, placeholder, maxLength, required, rows, cols, updateHandler }) => (
+ const MessageBox = ({ id, label, placeholder, maxLength, required, rows, cols, disabled, updateHandler }) => (
   <section className="message-box-container">
     <label htmlFor={id}>{label}</label>
     <textarea 
@@ -12,7 +12,8 @@ import './MessageBox.scss';
       maxLength={maxLength} 
       aria-required={required}
       required={required}
-      onChange={updateHandler}>
+      onChange={updateHandler}
+      disabled={disabled}>
     </textarea>
   </section>
 );

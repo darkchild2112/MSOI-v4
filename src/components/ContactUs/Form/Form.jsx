@@ -3,6 +3,7 @@ import Button, { ButtonTypes, ButtonStyles } from './Button';
 import TextBox, { TextBoxTypes } from './TextBox';
 import MessageBox from './MessageBox';
 import Alert, { AlertTypes } from './Alert';
+import LoadingIcon from '../../Icons/LoadingIcon';
 
 import './Form.scss'
 
@@ -14,14 +15,8 @@ import { useState } from 'react';
 
 const Form = () => {
 
-  // TODO: Consolidate state into a single object
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [tel, setTel] = useState('');
-  const [message, setMessage] = useState('');
-
+  const [formData, setFormData] = useState({name: '', email: '', tel: '', message: ''});
   const [loading, setLoading] = useState(false);
-
   const [showError, setShowError] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   
@@ -32,7 +27,7 @@ const Form = () => {
     setShowSuccess(false);
     setShowError(false);
 
-    const response = await sendMail({name, email, tel, message});
+    const response = await sendMail(formData);
 
     if(response.status === 200) {
       setShowSuccess(true);
@@ -44,10 +39,10 @@ const Form = () => {
     setLoading(false);
   }
 
-  const updateNameEventHandler = (event) => setName(event.target.value);
-  const updateEmailEventHandler = (event) => setEmail(event.target.value);
-  const updateTelEventHandler = (event) => setTel(event.target.value);
-  const updateMessageEventHandler = (event) => setMessage(event.target.value);
+  const updateNameEventHandler = (event) => setFormData({...formData, name: event.target.value});
+  const updateEmailEventHandler = (event) => setFormData({...formData, email: event.target.value});
+  const updateTelEventHandler = (event) => setFormData({...formData, tel: event.target.value});
+  const updateMessageEventHandler = (event) => setFormData({...formData, message: event.target.value});
   
   return (
     <>
@@ -63,7 +58,8 @@ const Form = () => {
               placeholder="Enter your name" 
               maxlength="250" 
               required={true}
-              updateHandler={updateNameEventHandler} />
+              updateHandler={updateNameEventHandler}
+              disabled={loading} />
             <TextBox 
               id="email" 
               type={TextBoxTypes.EMAIL} 
@@ -71,7 +67,8 @@ const Form = () => {
               placeholder="Enter your email address" 
               maxlength="250" 
               required={true}
-              updateHandler={updateEmailEventHandler} />
+              updateHandler={updateEmailEventHandler}
+              disabled={loading} />
             <TextBox 
               id="tel" 
               type={TextBoxTypes.TEL} 
@@ -79,7 +76,8 @@ const Form = () => {
               placeholder="Enter your telephone number" 
               maxlength="14" 
               required={false}
-              updateHandler={updateTelEventHandler} />
+              updateHandler={updateTelEventHandler}
+              disabled={loading} />
           </div>
           <div className="message-box">
             <MessageBox 
@@ -90,7 +88,8 @@ const Form = () => {
               placeholder="Enter a short message about you enquiry" 
               maxlength="5000" 
               required={true}
-              updateHandler={updateMessageEventHandler} />
+              updateHandler={updateMessageEventHandler}
+              disabled={loading} />
           </div>
         </div>
         
@@ -98,7 +97,7 @@ const Form = () => {
           { 
             !loading 
             ? <Button type={ButtonTypes.SUBMIT} style={ButtonStyles.PRIMARY}>Submit</Button> 
-            : <div>Loading...</div>
+            : <LoadingIcon />
           }
         </div>
       </form>
