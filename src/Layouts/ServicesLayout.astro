@@ -2,28 +2,35 @@
 
 import BaseLayout from "../Layouts/BaseLayout.astro";
 import Container from "../components/HOC/Container.astro"
+import ServicesNavigation from "../components/ServicesNavigation/ServicesNavigation.astro"
 
 ---
 
 <style lang="scss">
+
+  @import '../styles/dimensions.scss';
+
   .services-container {
     display: flex;
     gap: 2rem;
+    padding-top: 30px;
 
-    nav {
-      border: 1px solid red;
-      display: flex;
-      flex-direction: column;
-      margin: 0 auto;
-      padding: 0;
-      width: 20%;
-      max-width: 800px;
-      gap: 1rem;
+    .nav-wrapper {
+      @media screen and (max-width: $breakpoint-sm) {
+        & {
+          display: none;
+        }
+      }
     }
 
     .services-content {
-      border: 1px solid red;
       width: 80%;
+
+      @media screen and (max-width: $breakpoint-sm) {
+        & {
+          width: 100%;
+        }
+      }
     }
   }
 </style>
@@ -31,14 +38,9 @@ import Container from "../components/HOC/Container.astro"
 <BaseLayout>
   <Container>
     <div class="services-container">
-      <nav>
-        <a href="/services/schools">Schools</a>
-        <a href="/services/family-mental-health">Child and Family Mental Health</a>
-        <a href="/services/learning-disabilities">Children with Learning Disabilities</a>
-        <a href="/services/cognitive-assessments">Cognitive Assessments</a>
-        <a href="/services/autism-assessments">Autism Diagnostic Service</a>
-        <a href="/services/supervision-and-training">Supervision & Training</a>
-      </nav>
+      <section class="nav-wrapper">
+        <ServicesNavigation />
+      </section>
       <div class="services-content">
         <slot />
       </div>

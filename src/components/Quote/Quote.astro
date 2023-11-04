@@ -1,18 +1,43 @@
 ---
+
+import QuoteLeft from "../Icons/QuoteLeft.astro";
+import QuoteRight from "../Icons/QuoteRight.astro";
+
 const { cite } = Astro.props;
 ---
 
 <style lang="scss">
   section {
     display: block;
-    border: 1px solid red;
     clear: both;
+    padding-bottom: 20px;
+    width: 80%;
+    margin: 0 auto;
+
+    blockquote {
+      display: block;
+      text-align: center;
+      fill: #ff8f00;
+      color: #ff8f00;
+      font-style: italic;
+    }
+
+    cite {
+      display: block;
+      font-style: normal;
+      font-style: italic;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+    }
   }
 </style>
 
 <section>
   <blockquote cite={cite}>
+    <QuoteLeft />
     <slot />
+    <QuoteRight />
   </blockquote>
   <cite>{ cite }</cite>
 </section>

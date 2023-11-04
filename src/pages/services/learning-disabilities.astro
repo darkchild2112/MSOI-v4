@@ -1,37 +1,65 @@
 ---
 
 import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import Quote from '../../components/Quote/Quote.astro'
+
+import childPaintedHandsImg from '../../assets/images/cgild-with-painted-hands-cropped.jpg'
+import childBlowingFlowerImg from '../../assets/images/child-blowing-flower.png'
 
 ---
 
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  .content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .content-section {
+      display: flex;
+
+      @media screen and (max-width: $breakpoint-lg){
+        & {
+          flex-direction: column;
+        }
+      }
+      
+      img {
+        margin: 1rem 0 0 2rem;
+
+        @media screen and (max-width: $breakpoint-lg){
+          margin: 2rem auto 0 auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sm){
+          width: 100%;
+        }
+      }
+
+      ul {
+        padding: 1rem 0 0 20px;
+        li {
+          &:not(:last-child)
+          {
+            padding-bottom: 10px;
+          }
+          list-style-type: none;
+        }
+      }
+    }
+  }
+</style>
+
 <ServicesLayout>
-  <div data-service-id="3" class="Service">
-    <h2>Children with Learning Disabilities</h3>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="FullWidthQuote text-center">
-          <blockquote><i class="fa fa-quote-left" aria-hidden="true"></i>These children are part of our community, not external to it. They are our nieces and nephews, the
-children of our neighbours and friends. In a very real way they are our children too. We have a
-responsibility as a community to do the best for these children, to support them in the best possible
-way in order to allow them to thrive. We need to take that responsibility seriously and believe that
-our actions can make a difference<i class="fa fa-quote-right" aria-hidden="true"></i></blockquote>
-          <p class="quoteSource">Christine Lenehan 2017</p>
-        </div>
-      </div>
-      <div id="quoteImage" class="col-sm-6">
-        <img src="/images/ChildrenWithLearningDisabilitiesCropped.jpg" class="img-responsive"  alt="girl with paint on her hands" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="MainServiceContent">
-          <p>Caring for a child/young person with a disability can be both rewarding and challenging. The needs of the family and the child, can be different and need a tailored or specialist approach. Depending on the level of a child’s learning disability, they may be attending a local mainstream school, a Special Educational Needs school, an independent school, or a residential school. We have experience working in and providing support to all of these educational settings. We aim to bring together all the different parts of a young person’s life to help it make sense to them and their family. We have links with a range of other specialist professionals.</p>
-          <p>At Making Sense Of It, we have extensive experience supporting families, children and schools in the following areas:</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-sm-push-6">
+  <h2>Children with Learning Disabilities</h3>
+  <div class="content">
+    <section class="content-section">
+      <section>
+        <p>Caring for a child/young person with a disability can be both rewarding and challenging. The needs of the family and the child, can be different and need a tailored or specialist approach. Depending on the level of a child’s learning disability, they may be attending a local mainstream school, a Special Educational Needs school, an independent school, or a residential school. We have experience working in and providing support to all of these educational settings. We aim to bring together all the different parts of a young person’s life to help it make sense to them and their family. We have links with a range of other specialist professionals.</p>
+        <p>At Making Sense Of It, we have extensive experience supporting families, children and schools in the following areas:</p>
         <ul id="ServiceBulletList">
           <li>Understanding and managing challenging behaviour (including functional analysis of behaviour and the development of positive behaviour support plans)</li>
           <li>Cognitive and adaptive skills assessments</li>
@@ -39,33 +67,33 @@ our actions can make a difference<i class="fa fa-quote-right" aria-hidden="true"
           <li>Supporting young people with positive peer relationships, managing anxiety, relationships and sex education</li>
           <li>Parent and wider family support – post-diagnosis support, managing behaviour, sleep difficulties, sibling support</li>
         </ul>
-      </div>							
-      <div class="col-sm-6 col-sm-pull-6">
-        <img src="/images/GirlBlowingFlower.png" class="img-responsive" alt="School supplies on a table" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="MainServiceContent">
-          <h4 style="margin-top: 0 !important;">Working into schools or residential settings</h4>
-          <p>We can offer a variety of support into educational settings and residential settings, including consultation to staff in relation to specific children/young people, whole setting training and therapeutic support packages for either individual children or small groups of children. We can provide services into:  </p>
-            <ul>
-              <li>Special Educational Needs schools</li>
-              <li>Local Authority Primary and Secondary schools</li>
-              <li>Independent schools</li>
-              <li>Residential schools</li>
-              <li>Residential children's homes - Local Authority and independent sector</li>
-            </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="FullWidthQuote text-center">
-          <blockquote><i class="fa fa-quote-left" aria-hidden="true"></i>Children and adults with learning disabilities are at least as likely to have a mental health problem as the general population. However, these problems often go undetected as the symptoms can be mixed up with the child or adult’s learning disabilities or challenging behaviour<i class="fa fa-quote-right" aria-hidden="true"></i></blockquote>
-          <p class="quoteSource">The Challenging Behaviour Foundation 2017</p>
-        </div>
-      </div>
-    </div>
-  </div>
+      </section>
+      <img src={childPaintedHandsImg.src} alt="child with paint on their hands" width="400" height="450" />
+    </section> 
+    <Quote cite="Christine Lenehan 2017">
+      These children are part of our community, not external to it. They are our nieces and nephews, the
+      children of our neighbours and friends. In a very real way they are our children too. We have a
+      responsibility as a community to do the best for these children, to support them in the best possible
+      way in order to allow them to thrive. We need to take that responsibility seriously and believe that
+      our actions can make a difference
+    </Quote> 
+    <section class="content-section">
+      <section>
+        <h2 style="margin-top: 0 !important;">Working into schools or residential settings</h2>
+        <p>We can offer a variety of support into educational settings and residential settings, including consultation to staff in relation to specific children/young people, whole setting training and therapeutic support packages for either individual children or small groups of children. We can provide services into:  </p>
+        <ul>
+          <li>Special Educational Needs schools</li>
+          <li>Local Authority Primary and Secondary schools</li>
+          <li>Independent schools</li>
+          <li>Residential schools</li>
+          <li>Residential children's homes - Local Authority and independent sector</li>
+        </ul>
+      </section>
+      <img src={childBlowingFlowerImg.src} alt="Child blowing on a flower" width="450" height="400" />
+    </section>
+    <Quote cite="The Challenging Behaviour Foundation 2017">
+      Children and adults with learning disabilities are at least as likely to have a mental health problem as 
+      the general population. However, these problems often go undetected as the symptoms can be mixed up with 
+      the child or adult’s learning disabilities or challenging behaviour
+    </Quote>
 </ServicesLayout>

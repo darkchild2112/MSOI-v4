@@ -1,36 +1,73 @@
 ---
 
 import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import Quote from '../../components/Quote/Quote.astro'
+
+import brainImg from '../../assets/images/brain.png';
+import supervisionSignpostImg from '../../assets/images/supervision-signposts.jpg';
 
 ---
 
-<ServicesLayout>
-  <div data-service-id="6" class="Service">
-    <h2>Supervision & Training</h3>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="FullWidthQuote text-center">
-          <blockquote><i class="fa fa-quote-left" aria-hidden="true"></i>A formal process for professional support and learning which enables individual practitioners to develop knowledge and competence, assume responsibility for their own practice and enhance consumer protection and safety in complex situations. It is central to the process of learning and scope of the expansion of practice and should be seen as a means of encouraging self-assessment, analytical and reflective skill<i class="fa fa-quote-right" aria-hidden="true"></i></blockquote>
-          <p class="quoteSource">The Department of Health, 1993</p>
-        </div>
-      </div>
-      <div id="quoteImage" class="col-sm-6">
-        <img src="/images/SupervisionAndTraining.jpg" class="img-responsive"  alt="signposts" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="MainServiceContent">
-          <h4>Supervision</h4>
-          <p>When professionals are working with young people, families, or adults with any mental health problems,  it is essential that they have formal supervision processes in place to support them to be effective and safe practitioners. At Making Sense Of It, we both have extensive experience of providing supervision both to other clinical psychologists and other health/social care professionals. When choosing a supervisor it is important to find the person with both the right skills and someone who you feel able to develop a safe and trusting relationship with.  If you are interested in discussing your supervision needs please get in touch with us and we would be happy to discuss this further.</p>
-          <h4 style="padding-top: 10px;">Training</h4>
-          <p>At Making Sense Of It we offer a variety of training packages which can be tailored to your needs. This could include training into educational settings, training for other health professionals or training for parents. Some examples of the kind of training packages that we could deliver include:</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 col-sm-push-6">
-        <ul id="ServiceBulletList">
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  .content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .content-section {
+      display: flex;
+
+      @media screen and (max-width: $breakpoint-lg){
+        & {
+          flex-direction: column;
+        }
+      }
+      
+      img {
+        margin: 1rem 0 0 2rem;
+
+        @media screen and (max-width: $breakpoint-lg){
+          margin: 2rem auto 0 auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sm){
+          width: 100%;
+        }
+      }
+
+      ul {
+        padding: 1rem 0 0 20px;
+        li {
+          &:not(:last-child)
+          {
+            padding-bottom: 10px;
+          }
+          list-style-type: none;
+        }
+      }
+    }
+  }
+</style>
+
+<ServicesLayout>    
+  <h1>Supervision & Training</h1>
+  <div class="content">
+    <section class="content-section">
+      <section>
+        <h2>Supervision</h2>
+        <p>When professionals are working with young people, families, or adults with any mental health problems,  it is essential that they have formal supervision processes in place to support them to be effective and safe practitioners. At Making Sense Of It, we both have extensive experience of providing supervision both to other clinical psychologists and other health/social care professionals. When choosing a supervisor it is important to find the person with both the right skills and someone who you feel able to develop a safe and trusting relationship with.  If you are interested in discussing your supervision needs please get in touch with us and we would be happy to discuss this further.</p>
+      </section>
+      <img src={supervisionSignpostImg.src} alt="signposts" width="300" height="300" />
+    </section>
+    <section class="content-section">
+      <section>
+        <h2>Training</h2>
+        <p>At Making Sense Of It we offer a variety of training packages which can be tailored to your needs. This could include training into educational settings, training for other health professionals or training for parents. Some examples of the kind of training packages that we could deliver include:</p>
+        <ul>
           <li>Understanding specific mental health difficulties e.g. managing anxiety and depression, self-harm in young people</li>
           <li>Sleep difficulties</li>
           <li>Bereavement</li>
@@ -41,10 +78,15 @@ import ServicesLayout from "../../layouts/ServicesLayout.astro";
           <li>Hard to reach children</li>
           <li>School refusal</li>
         </ul>
-      </div>							
-      <div class="col-sm-6 col-sm-pull-6">
-        <img src="/images/training.png" class="img-responsive" alt="School supplies on a table" />
-      </div>
-    </div>
+      </section>
+      <img src={brainImg.src} alt="picture of a brain" width="300" height="300" />
+    </section>	
+    <Quote cite="The Department of Health, 1993">
+      A formal process for professional support and learning which enables individual practitioners 
+      to develop knowledge and competence, assume responsibility for their own practice and enhance 
+      consumer protection and safety in complex situations. It is central to the process of learning 
+      and scope of the expansion of practice and should be seen as a means of encouraging self-assessment, 
+      analytical and reflective skill
+    </Quote>						
   </div>
 </ServicesLayout>
