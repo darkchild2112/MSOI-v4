@@ -22,7 +22,7 @@
       transition: background-color 0.5s ease-in-out;
       transition: color 0.1s ease-in-out;
 
-      &:hover {
+      &:hover:not(.active) {
         background-color: #27BBDF;		
         color: #fff;	
         opacity: 0.6;
@@ -56,24 +56,35 @@
 
 <script>
 
-  let location = window.location.hash || '';
-  const navigation = document.getElementById('navigation');
+  const navigation = document.querySelector('#navigation');
 
-  updateActiveLink();
+  // Todo: optimise with setTimout so that it doesn't run on every scroll event
+  let scrollTimeout;
 
-  window.addEventListener('popstate', function () {
-    location = window.location.hash || '';
-    updateActiveLink();
-  });
+  document.addEventListener('scroll', function () {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      console.log('setting nav active');
 
-  function updateActiveLink()
-  {
-    navigation.childNodes.forEach((node) => {
-      if (node.hash === location) {
+      navigation?.childNodes.forEach((node) => {
+
+      const hash = node.hash === '' ? '#banner' : node.hash;
+      const section = document.querySelector(hash);
+      const visible = isVisible(section)
+
+      if (visible) {
         node.classList.add('active');
       } else {
         node.classList.remove('active');
       }
     });
+    }, 50);
+  });
+
+  function isVisible(element) {
+    const rect = element.getBoundingClientRect();
+    const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    const verticalCenter = viewHeight / 2;
+    return rect.top <= verticalCenter && rect.bottom >= verticalCenter;
   }
 </script>
