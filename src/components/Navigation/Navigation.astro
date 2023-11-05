@@ -106,14 +106,18 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
         isNodeActive = node.pathname === window.location.pathname;
       }
 
-      if (isNodeActive) {
-        node.classList.add('active');
-      } 
-      else {
-        node.classList.remove('active');
-      }
+      setActiveNode(node, isNodeActive);
     });
   };
+
+  function setActiveNode(node, isNodeActive) {
+    if (isNodeActive) {
+        node.classList.add('active');
+    } 
+    else {
+      node.classList.remove('active');
+    }
+  }
 
   function isVisible(element) {
     const rect = element.getBoundingClientRect();
