@@ -1,3 +1,8 @@
+---
+
+import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigationData.js';
+---
+
 <style lang="scss">
 
   @import '../../styles/dimensions.scss';
@@ -11,7 +16,7 @@
       width: 70%;
       background-color: #fff;
       height: 100vh;
-      overflow: hidden;
+      overflow-y: hidden;
     }
 
     a {
@@ -21,6 +26,10 @@
       background-color: transparent;
       transition: background-color 0.5s ease-in-out;
       transition: color 0.1s ease-in-out;
+
+      @media (max-width: $breakpoint-sm) {  
+        padding: 10px;
+      }
 
       &:hover:not(.active) {
         background-color: #27BBDF;		
@@ -43,20 +52,33 @@
         color: #000;
       }
     }
+
+    .services-link
+      {
+        padding-left: 20px;
+
+        @media (min-width: $breakpoint-sm) {  
+          display: none;
+        }
+      }
   }
 </style>
 
 <nav id="navigation">
-  <a href="/#">Home</a>
+  <a href="/#body">Home</a>
   <a href="/#services">Services</a>
+  { 
+    ServicesNavigationData.map((service) => (
+        <a href={service.link} class="services-link">{service.text}</a>
+      )
+    )
+  }
   <a href="/#whatWeDo">About Us</a>
   <a href="/#whoWeAre">Who We Are</a>
   <a href="/#contact">Contact Us</a>
 </nav>
 
 <script>
-
-  const navigation = document.querySelector('#navigation');
   let scrollTimeout;
 
   setActiveLink();
@@ -67,18 +89,28 @@
   });
 
   function setActiveLink() {
+    const navigation = document.querySelector('#navigation');
+
     navigation?.childNodes.forEach((node) => {
-      const hash = node.hash === '' ? '#banner' : node.hash;
-      const section = document.querySelector(hash);
 
-      if(section){
-        const visible = isVisible(section);
-
-        if (visible) {
-          node.classList.add('active');
-        } else {
-          node.classList.remove('active');
+      let isNodeActive = false;
+        
+      if(window.location.pathname === '/'){
+        const hash = node.hash === '#body' ? '#banner' : node.hash;
+        if(hash !== ''){
+          const section = document.querySelector(hash);
+          isNodeActive = isVisible(section);
         }
+      }
+      else {
+        isNodeActive = node.pathname === window.location.pathname;
+      }
+
+      if (isNodeActive) {
+        node.classList.add('active');
+      } 
+      else {
+        node.classList.remove('active');
       }
     });
   };
