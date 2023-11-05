@@ -57,29 +57,31 @@
 <script>
 
   const navigation = document.querySelector('#navigation');
-
-  // Todo: optimise with setTimout so that it doesn't run on every scroll event
   let scrollTimeout;
+
+  setActiveLink();
 
   document.addEventListener('scroll', function () {
     clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      console.log('setting nav active');
+    scrollTimeout = setTimeout(() => setActiveLink(), 50);
+  });
 
-      navigation?.childNodes.forEach((node) => {
-
+  function setActiveLink() {
+    navigation?.childNodes.forEach((node) => {
       const hash = node.hash === '' ? '#banner' : node.hash;
       const section = document.querySelector(hash);
-      const visible = isVisible(section)
 
-      if (visible) {
-        node.classList.add('active');
-      } else {
-        node.classList.remove('active');
+      if(section){
+        const visible = isVisible(section);
+
+        if (visible) {
+          node.classList.add('active');
+        } else {
+          node.classList.remove('active');
+        }
       }
     });
-    }, 50);
-  });
+  };
 
   function isVisible(element) {
     const rect = element.getBoundingClientRect();

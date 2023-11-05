@@ -4,12 +4,40 @@
     display: flex;
     flex-direction: column;
     padding: 0;
-    gap: 1rem;
+
+    a {
+      color: #777;
+      padding: 10px;
+      line-height: 20px;
+      background-color: transparent;
+      //transition: background-color 0.5s ease-in-out;
+      //transition: color 0.1s ease-in-out;
+
+      &:hover:not(.active) {
+        background-color: #27BBDF;		
+        color: #fff;	
+        opacity: 0.6;
+      }
+
+      &:visited {
+        text-decoration: none;
+      }
+
+      &.active {
+        background-color: #27BBDF;		
+        color: #fff;	
+      }
+
+      &:focus-visible {
+        outline: 2px solid transparent;
+        background-color: #fd0;
+        color: #000;
+      }
+    }
   }
 </style>
 
-
-<nav>
+<nav id="servicesNav">
   <a href="/services/schools">Schools</a>
   <a href="/services/family-mental-health">Child and Family Mental Health</a>
   <a href="/services/learning-disabilities">Children with Learning Disabilities</a>
@@ -19,30 +47,19 @@
 </nav>
 
 <script>
-  //let location = window.location.hash || '';
-  //const navigation = document.querySelector('#navigation');
+  const location = window.location.pathname || '';
+  const navigation = document.querySelector('#servicesNav');
 
-  // updateActiveLink();
+  updateActiveLink();
 
-  // window.addEventListener('popstate', function () {
-  //   location = window.location.hash || '';
-  //   updateActiveLink();
-  // });
-
-  // function updateActiveLink()
-  // {
-  //   navigation.childNodes.forEach((node) => {
-  //     if (node.hash === location) {
-  //       node.classList.add('active');
-  //     } else {
-  //       node.classList.remove('active');
-  //     }
-  //   });
-  // }
-
-  //const servicesEl = document.querySelector('#services');
-
-  //console.log(servicesEl);
-  // const isvis = isVisible(servicesEl);
-  // console.log(isvis);
+  function updateActiveLink()
+  {
+    navigation.childNodes.forEach((node) => {
+      if (node.pathname === location) {
+        node.classList.add('active');
+      } else {
+        node.classList.remove('active');
+      }
+    });
+  }
 </script>
