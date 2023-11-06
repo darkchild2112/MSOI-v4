@@ -1,3 +1,25 @@
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'EduTASBeginner';
+  src: url('/fonts/edu-tas-beginner/EduTASBeginner-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/roboto/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'work-sans';
+  src: url('/fonts/work-sans/WorkSans-VariableFont_wght.ttf') format('truetype');
+}
+
 h1, h2, h3, h4 {
-  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-family: "work-sans", "Helvetica Neue", Helvetica;
+  font-weight: 400;
+}
+
+p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
 }
