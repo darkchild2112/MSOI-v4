@@ -1,8 +1,11 @@
 ---
 
-import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import ServicesLayout from "../../Layouts/ServicesLayout.astro";
 import schoolsImg from '../../assets/images/child-reading-cropped.jpg';
 import Quote from '../../components/Quote/Quote.astro'
+
+import List from '../../components/List/List.astro';
+import ListItem from '../../components/List/ListItem.astro';
 
 ---
 
@@ -38,11 +41,11 @@ import Quote from '../../components/Quote/Quote.astro'
       }
 
       ul {
-        padding: 1rem 0 0 20px;
+        padding: 1rem 0 0 0;
         li {
           &:not(:last-child)
           {
-            padding-bottom: 10px;
+            padding-bottom: 20px;
           }
           list-style-type: none;
         }
@@ -57,11 +60,11 @@ import Quote from '../../components/Quote/Quote.astro'
     <section class="content-section">
       <section>
         <p>Children spend more of their time in school than any other location. Teachers work hard to understand and meet the needs of multiple children alongside ensuring that they deliver the curriculum. Often teachers are the first to notice that something is not right for a child or young person. At Making Sense Of It we aim to enable teachers to feel confident in identifying mental health difficulties in their students. Following this, we will support school staff to explore what may help the student. With overstretched local mental health services, many teachers report that some children they are concerned about “fall through the gap” and they struggle to access timely support. At Making Sense Of It we work closely with schools to think about how we could help. This could include:</p>
-        <ul>
-          <li><strong>Consultation</strong> to teachers/<abbr title="Special Educational Needs Co-ordinator">SENCOs</abbr>/teaching assistants. This will include a meeting within school with professionals, parents/carers, to explore the areas of difficulty, develop a shared understanding and agree a plan with recomendations.</li>
-          <li><strong>Training</strong> - Whole school or small group training e.g. managing anxiety/depression, bereavement, dealing with disruptive behaviour, autism, attachment in the classroom, hard to reach children, working with parents.</li>
-          <li><strong>Direct work</strong> with individuals or small groups of children</li>
-        </ul>
+        <List>
+          <ListItem><strong>Consultation</strong> to teachers/<abbr title="Special Educational Needs Co-ordinator">SENCOs</abbr>/teaching assistants. This will include a meeting within school with professionals, parents/carers, to explore the areas of difficulty, develop a shared understanding and agree a plan with recomendations.</ListItem>
+          <ListItem><strong>Training</strong> - Whole school or small group training e.g. managing anxiety/depression, bereavement, dealing with disruptive behaviour, autism, attachment in the classroom, hard to reach children, working with parents.</ListItem>
+          <ListItem><strong>Direct work</strong> with individuals or small groups of children</ListItem>
+        </List>
       </section>
       <img src={schoolsImg.src} alt="Child reading a book" width="300" height="350" />
     </section>
@@ -71,12 +74,12 @@ import Quote from '../../components/Quote/Quote.astro'
     <section class="content-section">
       <section>
         <p>We can also work with schools to support them with the development and implementation of whole school mental health / emotional well-being support, including working within:</p>
-        <ul>
-          <li>Special Educational Needs schools</li>
-          <li>Local Authority Primary and Secondary schools</li>
-          <li>Independent schools</li>
-          <li>Residential schools</li>
-        </ul>
+        <List>
+          <ListItem>Special Educational Needs schools</ListItem>
+          <ListItem>Local Authority Primary and Secondary schools</ListItem>
+          <ListItem>Independent schools</ListItem>
+          <ListItem>Residential schools</ListItem>
+        </List>
       </section>
       <img src="/images/Schools.jpg" alt="School supplies on a table" class="imgLeft" width="300" height="300" />
     </section>

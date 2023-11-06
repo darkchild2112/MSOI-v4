@@ -1,10 +1,13 @@
 ---
 
-import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import ServicesLayout from "../../Layouts/ServicesLayout.astro";
 import Quote from '../../components/Quote/Quote.astro'
 
 import brainImg from '../../assets/images/brain.png';
 import supervisionSignpostImg from '../../assets/images/supervision-signposts.jpg';
+
+import List from '../../components/List/List.astro';
+import ListItem from '../../components/List/ListItem.astro';
 
 ---
 
@@ -67,17 +70,17 @@ import supervisionSignpostImg from '../../assets/images/supervision-signposts.jp
       <section>
         <h2>Training</h2>
         <p>At Making Sense Of It we offer a variety of training packages which can be tailored to your needs. This could include training into educational settings, training for other health professionals or training for parents. Some examples of the kind of training packages that we could deliver include:</p>
-        <ul>
-          <li>Understanding specific mental health difficulties e.g. managing anxiety and depression, self-harm in young people</li>
-          <li>Sleep difficulties</li>
-          <li>Bereavement</li>
-          <li>Understanding and supporting children with autism</li>
-          <li>Understanding and managing challenging behaviour</li>
-          <li>Attachment and trauma</li>
-          <li>Dealing with disruptive behaviour</li>
-          <li>Hard to reach children</li>
-          <li>School refusal</li>
-        </ul>
+        <List>
+          <ListItem>Understanding specific mental health difficulties e.g. managing anxiety and depression, self-harm in young people</ListItem>
+          <ListItem>Sleep difficulties</ListItem>
+          <ListItem>Bereavement</ListItem>
+          <ListItem>Understanding and supporting children with autism</ListItem>
+          <ListItem>Understanding and managing challenging behaviour</ListItem>
+          <ListItem>Attachment and trauma</ListItem>
+          <ListItem>Dealing with disruptive behaviour</ListItem>
+          <ListItem>Hard to reach children</ListItem>
+          <ListItem>School refusal</ListItem>
+        </List>
       </section>
       <img src={brainImg.src} alt="picture of a brain" width="300" height="300" />
     </section>	

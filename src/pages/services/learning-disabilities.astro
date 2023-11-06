@@ -1,10 +1,13 @@
 ---
 
-import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import ServicesLayout from "../../Layouts/ServicesLayout.astro";
 import Quote from '../../components/Quote/Quote.astro'
 
 import childPaintedHandsImg from '../../assets/images/cgild-with-painted-hands-cropped.jpg'
 import childBlowingFlowerImg from '../../assets/images/child-blowing-flower.png'
+
+import List from '../../components/List/List.astro';
+import ListItem from '../../components/List/ListItem.astro';
 
 ---
 
@@ -60,13 +63,13 @@ import childBlowingFlowerImg from '../../assets/images/child-blowing-flower.png'
       <section>
         <p>Caring for a child/young person with a disability can be both rewarding and challenging. The needs of the family and the child, can be different and need a tailored or specialist approach. Depending on the level of a child’s learning disability, they may be attending a local mainstream school, a Special Educational Needs school, an independent school, or a residential school. We have experience working in and providing support to all of these educational settings. We aim to bring together all the different parts of a young person’s life to help it make sense to them and their family. We have links with a range of other specialist professionals.</p>
         <p>At Making Sense Of It, we have extensive experience supporting families, children and schools in the following areas:</p>
-        <ul id="ServiceBulletList">
-          <li>Understanding and managing challenging behaviour (including functional analysis of behaviour and the development of positive behaviour support plans)</li>
-          <li>Cognitive and adaptive skills assessments</li>
-          <li>Support in the community</li>
-          <li>Supporting young people with positive peer relationships, managing anxiety, relationships and sex education</li>
-          <li>Parent and wider family support – post-diagnosis support, managing behaviour, sleep difficulties, sibling support</li>
-        </ul>
+        <List>
+          <ListItem>Understanding and managing challenging behaviour (including functional analysis of behaviour and the development of positive behaviour support plans)</ListItem>
+          <ListItem>Cognitive and adaptive skills assessments</ListItem>
+          <ListItem>Support in the community</ListItem>
+          <ListItem>Supporting young people with positive peer relationships, managing anxiety, relationships and sex education</ListItem>
+          <ListItem>Parent and wider family support – post-diagnosis support, managing behaviour, sleep difficulties, sibling support</ListItem>
+        </List>
       </section>
       <img src={childPaintedHandsImg.src} alt="child with paint on their hands" width="400" height="450" />
     </section> 
@@ -81,13 +84,13 @@ import childBlowingFlowerImg from '../../assets/images/child-blowing-flower.png'
       <section>
         <h2 style="margin-top: 0 !important;">Working into schools or residential settings</h2>
         <p>We can offer a variety of support into educational settings and residential settings, including consultation to staff in relation to specific children/young people, whole setting training and therapeutic support packages for either individual children or small groups of children. We can provide services into:  </p>
-        <ul>
-          <li>Special Educational Needs schools</li>
-          <li>Local Authority Primary and Secondary schools</li>
-          <li>Independent schools</li>
-          <li>Residential schools</li>
-          <li>Residential children's homes - Local Authority and independent sector</li>
-        </ul>
+        <List>
+          <ListItem>Special Educational Needs schools</ListItem>
+          <ListItem>Local Authority Primary and Secondary schools</ListItem>
+          <ListItem>Independent schools</ListItem>
+          <ListItem>Residential schools</ListItem>
+          <ListItem>Residential children's homes - Local Authority and independent sector</ListItem>
+        </List>
       </section>
       <img src={childBlowingFlowerImg.src} alt="Child blowing on a flower" width="450" height="400" />
     </section>

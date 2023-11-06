@@ -1,10 +1,13 @@
 ---
 
-import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import ServicesLayout from "../../Layouts/ServicesLayout.astro";
 import Quote from '../../components/Quote/Quote.astro'
 
 import musclesImg from '../../assets/images/child-with-chalk-muscles.jpg';
 import familyUmbrellaImg from '../../assets/images/family-umbrella.jpg';
+
+import List from '../../components/List/List.astro';
+import ListItem from '../../components/List/ListItem.astro';
 
 ---
 
@@ -39,17 +42,6 @@ import familyUmbrellaImg from '../../assets/images/family-umbrella.jpg';
           width: 100%;
         }
       }
-
-      ul {
-        padding: 1rem 0 0 20px;
-        li {
-          &:not(:last-child)
-          {
-            padding-bottom: 10px;
-          }
-          list-style-type: none;
-        }
-      }
     }
   }
 </style>
@@ -59,21 +51,20 @@ import familyUmbrellaImg from '../../assets/images/family-umbrella.jpg';
   <div class="content">
     <section class="content-section">
       <section>
-        <p>Children and families throughout their lives can struggle with a range of different issues. Often these problems may resolve of their own accord but at other times help from a specialist with experience in child development and mental health may be useful. It might be that you are a parent or carer who is worried about your child and would like to either talk to someone yourself, or seek some help for them directly.   You may have noticed a change in their behaviour, or feel concerned that they are becoming withdrawn or seems overly anxious. You may be a young person yourself feeling overwhelmed by difficult thoughts or feelings, and would like to talk to someone directly. At Making Sense Of It we are passionate about supporting children and young people to live fulfilling lives. As experienced Registered Clinical Psychologists, we have learnt through our practice that providing the right support as early as possible is essential. At Making Sense of It, we work with children and young people experiencing a range of mental health difficulties including:</p>
-        <ul>
-          <li>Depression</li>
-          <li>Anxiety</li>
-          <li>Obsessive Compulsive Disorder (OCD)</li>
-          <li>Bereavement</li>
-          <li>Family relationship difficulties</li>
-          <li>Autistic spectrum disorder</li>
-          <li>Attachment difficulties</li>
-          <li>School attendance</li>
-          <li>Trauma / Post traumatic stress disorder (PTSD)</li>
-        </ul>
+        <p>Children and families throughout their lives can struggle with a range of different issues. Often these problems may resolve of their own accord but at other times help from a specialist with experience in child development and mental health may be useful. It might be that you are a parent or carer who is worried about your child and would like to either talk to someone yourself, or seek some help for them directly.   You may have noticed a change in their behaviour, or feel concerned that they are becoming withdrawn or seems overly anxious. You may be a young person yourself feeling overwhelmed by difficult thoughts or feelings, and would like to talk to someone directly. At Making Sense Of It we are passionate about supporting children and young people to live fulfilling lives. As experienced Registered Clinical Psychologists, we have learnt through our practice that providing the right support as early as possible is essential. At Making Sense of It, we work with children and young people experiencing a range of mental health difficulties including:</p>      
+        <List>
+          <ListItem>Depression</ListItem>
+          <ListItem>Anxiety</ListItem>
+          <ListItem>Obsessive Compulsive Disorder (OCD)</ListItem>
+          <ListItem>Bereavement</ListItem>
+          <ListItem>Family relationship difficulties</ListItem>
+          <ListItem>Autistic spectrum disorder</ListItem>
+          <ListItem>Attachment difficulties</ListItem>
+          <ListItem>School attendance</ListItem>
+          <ListItem>Trauma / Post traumatic stress disorder (PTSD)</ListItem>
+        </List>
       </section>
       <img src={musclesImg.src} alt="Child with a chalk board behind with an outline of large muscles" width="400" height="500" />
-      <!-- <img src={familyUmbrellaImg.src} alt="family with a drawn unbrealla over them protecting them from drawn rain" width="300" height="300" />			 -->
     </section>
     <Quote cite="The Mental Health Foundation">
       The emotional well-being of children is just as important as their physical health. Good mental health allows children and young people to develop resilience to cope with whatever life throws at them and grow into well-rounded, healthy adults.
@@ -86,7 +77,6 @@ import familyUmbrellaImg from '../../assets/images/family-umbrella.jpg';
         <h2>Confidentiality</h2>
         <p>All information shared with us during both the assessment and intervention will be treated confidentially. This means that we will not talk about or share information about you or your family with other people unless we are worried that you (or your child/young person) are being harmed or plan to harm themselves or someone else. For more information please see our full confidentiality policy</p>
       </section>
-      <!-- <img src={musclesImg.src} alt="Child with a chalk board behind with an outline of large muscles" /> -->
       <img src={familyUmbrellaImg.src} alt="family with a drawn unbrealla over them protecting them from drawn rain" width="400" height="450" />
     </section>
     <Quote cite="Young minds">

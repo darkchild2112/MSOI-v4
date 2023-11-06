@@ -1,0 +1,34 @@
+---
+import CarretRight from '../Icons/CarretRight.astro'
+---
+
+<style lang="scss">
+  li {
+    display: flex;
+    align-items: top;
+    flex-direction: row;
+    list-style-type: none;
+
+    &:not(:last-child) {
+      padding-bottom: 15px;
+    }
+
+    .carret-right {
+      padding-right: 10px;
+      fill: #E50E17;
+    }
+
+    .text {
+      padding-top: 2px;
+    }
+  }
+</style>
+
+<li>
+  <span class="carret-right">
+    <CarretRight />
+  </span>
+  <span class="text">
+    <slot />
+  </span>
+</li>

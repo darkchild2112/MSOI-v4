@@ -1,10 +1,13 @@
 ---
 
-import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import ServicesLayout from "../../Layouts/ServicesLayout.astro";
 import Quote from '../../components/Quote/Quote.astro'
 
 import autismMnemonic from '../../assets/images/autism-mnemonic.jpg'
 import childFlying from '../../assets/images/child-flying.png'
+
+import List from '../../components/List/List.astro';
+import ListItem from '../../components/List/ListItem.astro';
 
 ---
 
@@ -86,29 +89,29 @@ import childFlying from '../../assets/images/child-flying.png'
       </p>
       <p>Broadly speaking, an autism assessment with us is split into two stages:</p>
       <h2>Stage 1: Initial Assessment and screening phase</h2>
-      <ul>
-        <li>An initial Clinical Psychology screening appointment with you and your child/young person</li>
-        <li>Questionnaire assessment packs sent to parents/carers and education setting</li>
-        <li>A speech and language screening assessment with your child/young person</li>
-        <li>Observation of your child/young person in education setting</li>
-        <li>Multi-disciplinary meeting to review findings</li>
-        <li>Reports compiled and shared</li>
-      </ul>
+      <List>
+        <ListItem>An initial Clinical Psychology screening appointment with you and your child/young person</ListItem>
+        <ListItem>Questionnaire assessment packs sent to parents/carers and education setting</ListItem>
+        <ListItem>A speech and language screening assessment with your child/young person</ListItem>
+        <ListItem>Observation of your child/young person in education setting</ListItem>
+        <ListItem>Multi-disciplinary meeting to review findings</ListItem>
+        <ListItem>Reports compiled and shared</ListItem>
+      </List>
       <p>
         Following the multi-disciplinary meeting a plan will be made with you regarding the next steps and whether 
         to proceed to Stage 2.  Sometimes other issues may be identified in the screening assessment which need 
         to be explored before (or instead) of proceeding to Stage 2.
       </p>
       <h2>Stage 2: Assessment and Formulation Phase</h2>
-      <ul>
-        <li>
+      <List>
+        <ListItem>
           Administration of two standardised assessments; the ADOS 2 (Autism Diagnostic Observation Schedule – second edition) 
           and the ADI-R (Autism Diagnostic Interview - Revised) to learn about your child/young person.
-        </li>
-        <li>Multi-disciplinary discussion of assessment findings</li>
-        <li>Reports compiled</li>
-        <li>Feedback session to discuss outcome of assessment</li>
-      </ul>
+        </ListItem>
+        <ListItem>Multi-disciplinary discussion of assessment findings</ListItem>
+        <ListItem>Reports compiled</ListItem>
+        <ListItem>Feedback session to discuss outcome of assessment</ListItem>
+      </List>
     </section>
     <section class="content-section">
       <section>
