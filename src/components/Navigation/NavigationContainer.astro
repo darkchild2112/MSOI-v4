@@ -15,6 +15,7 @@ import Navigation from './Navigation.astro'
 			left: 0;
 			width: 0;
 			display: flex;
+			height: -webkit-fill-available;
 
 			&.open-nav-menu {
 				animation: slideOpen .50s forwards;
@@ -48,7 +49,6 @@ import Navigation from './Navigation.astro'
 			@media (max-width: $breakpoint-sm) {  
 				background-color: #666;
 				opacity: 0.5;
-				height: 100vh;
 				display: block;
 				width: 30%;
 			}
