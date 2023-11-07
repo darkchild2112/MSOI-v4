@@ -13,8 +13,13 @@ import PaperFamilyImg from '../../assets/images/paper-family-in-hands.png';
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: $breakpoint-sm) {
+    @media screen and (max-width: $breakpoint-lg) {
 			flex-direction: column-reverse;
+      gap: 40px;
+		}
+
+    @media screen and (max-width: $breakpoint-sm) {
+      gap: 20px;
 		}
 
     section {
