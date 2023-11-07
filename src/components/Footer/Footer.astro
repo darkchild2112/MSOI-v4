@@ -7,6 +7,8 @@ import PrinterIcon from '../Icons/PrinterIcon.astro';
 ---
 
 <style lang="scss">
+
+  @import '../../styles/dimensions.scss';
   
   .footer-container {
     background-color: #2E2E2E; 
@@ -37,19 +39,29 @@ import PrinterIcon from '../Icons/PrinterIcon.astro';
       }
     }
 
-    .copyright {
-      float: left;
-    }
+    .footer-text-nav {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      @media screen and (max-width: $breakpoint-sm){
+        flex-direction: column;
+        gap: 10px;
+      }
     
-    .footerNav {
-      float: right;
+      nav {
+        @media screen and (max-width: $breakpoint-sm){
+          text-align: center;
+        }
 
-      a {
-        padding-right: 1rem;
-        text-decoration: underline;
+        a {
+          padding-right: 1rem;
+          text-decoration: underline;
 
-        &:last-child {
-          padding-right: 0;
+          &:last-child {
+            padding-right: 0;
+          }
         }
       }
     }
@@ -76,8 +88,10 @@ import PrinterIcon from '../Icons/PrinterIcon.astro';
       <span class="visually-hidden">Print this page</span>
     </a>
   </div>
-  <p class="copyright">&copy; Copyright { new Date().getFullYear() } - Making Sense Of It Ltd</p>
-  <nav class="footerNav">
-    <a href="pdfs/PrivacyPolicy.pdf" target="_blank" title="Privacy Policy (opens in a new tab)">Privacy Policy</a>
-  </nav>
+  <div class="footer-text-nav">
+    <p>&copy; Copyright { new Date().getFullYear() } - Making Sense Of It Ltd</p>
+    <nav>
+      <a href="pdfs/PrivacyPolicy.pdf" target="_blank" title="Privacy Policy (opens in a new tab)">Privacy Policy</a>
+    </nav>
+  </div>
 </footer>
