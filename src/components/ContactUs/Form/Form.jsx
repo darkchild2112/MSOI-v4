@@ -92,7 +92,7 @@ const Form = () => {
         <div className="buttons">
           { 
             !isloading 
-            ? <Button type={ButtonTypes.SUBMIT} style={ButtonStyles.PRIMARY}>Submit</Button> 
+            ? <Button>Submit</Button> 
             : <LoadingIcon />
           }
         </div>

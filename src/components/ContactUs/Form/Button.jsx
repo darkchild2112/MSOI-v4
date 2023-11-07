@@ -1,32 +1,15 @@
 import './Button.scss';
 
-const Button = ({ id, type, style, fill, children, clickHandler }) => {
-
-  const btnType = type || ButtonTypes.BUTTON;
-  const btnStyle = style || ButtonStyles.PRIMARY;
+const Button = ({ children, clickHandler }) => {
 
   return (
     <button 
-      id={id} 
-      type={btnType} 
-      className={`btn ${btnStyle} ${fill ? 'full-width' : ''}`.trim()} 
+      type="submit"
+      className="btn" 
       onClick={clickHandler}>
       { children }
     </button>
   )
 };
 
-export default Button
-
-export const ButtonTypes = {
-  BUTTON: 'button',
-  SUBMIT: 'submit',
-  RESET: 'reset',
-  LINK: 'link'
-}
-
-export const ButtonStyles = {
-  PRIMARY: 'btn-primary',
-  SECONDARY: 'btn-secondary',
-}
-
+export default Button;
