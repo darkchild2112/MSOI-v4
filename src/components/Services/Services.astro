@@ -24,6 +24,9 @@ services.find(service => service.slug === 'supervision-and-training').image = su
 ---
 
 <style lang="scss">
+
+	@import '../../styles/dimensions.scss';
+
 	section {
 		display: flex;
 		flex-direction: row;
@@ -31,6 +34,10 @@ services.find(service => service.slug === 'supervision-and-training').image = su
 		flex-wrap: wrap;
 		padding: 20px;
 		justify-content: center;
+
+		@media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+			gap: 60px 40px;
+    }
 	}
 
 	p {

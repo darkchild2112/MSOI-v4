@@ -7,6 +7,7 @@ body
 {
 	// font-size: 1rem;
 	/*letter-spacing: 0.5px;*/
+  font-weight: 300;
 }
 
 h1, h2, h3, h4 {
@@ -37,9 +38,14 @@ a {
   }
 }
 
-p {
-  color: #5f5e5e;
+strong {
+  font-weight: 600;
 }
+
+// p {
+//   color: #222121;
+//   line-height: 1.7;
+// }
 
 // p:last-child
 // {

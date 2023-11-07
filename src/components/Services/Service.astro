@@ -1,11 +1,13 @@
 ---
-import ButtonLink from '../Button/ButtonLink.astro'
-import { ButtonStyles } from '../Button/ButtonTypes'
+import LinkButton from '../LinkButton/LinkButton.astro'
 
 const { service } = Astro.props;
 ---
 
 <style lang="scss">
+
+	@import '../../styles/dimensions.scss';
+
   section {
     width: 360px;
     display: flex;
@@ -13,6 +15,10 @@ const { service } = Astro.props;
     justify-content: center;
     align-items: center;
     padding: 0 20px;
+
+    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+      width: 330px;
+    }
     
     img {
       border: 1px solid #eee;
@@ -40,7 +46,7 @@ const { service } = Astro.props;
 
     p {
       text-align: center;
-      min-height: 190px;
+      min-height: 250px;
     }
   }
 </style>
@@ -53,10 +59,10 @@ const { service } = Astro.props;
     <h3>{service.heading}</h3>
   </div>
   <p>{service.text}</p>
-  <ButtonLink buttonStyle={ButtonStyles.SECONDARY} destination={`/services/${service.slug}`} fill={true}>
+  <LinkButton destination={`/services/${service.slug}`} fill={true}>
     Find out more
     <span aria-hidden="true">...</span>
     &nbsp;
     <span class="visually-hidden">about {service.heading}</span>
-  </ButtonLink>
+  </LinkButton>
 </section>
