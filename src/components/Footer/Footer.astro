@@ -49,6 +49,14 @@ import PrinterIcon from '../Icons/PrinterIcon.astro';
         flex-direction: column;
         gap: 10px;
       }
+
+      p {
+        text-wrap: balance;
+
+        @media screen and (max-width: $breakpoint-sm){
+          text-align: center;
+        }
+      }
     
       nav {
         @media screen and (max-width: $breakpoint-sm){
