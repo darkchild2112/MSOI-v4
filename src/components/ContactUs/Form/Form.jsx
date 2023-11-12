@@ -15,7 +15,9 @@ import { useState } from 'react';
 
 const Form = () => {
 
-  const [formData, setFormData] = useState({name: '', email: '', tel: '', message: ''});
+  const defaultFormState = {name: '', email: '', tel: '', message: ''};
+
+  const [formData, setFormData] = useState(defaultFormState);
   const [isloading, setIsLoading] = useState(false);
   const [showError, setShowError] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
