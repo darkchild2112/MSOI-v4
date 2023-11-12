@@ -127,7 +127,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
   function isVisible(element) {
     const rect = element.getBoundingClientRect();
     const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    const verticalCenter = viewHeight / 2;
+    const verticalCenter = viewHeight / 3;
     return rect.top <= verticalCenter && rect.bottom >= verticalCenter;
   }
 </script>
