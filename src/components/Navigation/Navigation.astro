@@ -89,6 +89,9 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
   });
 
   function setActiveLink() {
+
+    console.log(window.location.href);
+
     const navigation = document.querySelector('#navigation');
 
     navigation?.childNodes.forEach((node) => {
@@ -100,6 +103,10 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
         if(hash !== ''){
           const section = document.querySelector(hash);
           isNodeActive = isVisible(section);
+
+          if(isNodeActive){
+            window.history.replaceState(null, null, hash);
+          }
         }
       }
       else {
