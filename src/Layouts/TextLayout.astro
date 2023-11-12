@@ -2,10 +2,12 @@
 
 import BaseLayout from "./BaseLayout.astro";
 
+import Container from "../components/HOC/Container.astro"
+
 ---
 
 <BaseLayout>
-  <div class="container" style="margin-top: 100px;">
+  <Container>
     <slot />
-  </div>
+  </Container>
 </BaseLayout>
