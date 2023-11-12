@@ -23,3 +23,4 @@ jobs:
           username: adminftp@173981490552427
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/beta/
+          local-dir: dist/
