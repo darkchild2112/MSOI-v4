@@ -1,0 +1,30 @@
+
+@font-face {
+  font-family: 'EduTASBeginner';
+  src: url('/fonts/edu-tas-beginner/EduTASBeginner-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/roboto/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'work-sans';
+  src: url('/fonts/work-sans/WorkSans-VariableFont_wght.ttf') format('truetype');
+}
+
+h1, h2, h3, h4 {
+  font-family: "work-sans", "Helvetica Neue", Helvetica;
+  font-weight: 400;
+}
+
+p, a, label, input, textarea, button, li {
+  font-family: "Roboto", "Helvetica Neue", Helvetica;
+}
+
+// p {
+//   //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+//   font-family: "Roboto";
+//   letter-spacing: 0.5px;
+// }

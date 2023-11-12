@@ -1,0 +1,105 @@
+---
+import FacebookIcon from '../Icons/FacebookIcon.astro';
+import TwitterIcon from '../Icons/TwitterIcon.astro';
+import EmailIcon from '../Icons/EmailIcon.astro';
+import PrinterIcon from '../Icons/PrinterIcon.astro';
+
+---
+
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+  
+  .footer-container {
+    background-color: #2E2E2E; 
+    color: white; 
+    padding: 2rem 2rem 4rem 2rem;
+    margin-top: 3rem;
+
+    a {
+       color: white;
+    }
+
+    .social-media-icons {
+      text-align: center;
+      font-size: 3rem;
+      fill: #fff;
+      padding: 0;
+      
+      a {
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:visited {
+          fill: #fff;
+        }
+      }
+    }
+
+    .footer-text-nav {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      @media screen and (max-width: $breakpoint-sm){
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      p {
+        text-wrap: balance;
+
+        @media screen and (max-width: $breakpoint-sm){
+          text-align: center;
+        }
+      }
+    
+      nav {
+        @media screen and (max-width: $breakpoint-sm){
+          text-align: center;
+        }
+
+        a {
+          padding-right: 1rem;
+          text-decoration: underline;
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+</style>
+
+<footer class="container-fluid footer-container">
+  <div class="social-media-icons">
+    <a target="_blank" href="https://www.facebook.com/sharer.php?u=http://www.makingsenseofit.org.uk/" title="Like us on Facebook">
+      <FacebookIcon />
+      <span class="visually-hidden">Like us on Facebook</span>
+    </a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Hello%20world" title="Tweet about us">
+      <TwitterIcon />
+      <span class="visually-hidden">Tweet about us</span>
+    </a>
+    <a target="_blank" href="mailto:info@makingsenseofit.org.uk" title="Send us an email">
+      <EmailIcon />
+      <span class="visually-hidden">Send us an email</span>
+    </a>
+    <a target="_blank" href="javascript: print()" title="Print this page">
+      <PrinterIcon />
+      <span class="visually-hidden">Print this page</span>
+    </a>
+  </div>
+  <div class="footer-text-nav">
+    <p>&copy; Copyright { new Date().getFullYear() } - Making Sense Of It Ltd</p>
+    <nav>
+      <a href="pdfs/PrivacyPolicy.pdf" target="_blank" title="Privacy Policy (opens in a new tab)">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>

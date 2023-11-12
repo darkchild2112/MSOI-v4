@@ -1,0 +1,65 @@
+---
+
+import Container from '../HOC/Container.astro';
+import HomePageContentSection from '../HOC/HomePageContentSection.astro';
+
+import hcpcLogo from '../../assets/images/accreditations/hcpc.jpg';
+import bpsLogo from '../../assets/images/accreditations/bpslogo.svg';
+
+const acreditations = [
+  {
+    id: 'HCPCLogo',
+    url: 'http://www.hcpc-uk.org',
+    logo: {
+      image: hcpcLogo,
+      alt: 'Health and Care Profesions Council Logo',
+      width: 139,
+      height: 142
+    }
+  },
+  {
+    id: 'bpsLogo',
+    url: 'http://www.bps.org.uk',
+    logo: {
+      image: bpsLogo,
+      alt: 'British Psychological Society Logo',
+      width: 300,
+      height: 107
+    }
+  }
+]
+
+---
+
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  section {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    @media screen and (max-width: $breakpoint-sm) {
+			flex-direction: column;
+      align-items: center;
+      gap: 50px;
+		}
+  }
+</style>
+
+<Container id="acreditations">
+  <HomePageContentSection title="Acreditations" visuallyHiddenTitle={true}>
+    <p class="visually-hidden">Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
+    <section>
+      {
+        acreditations.map(item => (
+          <a href={item.url}>
+            <img src={item.logo.image.src} alt={item.logo.alt} width={item.logo.width} height={item.logo.height} />
+          </a>
+        ))
+      }
+    </section>
+  </HomePageContentSection>
+</Container>

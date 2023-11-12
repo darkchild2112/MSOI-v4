@@ -1,0 +1,89 @@
+---
+import ButtonLink from '../Button/ButtonLink.astro'
+import { ButtonStyles } from '../Button/ButtonTypes'
+import Container from '../HOC/Container.astro'
+import HomePageContentSection from '../HOC/HomePageContentSection.astro';
+---
+
+<style lang="scss">
+
+	@import '../../styles/dimensions.scss';
+
+  #banner	{
+		background-color: #F9FDFE;
+		background-image: url('../images/stock-photo-many-colorful-hands-with-smileys-204520951.jpg');
+		background-position: center 0px;
+		background-repeat: no-repeat;
+		background-size: auto;
+		background-color: #fff;
+		border-bottom: 3px solid #27bbdf;
+		height: 450px;
+
+		@media screen and (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl){
+			background-position: -100px 30px;
+		}
+
+		@media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+			background-position: center 50px;
+		}
+
+		@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md){
+			background-position: -100px 100px;
+		}
+
+		@media screen and (max-width: $breakpoint-sm){
+			background-position: -200px 150px;
+			height: 650px;
+		}
+
+		section {
+			padding-top: 50px;
+			padding-left: 20px;
+
+			@media screen and (max-width: $breakpoint-sm){
+				padding-top: 10px;
+				padding-left: 0;
+			}
+
+			h1 {
+				font-size: 2.5rem;
+				padding-bottom: 5px;
+				text-wrap: pretty;
+
+				@media screen and (max-width: $breakpoint-sm){
+					text-align: center;
+				}
+			}
+
+			p {
+				width: 75%;
+
+				@media screen and (min-width: $breakpoint-xl) and (max-width: $breakpoint-xxl){
+					width: 80%;
+				}
+
+				@media screen and (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl){
+					width: 90%;
+				}
+
+				@media screen and (max-width: $breakpoint-lg) {
+					width: 100%;
+				}
+
+				@media screen and (max-width: $breakpoint-sm){
+					text-align: center;
+				}
+			}
+		}
+	}
+</style>
+
+<div id="banner">
+  <Container>
+		<section>
+			<h1>Psychology Services for children, families and schools</h1> 
+			<p>Based in Worthing, West Sussex, Making Sense Of It Ltd provide Clinical Psychology services to children, families and schools in the Sussex area. Specialising in autism assessments in Sussex.</p> 
+			<!-- <ButtonLink buttonStyle={ButtonStyles.PRIMARY} destination="#Services">Find out more...</ButtonLink> -->
+		</section>
+  </Container>
+</div>

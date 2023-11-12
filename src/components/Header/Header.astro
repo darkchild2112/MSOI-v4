@@ -1,0 +1,39 @@
+---
+
+import Container from '../HOC/Container.astro';
+import Logo from './Logo.astro';
+import NavigationContainer from '../Navigation/NavigationContainer.astro';
+
+---
+
+<style lang="scss">
+
+@import '../../styles/dimensions.scss';
+
+  header {
+    border: 0;
+    border-bottom: 2px solid #27BBDF;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      @media (max-width: $breakpoint-sm) {  
+				align-items: center;
+			}
+    }
+  }  
+</style>
+
+<header>
+  <Container>
+    <div>
+      <Logo />
+      <NavigationContainer />
+    </div>
+  </Container>
+</header>

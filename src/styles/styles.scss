@@ -1,0 +1,39 @@
+@import './fonts.scss';
+@import './forms.scss';
+@import './accessibility.scss';
+
+
+body
+{
+  font-weight: 300;
+}
+
+h1, h2, h3, h4 {
+	color: #222121;
+}
+
+h2, h3, h4 {
+	padding-top: 20px;
+}
+
+a {
+	color: #2D3286;
+	text-decoration: underline;
+  font-weight: 400;
+
+  &:hover {
+    color: #2F3184;
+  }
+
+  &:visited {
+    color: #2D3286;
+  }
+
+  &:active {
+    color: #2F3184;
+  }
+}
+
+strong {
+  font-weight: 600;
+}

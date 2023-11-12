@@ -1,0 +1,54 @@
+---
+import companyLogo from "../../assets/images/company-logo.png"
+---
+
+<style lang="scss">
+  a {
+		padding: 0;
+    margin: .5rem 0 .5rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-decoration: none;
+
+    &:focus-visible{
+      outline: 2px solid #fd0;
+      background-color: #fd0;
+      outline-offset: -1px;
+    }
+
+    .logo img {
+      height:68px;
+      width: auto;
+    }
+
+    .company-name {
+      font-weight: 700;
+      font-size:1.5rem;
+      padding-left: 8px;
+      line-height: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      text-wrap: nowrap;
+
+      .top {
+        color:#27bbdf;
+      }
+
+      .bottom {
+        color:#2d3286;
+      }
+    }
+	}
+</style>
+
+<a href="/">
+  <section class="logo">
+    <img src={companyLogo.src} alt="Making Sense Of It Ltd Logo" width="68" height="65">
+  </section>
+  <section class="company-name">
+    <span class="top">Making</span>
+    <span class="bottom">Sense Of It</span>
+  </section>
+</a>

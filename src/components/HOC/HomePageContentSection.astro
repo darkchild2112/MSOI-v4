@@ -1,0 +1,21 @@
+---
+const { title, visuallyHiddenTitle } = Astro.props;
+---
+
+<style lang="scss">
+  section {
+    padding-top: 100px;
+
+    h2 {
+      padding-bottom: 25px;
+      font-size: 30px;
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+</style>
+
+<section>
+  { title && <h2 class={`${visuallyHiddenTitle === true ? 'visually-hidden' : null}`}>{ title }</h2> }
+  <slot />
+</section>

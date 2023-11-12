@@ -1,0 +1,74 @@
+---
+
+import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import Quote from '../../components/Quote/Quote.astro'
+
+// this image needs to be cropped
+import girlWithGlasses from '../../assets/images/girl-with-glasses.jpg';
+
+---
+
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  .content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .content-section {
+      display: flex;
+      flex-direction: space-between;
+
+      @media screen and (max-width: $breakpoint-lg){
+        & {
+          flex-direction: column;
+        }
+      }
+      
+      img {
+        margin: 1rem 0 0 2rem;
+
+        @media screen and (max-width: $breakpoint-lg){
+          margin: 2rem auto 0 auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sm){
+          width: 100%;
+        }
+      }
+
+      ul {
+        padding: 1rem 0 0 20px;
+        li {
+          &:not(:last-child)
+          {
+            padding-bottom: 10px;
+          }
+          list-style-type: none;
+        }
+      }
+    }
+  }
+</style>
+
+<ServicesLayout>
+  <h1>Cognitive Assessments</h1>
+  <div class="content">
+    <section class="content-section">
+      <section>
+        <p>A cognitive assessment can be helpful when a young person is struggling with learning in school or having difficulties in specific areas. The young person will engage in a series of activities, puzzles or tasks which have been specifically designed to gain a fuller understanding of a young person’s strengths and weaknesses in a variety of areas (e.g. ability to solve problems, remember information, interpret language, or process information). These cognitive assessment tools are standardised which means that clinical psychologists can make comparisons in skills and abilities between other young people of the same age. </p>
+        <p>Alongside this face-to-face assessment, further information will be gathered from school and home via various questionnaires. The information gathered from the direct assessments, questionnaires and clinical interview is combined to help further understand the young person’s strengths and weaknesses. This can then be used to guide learning within school or help tailor interventions.</p>
+        <h2>What is involved in a Cognitive Assessment?</h2>
+        <p>The process may vary for different children and will be fully discussed with you prior to starting the assessment. Typically the assessment begins with an initial appointment with parents/carers to gather relevant background information and a developmental history. Following this, we will offer an appointment with your child/young person (lasting approximately 2 hours) to complete the assessment. This can occur over one session or split across appointments depending on the child. Information may also be sought from the young person's school. The assessment is then interpreted and a written report including recommendations will be produced and shared. A 50-minute feedback session to discuss the assessment and recommendations is then offered. </p>
+      </section>
+      <img src={girlWithGlasses.src} alt="A girl wearing glasses, reading a book with a drawn lighbulb over her head" width="400" height="500" />
+    </section>
+    <Quote cite="Tonks et al, 2014">
+      A child’s cognitive/neuropsychological profile can explain issues as diverse as self-esteem, behaviour, 
+      and learning, is important in tracking progress and informing decision making
+    </Quote>
+  </div>
+</ServicesLayout>
