@@ -1,5 +1,5 @@
 
-import Button, { ButtonTypes, ButtonStyles } from './Button';
+import Button from './Button';
 import TextBox, { TextBoxTypes } from './TextBox';
 import MessageBox from './MessageBox';
 import Alert, { AlertTypes } from './Alert';
