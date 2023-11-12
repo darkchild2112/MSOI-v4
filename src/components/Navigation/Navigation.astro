@@ -1,0 +1,132 @@
+---
+
+import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigationData.js';
+---
+
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  nav {
+    display: flex;
+    gap: 5px;
+
+    @media (max-width: $breakpoint-md) {  
+      flex-direction: column;
+      width: 70%;
+      background-color: #fff;
+      overflow-y: hidden;
+    }
+
+    a {
+      color: #222121;
+      padding: 15px 15px 15px 15px;
+      line-height: 20px;
+      background-color: transparent;
+      transition: background-color 0.2s ease-in-out;
+      transition: color 0.1s ease-in-out;
+      text-decoration: none;
+
+      @media (max-width: $breakpoint-md) {  
+        padding: 10px;
+      }
+
+      &:hover:not(.active) {
+        background-color: #27BBDF;		
+        color: #fff;	
+        opacity: 0.6;
+      }
+
+      &:visited {
+        text-decoration: none;
+      }
+
+      &.active {
+        background-color: #27BBDF;		
+        color: #fff;	
+      }
+
+      &:focus-visible {
+        outline: 2px solid transparent;
+        background-color: #fd0;
+        color: #000;
+      }
+    }
+
+    .services-link
+      {
+        padding-left: 20px;
+
+        @media (min-width: $breakpoint-md) {  
+          display: none;
+        }
+      }
+  }
+</style>
+
+<nav id="navigation">
+  <a href="/#body">Home</a>
+  <a href="/#services">Services</a>
+  { 
+    ServicesNavigationData.map((service) => (
+        <a href={service.link} class="services-link">{service.text}</a>
+      )
+    )
+  }
+  <a href="/#whatWeDo">About Us</a>
+  <a href="/#whoWeAre">Who We Are</a>
+  <a href="/#contact">Contact Us</a>
+</nav>
+
+<script>
+  let scrollTimeout;
+
+  setActiveLink();
+
+  document.addEventListener('scroll', function () {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => setActiveLink(), 25);
+  });
+
+  function setActiveLink() {
+    const navigation = document.querySelector('#navigation');
+
+    navigation?.childNodes.forEach((node) => {
+
+      let isNodeActive = false;
+        
+      if(window.location.pathname === '/'){
+        const hash = node.hash === '#body' ? '#banner' : node.hash;
+        if(hash !== ''){
+          const section = document.querySelector(hash);
+          isNodeActive = isVisible(section);
+
+          if(isNodeActive){
+            window.history.replaceState(null, null, hash);
+          }
+        }
+      }
+      else {
+        isNodeActive = node.pathname === window.location.pathname;
+      }
+
+      setActiveNode(node, isNodeActive);
+    });
+  };
+
+  function setActiveNode(node, isNodeActive) {
+    if (isNodeActive) {
+        node.classList.add('active');
+    } 
+    else {
+      node.classList.remove('active');
+    }
+  }
+
+  function isVisible(element) {
+    const rect = element.getBoundingClientRect();
+    const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    const verticalCenter = viewHeight / 3;
+    return rect.top <= verticalCenter && rect.bottom >= verticalCenter;
+  }
+</script>

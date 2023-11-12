@@ -1,40 +1,65 @@
 ---
 
+import Container from '../HOC/Container.astro';
+import HomePageContentSection from '../HOC/HomePageContentSection.astro';
+
+import hcpcLogo from '../../assets/images/accreditations/hcpc.jpg';
+import bpsLogo from '../../assets/images/accreditations/bpslogo.svg';
+
 const acreditations = [
   {
     id: 'HCPCLogo',
     url: 'http://www.hcpc-uk.org',
-    logo: 'images/hcpc.jpg',
-    alt: 'Health and Care Profesions Council Logo'
+    logo: {
+      image: hcpcLogo,
+      alt: 'Health and Care Profesions Council Logo',
+      width: 139,
+      height: 142
+    }
   },
   {
     id: 'bpsLogo',
     url: 'http://www.bps.org.uk',
-    logo: 'images/bpslogo.svg',
-    alt: 'British Psychological Society Logo'
+    logo: {
+      image: bpsLogo,
+      alt: 'British Psychological Society Logo',
+      width: 300,
+      height: 107
+    }
   }
 ]
 
 ---
 
-<div id="acreditations" class="container text-center pageSection">
-		
-  <h2 class="sr-only text-center">Acreditations</h2>
+<style lang="scss">
 
-  <p class="sr-only">Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
+  @import '../../styles/dimensions.scss';
 
-  <div class="row">
+  section {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 
-    {
-      acreditations.map(item => (
-        <div class="col-sm-6 logoContainer">
+    @media screen and (max-width: $breakpoint-sm) {
+			flex-direction: column;
+      align-items: center;
+      gap: 50px;
+		}
+  }
+</style>
+
+<Container id="acreditations">
+  <HomePageContentSection title="Acreditations" visuallyHiddenTitle={true}>
+    <p class="visually-hidden">Dr Jodie Tilley and Dr Helena Bligh are both proud members of the Health and Care Professions Council (HCPC) and the British Psychological Society (BPS). Please click the links below to find out about these organisations.</p>
+    <section>
+      {
+        acreditations.map(item => (
           <a href={item.url}>
-            <img id={item.id} src={item.logo} alt={item.alt} />
+            <img src={item.logo.image.src} alt={item.logo.alt} width={item.logo.width} height={item.logo.height} />
           </a>
-        </div>
-      ))
-    }
-
-  </div>
-
-</div>
+        ))
+      }
+    </section>
+  </HomePageContentSection>
+</Container>

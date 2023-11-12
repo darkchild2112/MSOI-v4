@@ -1,0 +1,31 @@
+.formButton {
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  padding: 12px 60px; 
+	font-size: 16px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: #27bbdf;
+  border-color: #27bbdf;
+  font-weight: bold;
+  color: white;
+  border: 1px solid transparent;
+
+  transition: background-color .2s ease-in-out;
+
+  &:hover {
+    background-color: #2d3286;
+  }
+
+  &:focus-visible{
+    outline: 2px solid transparent;
+    background-color: #fd0;
+    color: #000 !important;
+    border-color: #fd0;
+  }
+}

@@ -1,0 +1,54 @@
+
+@import '../../../styles/dimensions.scss';
+
+form {
+  .form {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 20px 50px;
+
+    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+      padding: 20px 0px;
+    }
+
+    @media screen and (max-width: $breakpoint-sm){
+      flex-direction: column;
+      padding: 20px 10px;
+      gap: 23px;
+    }
+
+    .text-fields{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+
+      @media screen and (max-width: $breakpoint-sm){
+        width: 100%;
+      }
+    }
+
+    .message-box {
+      width: 50%;
+
+      @media screen and (max-width: $breakpoint-sm){
+        width: 100%;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 20px;
+
+    @media screen and (max-width: $breakpoint-sm){
+      width: 100%;
+      flex-direction: column;
+      padding: 0 10px;
+    }
+  }
+}

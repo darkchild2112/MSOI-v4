@@ -1,34 +1,58 @@
 ---
 
 import { services } from './services.js'
+import Container from '../HOC/Container.astro';
+import HomePageContentSection from '../HOC/HomePageContentSection.astro';
+
+import Service from './Service.astro';
+
+import schoolsImg from '../../assets/images/child-reading-cropped.jpg';
+import familyUmbrellaImg from "../../assets/images/family-umbrella.jpg";
+import childWithPaintedHandsImg from "../../assets/images/cgild-with-painted-hands-cropped.jpg";
+import girlWithGlassesImg from "../../assets/images/girl-with-glasses.jpg";
+import autismMnemonicImg from "../../assets/images/autism-mnemonic.jpg";
+import supervisionImg from "../../assets/images/supervision-signposts.jpg";
+
+// Add imported images
+services.find(service => service.slug === 'schools').image = schoolsImg;
+services.find(service => service.slug === 'family-mental-health').image = familyUmbrellaImg;
+services.find(service => service.slug === 'learning-disabilities').image = childWithPaintedHandsImg;
+services.find(service => service.slug === 'cognitive-assessments').image = girlWithGlassesImg;
+services.find(service => service.slug === 'autism-assessments').image = autismMnemonicImg;
+services.find(service => service.slug === 'supervision-and-training').image = supervisionImg;
 
 ---
 
-<div id="Services" class="container-fluid text-center pageSection">
-		
-  <div class="container">
-        
-    <h2>Services</h2>
-    
-    <p id="ServicesIntroText">At Making Sense Of It we offer a range of services. The following sections give some brief detail about each of these services we offer.</p>
-    
-    <div class="row">
+<style lang="scss">
 
-      { 
-        services.map((item) => (
-          <div class="col-sm-4">
-            <div class="innerServiceContainer">
-              <a href={item.link}>
-                <img src={item.image} class="img-responsive"  alt={item.imageAlt} />
-              </a>
-              <h3>{item.heading}</h3>
-              <p>{item.text}</p>
-              <a href={item.link} class="btn btn-secondary">Find out more...</a>
-            </div>
-          </div>
-        ))
-      }
-      
-    </div>
-  </div>
-</div>
+	@import '../../styles/dimensions.scss';
+
+	section {
+		display: flex;
+		flex-direction: row;
+		gap: 100px 40px;
+		flex-wrap: wrap;
+		padding: 20px;
+		justify-content: center;
+
+		@media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+			gap: 60px 40px;
+    }
+	}
+
+	p {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+</style>
+
+<Container id="services">	
+	<HomePageContentSection title="Services">
+		<p>At Making Sense Of It we offer a range of services. The following sections give some brief detail about each of these services we offer.</p>
+		<section>
+			{ 
+				services.map(service => (<Service service={service} />))
+			}
+		</section>
+	</HomePageContentSection>  
+</Container>

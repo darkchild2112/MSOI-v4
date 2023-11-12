@@ -1,0 +1,49 @@
+---
+
+import BaseLayout from "../Layouts/BaseLayout.astro";
+import Container from "../components/HOC/Container.astro"
+import ServicesNavigation from "../components/ServicesNavigation/ServicesNavigation.astro"
+
+---
+
+<style lang="scss">
+
+  @import '../styles/dimensions.scss';
+
+  .services-container {
+    display: flex;
+    gap: 2rem;
+    padding-top: 30px;
+
+    .nav-wrapper {
+      @media screen and (max-width: $breakpoint-md) {
+        & {
+          display: none;
+        }
+      }
+    }
+
+    .services-content {
+      width: 80%;
+
+      @media screen and (max-width: $breakpoint-md) {
+        & {
+          width: 100%;
+        }
+      }
+    }
+  }
+</style>
+
+<BaseLayout>
+  <Container>
+    <div class="services-container">
+      <section class="nav-wrapper">
+        <ServicesNavigation />
+      </section>
+      <div class="services-content">
+        <slot />
+      </div>
+    </div>
+  </Container>
+</BaseLayout>

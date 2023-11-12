@@ -1,0 +1,68 @@
+---
+import LinkButton from '../LinkButton/LinkButton.astro'
+
+const { service } = Astro.props;
+---
+
+<style lang="scss">
+
+	@import '../../styles/dimensions.scss';
+
+  section {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+
+    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+      width: 330px;
+    }
+    
+    img {
+      border: 1px solid #eee;
+      padding: 1px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      margin: 0 auto;
+      max-width: 100%;
+      vertical-align: middle;
+      box-sizing: border-box;
+      display: block;
+    }
+
+    div {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+
+      h3 {
+        text-align: center;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    p {
+      text-align: center;
+      min-height: 250px;
+    }
+  }
+</style>
+
+<section>
+  <a href={`/services/${service.slug}`} tabindex="-1">
+    <img src={service.image.src} alt={service.imageAlt} width={300} height={300} />
+  </a>
+  <div>
+    <h3>{service.heading}</h3>
+  </div>
+  <p>{service.text}</p>
+  <LinkButton destination={`/services/${service.slug}`} fill={true}>
+    Find out more
+    <span aria-hidden="true">...</span>
+    &nbsp;
+    <span class="visually-hidden">about {service.heading}</span>
+  </LinkButton>
+</section>

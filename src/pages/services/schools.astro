@@ -1,0 +1,90 @@
+---
+
+import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import schoolsImg from '../../assets/images/child-reading-cropped.jpg';
+import Quote from '../../components/Quote/Quote.astro'
+
+import List from '../../components/List/List.astro';
+import ListItem from '../../components/List/ListItem.astro';
+
+---
+
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  .content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .content-section {
+      display: flex;
+
+      @media screen and (max-width: $breakpoint-lg){
+        & {
+          flex-direction: column;
+        }
+      }
+      
+      img {
+        margin: 1rem 0 0 2rem;
+
+        @media screen and (max-width: $breakpoint-lg){
+          margin: 2rem auto 0 auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sm){
+          width: 100%;
+        }
+      }
+
+      ul {
+        padding: 1rem 0 0 0;
+        li {
+          &:not(:last-child)
+          {
+            padding-bottom: 20px;
+          }
+          list-style-type: none;
+        }
+      }
+    }
+  }
+</style>
+
+<ServicesLayout>
+  <h1>Schools</h1>
+  <div class="content">
+    <section class="content-section">
+      <section>
+        <p>Children spend more of their time in school than any other location. Teachers work hard to understand and meet the needs of multiple children alongside ensuring that they deliver the curriculum. Often teachers are the first to notice that something is not right for a child or young person. At Making Sense Of It we aim to enable teachers to feel confident in identifying mental health difficulties in their students. Following this, we will support school staff to explore what may help the student. With overstretched local mental health services, many teachers report that some children they are concerned about “fall through the gap” and they struggle to access timely support. At Making Sense Of It we work closely with schools to think about how we could help. This could include:</p>
+        <List>
+          <ListItem><strong>Consultation</strong> to teachers/<abbr title="Special Educational Needs Co-ordinator">SENCOs</abbr>/teaching assistants. This will include a meeting within school with professionals, parents/carers, to explore the areas of difficulty, develop a shared understanding and agree a plan with recomendations.</ListItem>
+          <ListItem><strong>Training</strong> - Whole school or small group training e.g. managing anxiety/depression, bereavement, dealing with disruptive behaviour, autism, attachment in the classroom, hard to reach children, working with parents.</ListItem>
+          <ListItem><strong>Direct work</strong> with individuals or small groups of children</ListItem>
+        </List>
+      </section>
+      <img src={schoolsImg.src} alt="Child reading a book" width="300" height="350" />
+    </section>
+    <Quote cite="Department of Education (2016) Guidance: Mental health and behavior in schools">
+      The role that schools play in promoting the resilience of their pupils is important, particularly so for some children where their home life is less supportive. School should be a safe and affirming place for children where they can develop a sense of belonging and feel able to trust and talk openly with adults about their problems
+    </Quote>
+    <section class="content-section">
+      <section>
+        <p>We can also work with schools to support them with the development and implementation of whole school mental health / emotional well-being support, including working within:</p>
+        <List>
+          <ListItem>Special Educational Needs schools</ListItem>
+          <ListItem>Local Authority Primary and Secondary schools</ListItem>
+          <ListItem>Independent schools</ListItem>
+          <ListItem>Residential schools</ListItem>
+        </List>
+      </section>
+      <img src="/images/Schools.jpg" alt="School supplies on a table" class="imgLeft" width="300" height="300" />
+    </section>
+    <Quote cite="Newman,T. (2004), What works in building resilience? Barnardo’s">
+      For 10 – 20 year olds school is one of the key environments in which mental health problems can be identified and mental health support can be provided
+    </Quote>
+  </div>
+</ServicesLayout>

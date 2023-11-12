@@ -1,0 +1,39 @@
+---
+import MobileMenuIcon from '../Icons/MobileMenuIcon.astro'
+
+const { id } = Astro.props;
+---
+
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  button {
+    display: none;
+
+    @media (max-width: $breakpoint-md) {  
+      display: block;
+      border: none;
+      background-color: transparent;
+      margin: 15px;
+      fill: #27bbdf;
+      padding: 10px;
+
+      &:focus{
+        border: none;
+        outline: none;
+      }
+
+      &:focus-visible{
+        outline: 2px solid transparent;
+        background-color: #fd0;
+        fill: #000;
+      }
+    }
+  }
+
+</style>
+
+<button id={id} type="button" aria-label="Show Navigation">
+	<MobileMenuIcon size={2} />
+</button>
