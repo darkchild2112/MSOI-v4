@@ -9,7 +9,7 @@ const { destination, fill } = Astro.props;
     border-width: 1px;
     border-color: #27bbdf;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     box-shadow: 2px 2px 5px #ccc;
     padding: 12px 12px; 
     font-size: 14px;
@@ -19,11 +19,12 @@ const { destination, fill } = Astro.props;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    // transition: border-color .5s ease-in-out;
-    // transition: color .5s ease-in-out;
+    transition: border-color .2s ease-in-out;
+    transition: color .1s ease-in-out;
     font-weight: bold;
     background-color: white;
     color: #27bbdf;
+    font-family: "Roboto";
 
     &:hover {
       border-color: #2d3286;
