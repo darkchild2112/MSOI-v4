@@ -1,4 +1,4 @@
-/* Register your custom font family and tell the browser where to find it. */
+
 @font-face {
   font-family: 'EduTASBeginner';
   src: url('/fonts/edu-tas-beginner/EduTASBeginner-VariableFont_wght.ttf') format('truetype');
@@ -17,6 +17,10 @@
 h1, h2, h3, h4 {
   font-family: "work-sans", "Helvetica Neue", Helvetica;
   font-weight: 400;
+}
+
+p, a, label, input, textarea, button, li {
+  font-family: "Roboto", "Helvetica Neue", Helvetica;
 }
 
 // p {
