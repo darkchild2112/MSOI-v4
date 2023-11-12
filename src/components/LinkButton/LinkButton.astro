@@ -3,8 +3,11 @@ const { destination, fill } = Astro.props;
 ---
 
 <style lang="scss">
-  .btn {
+  .linkButton {
     border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #27bbdf;
     text-decoration: none;
     letter-spacing: 1px;
     box-shadow: 2px 2px 5px #ccc;
@@ -16,6 +19,16 @@ const { destination, fill } = Astro.props;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
+    // transition: border-color .5s ease-in-out;
+    // transition: color .5s ease-in-out;
+    font-weight: bold;
+    background-color: white;
+    color: #27bbdf;
+
+    &:hover {
+      border-color: #2d3286;
+      color: #2d3286;
+    }
 
     &:focus-visible{
       outline: 2px solid transparent;
@@ -25,31 +38,11 @@ const { destination, fill } = Astro.props;
     }
   }
 
-  .btn-secondary {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #27bbdf;
-    // transition: border-color .5s ease-in-out;
-    // transition: color .5s ease-in-out;
-    font-weight: bold;
-    background-color: white;
-    color: #27bbdf;
-
-    &:visited {
-      color: #27bbdf;
-    }
-
-    &:hover {
-      border-color: #2d3286;
-      color: #2d3286;
-    }
-  }
-
   .full-width {
     width: 100%;
   }
 </style>
 
-<a href={destination} class={`btn btn-secondary ${fill ? 'full-width' : null}`}>
+<a href={destination} class={`linkButton ${fill ? 'full-width' : null}`}>
   <slot />
 </a>

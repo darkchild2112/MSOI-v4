@@ -17,39 +17,23 @@ h2, h3, h4 {
 }
 
 a {
-	color: blue;
 	color: #2D3286;
-	text-decoration: none;
+	text-decoration: underline;
+  font-weight: 400;
 
   &:hover {
-    color: blue;
     color: #2F3184;
-    text-decoration: none;
   }
 
   &:visited {
-    color: blue;
     color: #2D3286;
-    text-decoration: none;
   }
 
   &:active {
-    color: blue;
     color: #2F3184;
-    text-decoration: none;
   }
 }
 
 strong {
   font-weight: 600;
 }
-
-// p {
-//   color: #222121;
-//   line-height: 1.7;
-// }
-
-// p:last-child
-// {
-// 	margin-bottom: 0;
-// }

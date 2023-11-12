@@ -5,7 +5,7 @@ const Button = ({ children, clickHandler }) => {
   return (
     <button 
       type="submit"
-      className="btn" 
+      className="formButton" 
       onClick={clickHandler}>
       { children }
     </button>

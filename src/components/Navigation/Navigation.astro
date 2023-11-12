@@ -26,6 +26,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
       transition: background-color 0.5s ease-in-out;
       transition: color 0.1s ease-in-out;
       font-family: "Roboto", "Helvetica Neue", Helvetica;
+      text-decoration: none;
 
       @media (max-width: $breakpoint-md) {  
         padding: 10px;
@@ -89,9 +90,6 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
   });
 
   function setActiveLink() {
-
-    console.log(window.location.href);
-
     const navigation = document.querySelector('#navigation');
 
     navigation?.childNodes.forEach((node) => {

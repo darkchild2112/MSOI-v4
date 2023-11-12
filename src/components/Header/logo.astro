@@ -3,13 +3,14 @@ import companyLogo from "../../assets/images/company-logo.png"
 ---
 
 <style lang="scss">
-  .logo-container {
+  a {
 		padding: 0;
     margin: .5rem 0 .5rem 0;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-end;
+    text-decoration: none;
 
     &:focus-visible{
       outline: 2px solid #fd0;
@@ -42,7 +43,7 @@ import companyLogo from "../../assets/images/company-logo.png"
 	}
 </style>
 
-<a class="logo-container" href="/">
+<a href="/">
   <section class="logo">
     <img src={companyLogo.src} alt="Making Sense Of It Ltd Logo" width="68" height="65">
   </section>
