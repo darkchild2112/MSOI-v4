@@ -19,30 +19,37 @@ import { Image } from 'astro:assets';
       margin-bottom: 50px;
     }
 
-    img	{
-		  margin: 0 50px;
+    .image-container {
 
       @media screen and (max-width: $breakpoint-sm){
-        margin: 0 auto;
-		  }
-	  }
+          margin: 0 auto;
+      }
 
-    h3 {
-    	margin-bottom: 10px;
-    	padding: 0 30px 5px 0;
-      font-weight: 600;
+      img	{
+        margin: 0 50px;
+      }
+    }
 
-      @media (max-width: $breakpoint-sm) {  
-        padding: 15px 0px 10px 0;
-        text-align: center;
+    .text-container {
+      h3 {
+        margin-bottom: 10px;
+        padding: 0 30px 5px 0;
+        font-weight: 600;
+
+        @media (max-width: $breakpoint-sm) {  
+          padding: 15px 0px 10px 0;
+          text-align: center;
+        }
       }
     }
   }
 </style>
 
 <div>
-  <Image src={ profile.image } alt={ profile.imageAlt } width={200} height={245} />
-  <section>
+  <section class="image-container">
+    <img src={ profile.image.src } alt={ profile.imageAlt } width={200} height={245} />
+  </section>
+  <section class="text-container">
     <h3 set:html={profile.name}></h3>
     <section set:html={profile.blurb}></section>
   </section>
