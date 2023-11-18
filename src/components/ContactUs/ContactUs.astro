@@ -5,7 +5,15 @@ import Form from './Form/Form.jsx';
 ---
 
 <style lang="scss">
+
+  @import '../../styles/dimensions.scss';
   
+  p {
+    @media screen and (max-width: $breakpoint-sm) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
 </style>
 
 <Container id="contact">

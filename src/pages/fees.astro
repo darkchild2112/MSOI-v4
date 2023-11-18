@@ -4,6 +4,18 @@ import TextLayout from "../layouts/TextLayout.astro";
 
 ---
 
+<style lang="scss">
+
+  @import '../styles/dimensions.scss';
+
+  h1, h2, h3, p {
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+  }
+</style>
+
 <TextLayout>
   <h1>Fee Structure</h1>
   <p>All fees will be discussed with you at the initial telephone consultation or via email.</p>

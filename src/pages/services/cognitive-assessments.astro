@@ -12,6 +12,13 @@ import girlWithGlasses from '../../assets/images/girl-with-glasses.jpg';
 
   @import '../../styles/dimensions.scss';
 
+  h1, h2, h3, p {
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+  }
+
   .content {
     margin-top: 20px;
     display: flex;
