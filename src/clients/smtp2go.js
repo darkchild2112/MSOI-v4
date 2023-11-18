@@ -1,14 +1,18 @@
 export const sendMail = async (htmlTemplate) => {
+
+  // TODO: move boolean to config file
+  const email = getEmail(false);
+
   const payload = {
     api_key: "api-42FEC8125309494BB3194CA24D35D347",
-    to: ["Info <info@ben-abbott.co.uk>"],
-    sender: `MSOI Enquiry Form <info@ben-abbott.co.uk>`,
+    to: [`Info <${email}>`],
+    sender: `MSOI Enquiry Form <${email}>`,
     subject: "MSOI Enquiry Form",
     html_body: htmlTemplate,
     custom_headers: [
       {
         "header": "Reply-To",
-        "value": "Info <info@makingsenseofit.org.uk>"
+        "value": `Info <${email}>`
       }
     ],
   };
@@ -22,3 +26,5 @@ export const sendMail = async (htmlTemplate) => {
     body: JSON.stringify(payload)
   });
 }
+
+const getEmail = (isDev) => isDev ? 'info@ben-abbott.co.uk' : 'info@makingsenseofit.org.uk';
