@@ -22,5 +22,5 @@ jobs:
           server: 123-ftp.aphid-gateway.net
           username: adminftp@173981490552427
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/beta/
+          server-dir: public_html/
           local-dir: dist/
