@@ -81,14 +81,16 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
 <script>
   let scrollTimeout;
 
-  setActiveLink();
-
-  document.addEventListener('scroll', function () {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => setActiveLink(), 25);
-  });
+  setTimeout(() => {
+    setActiveLink();
+    document.addEventListener('scroll', function () {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => setActiveLink(), 25);
+    });
+  }, 500);
 
   function setActiveLink() {
+
     const navigation = document.querySelector('#navigation');
 
     navigation?.childNodes.forEach((node) => {
@@ -116,7 +118,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
 
   function setActiveNode(node, isNodeActive) {
     if (isNodeActive) {
-        node.classList.add('active');
+      node.classList.add('active');
     } 
     else {
       node.classList.remove('active');
