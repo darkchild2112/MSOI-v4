@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .visually-hidden-focusable:not(:focus):not(:focus-within):not(caption), .visually-hidden:not(caption) {
   position: absolute!important;
 }
@@ -30,18 +32,16 @@
 
 a {
   &:focus-visible{
-    outline: 2px solid #fd0;
+    outline: 2px solid $accessibility-highlight;
     outline-offset: -1px;
-    background-color: #fd0;
-    color: #000 !important;
+    background-color: $accessibility-highlight;
+    color: $accessibility-text !important;
   }
 }
 
 input, textarea {
   &:focus-visible{
-    outline: 3px solid transparent;
-    color: #000 !important;
-    border-color: #fd0;
-    border-width: 1px;
+    outline: 3px solid $accessibility-highlight;
+    color: $accessibility-text !important;
   }
 }
