@@ -131,4 +131,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
     const verticalCenter = viewHeight / 3;
     return rect.top <= verticalCenter && rect.bottom >= verticalCenter;
   }
+
+  const isDev = import.meta.env.DEV;
+  console.log(`isDev: ${isDev}`)
 </script>

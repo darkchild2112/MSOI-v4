@@ -1,7 +1,8 @@
 export const sendMail = async (htmlTemplate) => {
 
-  // TODO: move boolean to config file
-  const email = getEmail(false);
+  const isDev = import.meta.env.DEV;
+
+  const email = getEmail(isDev);
 
   const payload = {
     api_key: "api-42FEC8125309494BB3194CA24D35D347",
