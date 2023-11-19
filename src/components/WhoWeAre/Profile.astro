@@ -53,7 +53,7 @@ const { profile } = Astro.props;
 
 <div>
   <section class="image-container">
-    <img src={ profile.image.src } alt={ profile.imageAlt } width={200} height={245} />
+    <img src={ profile.image.src } alt={ profile.imageAlt } role="presentation" width={200} height={245} />
   </section>
   <section class="text-container">
     <h3 set:html={profile.name}></h3>
