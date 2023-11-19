@@ -3,6 +3,9 @@ const { title, visuallyHiddenTitle } = Astro.props;
 ---
 
 <style lang="scss">
+
+  @import '../../styles/colors.scss';
+
   section {
     padding-top: 100px;
 
@@ -11,6 +14,7 @@ const { title, visuallyHiddenTitle } = Astro.props;
       font-size: 30px;
       text-align: center;
       font-weight: 500;
+      color: $primary-heading;
     }
   }
 </style>

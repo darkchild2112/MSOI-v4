@@ -6,8 +6,23 @@ import Container from "../components/HOC/Container.astro"
 
 ---
 
+<style lang="scss">
+   
+  @import '../styles/dimensions.scss';
+
+  div {
+    padding-top: 30px;
+
+    @media screen and (max-width: $breakpoint-sm) {
+      padding-top: 20px;
+    }
+  }
+</style>
+
 <BaseLayout>
   <Container>
-    <slot />
+    <div>
+      <slot />
+    </div>
   </Container>
 </BaseLayout>

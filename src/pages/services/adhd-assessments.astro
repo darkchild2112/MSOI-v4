@@ -1,0 +1,77 @@
+---
+
+import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import Quote from '../../components/Quote/Quote.astro'
+
+import autismMnemonic from '../../assets/images/autism-mnemonic.jpg'
+import childFlying from '../../assets/images/child-flying.png'
+
+import List from '../../components/List/List.astro';
+import ListItem from '../../components/List/ListItem.astro';
+
+---
+
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  h1, h2, h3, p {
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+  }
+
+  .content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .content-section {
+      display: flex;
+
+      @media screen and (max-width: $breakpoint-lg){
+        & {
+          flex-direction: column;
+        }
+      }
+      
+      img {
+        margin: 1rem 0 0 2rem;
+
+        @media screen and (max-width: $breakpoint-lg){
+          margin: 2rem auto 0 auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sm){
+          width: 100%;
+        }
+      }
+
+      ul {
+        padding: 1rem 0 0 20px;
+        li {
+          &:not(:last-child)
+          {
+            padding-bottom: 10px;
+          }
+          list-style-type: none;
+        }
+      }
+    }
+  }
+</style>
+
+<ServicesLayout>
+  <h1><abbr title="Attention Deficit Hyperactivity Disorder">ADHD</abbr> Assessments (Coming Soon)</h1>
+  <div class="content">
+    <section class="content-section">
+      <section>
+        <p>
+          
+        </p>      
+      </section>
+    </section>
+  </div>
+</ServicesLayout>

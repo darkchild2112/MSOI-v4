@@ -1,6 +1,7 @@
 @import './fonts.scss';
 @import './forms.scss';
 @import './accessibility.scss';
+@import './colors.scss';
 
 
 body
@@ -9,7 +10,7 @@ body
 }
 
 h1, h2, h3, h4 {
-	color: #222121;
+	color: $primary-heading;
 }
 
 h2, h3, h4 {
@@ -36,4 +37,20 @@ a {
 
 strong {
   font-weight: 600;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h2 {
+  color: $secondary-heading;
+  font-weight: 600;
+}
+
+
+
+ul.no-bullet {
+  padding-left: 20px;
+  list-style-type: none;
 }
