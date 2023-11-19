@@ -13,7 +13,7 @@ export default defineConfig({
   //   '/services.htm?serviceId=6': '/services/supervision-and-training'
   // },
   redirects: {
-    '/services.htm?serviceId=1': '/services/schools',
+    'services.htm?serviceId=1': '/services/schools',
   },
   integrations: [react()]
 });
