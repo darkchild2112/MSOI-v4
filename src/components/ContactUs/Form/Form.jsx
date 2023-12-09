@@ -26,6 +26,7 @@ const Form = () => {
     event.preventDefault();
 
     setIsLoading(true);
+
     setShowSuccess(false);
     setShowError(false);
 
@@ -34,6 +35,11 @@ const Form = () => {
 
     setShowSuccess(response.status === 200);
     setShowError(response.status !== 200);
+
+    if(response.status === 200){
+      setFormData(defaultFormState);
+    }
+
     setIsLoading(false);
   }
 
@@ -52,6 +58,7 @@ const Form = () => {
             <TextBox 
               id="name" 
               type={TextBoxTypes.TEXT} 
+              value={formData.name}
               label="Name: (Required)" 
               placeholder="Enter your name" 
               maxlength="250" 
@@ -61,6 +68,7 @@ const Form = () => {
             <TextBox 
               id="email" 
               type={TextBoxTypes.EMAIL} 
+              value={formData.email}
               label="Email: (Required)" 
               placeholder="Enter your email address" 
               maxlength="250" 
@@ -70,6 +78,7 @@ const Form = () => {
             <TextBox 
               id="tel" 
               type={TextBoxTypes.TEL} 
+              value={formData.tel}
               label="Telephone:" 
               placeholder="Enter your telephone number" 
               maxlength="14" 
@@ -80,6 +89,7 @@ const Form = () => {
           <div className="message-box">
             <MessageBox 
               id="message" 
+              value={formData.message}
               rows="5" 
               label="Message: (Required)" 
               cols="30" 

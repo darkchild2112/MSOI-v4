@@ -1,6 +1,6 @@
 import './TextBox.scss'
 
-const TextBox = ({ id, label, placeholder, maxLength, required, type, disabled, updateHandler }) => {
+const TextBox = ({ id, label, placeholder, maxLength, required, type, disabled, updateHandler, value }) => {
   
   return (
     <section className="text-box">
@@ -9,6 +9,7 @@ const TextBox = ({ id, label, placeholder, maxLength, required, type, disabled, 
         id={id} 
         type={type} 
         name={id} 
+        value={value}
         placeholder={placeholder} 
         maxLength={maxLength} 
         aria-required={required} 
