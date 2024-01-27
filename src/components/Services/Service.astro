@@ -52,7 +52,9 @@ const { service } = Astro.props;
 </style>
 
 <section>
-  <img src={service.image.src} alt={service.imageAlt} role="presentation" width={300} height={300} />
+  <a href={`/services/${service.slug}`}>
+    <img src={service.image.src} alt={service.imageAlt} role="presentation" width={300} height={300} />
+  </a>
   <div>
     <h3>{service.heading}</h3>
   </div>
