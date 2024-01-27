@@ -19,8 +19,8 @@ jobs:
       - run: npm run build  
       - uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: 123-ftp.aphid-gateway.net
-          username: adminftp@173981490552427
+          server: ftp.makingsenseofit.org.uk
+          username: adminftp@makingsenseofit.org.uk
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/
           local-dir: dist/
