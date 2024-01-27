@@ -22,6 +22,6 @@ jobs:
           server: ftp.makingsenseofit.org.uk
           username: adminftp@makingsenseofit.org.uk
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/
+          server-dir: /
           local-dir: dist/
           dangerous-clean-slate: true
