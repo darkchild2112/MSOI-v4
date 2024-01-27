@@ -1,9 +1,9 @@
 export const services = [
   {
-    slug: "autism-assessments",
-    heading: "Autism Assessment and Diagnosis Service in Sussex",
+    slug: "autism-adhd-assessments",
+    heading: "Autism and ADHD Assessment Services and Support",
     imageAlt: "Autism Acronym - Always Unique totally intelligent sometimes mysterious",
-    text: "At Making Sense Of It, we have joined with Speech and Language Therapists (SALT) to offer a multidisciplinary assessment and diagnosis service. Giving an autism diagnosis to a child involves detailed and comprehensive assessment of all areas of their life. Our assessments follow NICE guidelines as closely as possible.",
+    text: "At Making Sense of It, we offer  both autism and ADHD assessments and post-diagnosis/ongoing therapeutic support. Assessing a young person for autism or ADHD, involves a detailed and comprehensive assessment of all areas of their life. Our assessments follow NICE guidelines.",
   },
   {
     slug: 'family-mental-health',

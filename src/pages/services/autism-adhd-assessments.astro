@@ -1,0 +1,224 @@
+---
+
+import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import Quote from '../../components/Quote/Quote.astro'
+
+import autismMnemonic from '../../assets/images/autism-mnemonic.jpg'
+import childFlying from '../../assets/images/child-flying.png'
+
+import List from '../../components/List/List.astro';
+import ListItem from '../../components/List/ListItem.astro';
+
+---
+
+<style lang="scss">
+
+  @import '../../styles/dimensions.scss';
+
+  h1, h2, h3, p {
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+  }
+
+  .extra-top-padding {
+    padding-top: 1.5rem;
+  }
+
+  .content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .content-section {
+      display: flex;
+
+      @media screen and (max-width: $breakpoint-lg){
+        & {
+          flex-direction: column;
+        }
+      }
+
+      h2 {
+        padding-top: 0;
+      }
+      
+      img {
+        margin: .5rem 0 0 2rem;
+
+        @media screen and (max-width: $breakpoint-lg){
+          margin: 2rem auto 0 auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sm){
+          width: 100%;
+        }
+      }
+
+      ul {
+        padding: 1rem 0 0 20px;
+        li {
+          &:not(:last-child)
+          {
+            padding-bottom: 10px;
+          }
+          list-style-type: none;
+        }
+      }
+    }
+  }
+</style>
+
+<ServicesLayout>
+  <h1>Autism and <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> Assessment Service and Support</h1>
+  <div class="content">
+    <section class="content-section">
+      <section>
+        <p>
+          Parents/carers often approach our service when they are questioning whether their young person may be autistic or 
+          have <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr>.  At Making sense of it, when there is a 
+          question around either <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr>, autism or both, the first 
+          step is a screening assessment. We call this initial appointment a Neurodevelopmental Screening assessment. 
+        </p>
+        <p>
+          A Neurodevelopmental Screening Assessment helps us to ensure that we only progress to a full diagnostic assessment 
+          if there is enough evidence to indicate that this is required. We will take this decision together with you and your 
+          young person (for older young people). If the outcome is to proceed for further assessment, this does not guarantee 
+          a diagnosis will be given. However, in this situation we will share our understanding of your young person and our 
+          thinking around any recommendations / interventions that may be helpful. 
+        </p>
+        <p>
+          The process of discovering whether your child is autistic or has <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> 
+          can feel overwhelming. We will help you to navigate this journey together. Below is an outline of what is included in the 
+          initial screening assessment and the full autism, <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> or 
+          combined assessment pathways.  
+        </p>      
+      </section>
+      <img src={autismMnemonic.src} alt="Autism Mnemonic; Always, Unique, Totally, Intelligent, Sometimes, Mysterious" role="presentation" width="300" height="350" />
+    </section>
+    <section>
+      <h2>Neurodevelopmental Screening Assessment: £330</h2>
+      <p>
+        This takes place before a full diagnostic assessment and is an opportunity to meet with you and your child to 
+        explore your concerns, gather background information (also gained via questionnaires sent prior to the appointment) 
+        and answer any questions you may have. These appointments typically last 90 minutes.
+        We will then decide together which type of further assessment might be best. Below is some further information about 
+        what these further assessments might involve and an idea of the costs.
+      </p>
+      <h2>Full Multi-disciplinary Autism diagnostic assessment - £2,350</h2>
+      <p>
+        At Making Sense Of It, we have joined with Speech and Language Therapists to develop a multidisciplinary 
+        assessment and diagnosis service. Our assessments follow the 
+        <a href="https://www.nice.org.uk/guidance/cg128" title="NICE Guidelines for the recognition and management of ADHD (opens in a new tab)" target="_blank">
+          <abbr title="National Institute for Health and Care Excellence">NICE</abbr> guidelines <span class="visually-hidden">(opens in a new tab)</span>
+        </a>. 
+        This assessment involves further appointments with a Clinical Psychologist and Speech and language therapist spread over 
+        several face-to-face appointments. During these appointments a number of standardised assessments take place including:
+      </p>
+      <List>
+        <ListItem>Autism Diagnostic Interview (ADI-R) – a standardised interview completed with parents, by Clinical Psychologist, looking in detail at various aspects of development (3-4 hours – this can occur remotely if this is preferred)</ListItem>
+        <ListItem>Autism Diagnostic Observation Schedule (ADOS-II) - a standardised assessment completed face-to-face with child/young person</ListItem>
+      </List>
+      <p class="extra-top-padding">Alongside this, the following are included:</p>
+      <List>
+        <ListItem>Speech and Language assessment and where possible observation in education setting</ListItem>
+        <ListItem>Completion of additional questionnaires – parent, young person and education</ListItem>
+        <ListItem>Multi-disciplinary discussion of assessment findings</ListItem>
+        <ListItem>Feedback appointment with Lead Practitioner</ListItem>
+        <ListItem>Detailed written report outlining each part of the assessment, our understanding of the young person, the diagnostic outcome and recommendations</ListItem>
+        <ListItem>A follow up appointment 3-4 weeks after the report has been shared – this is a chance to reflect on the process of assessment, ask any questions and think about further support</ListItem>
+      </List>
+      <h2>Combined Autism and <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> diagnostic assessment - £2,930</h2>
+      <p>
+        Where assessment for both <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> and autism is indicated 
+        during the screening assessment, a combined assessment can be offered and includes the following:
+      </p>
+      <List>
+        <ListItem>Autism Diagnostic Interview (ADI-R) – a standardised interview completed with parents, by Clinical Psychologist, looking in detail at various aspects of development (3-4 hours)</ListItem>
+        <ListItem>Autism Diagnostic Observation Schedule (ADOS-II) - a standardised assessment completed with child/young person</ListItem>
+        <ListItem><abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> specific clinical interview parent/carer and young person</ListItem>
+        <ListItem>A computer based assessment will be administered called a Qb check (further information provided at the time)</ListItem>
+        <ListItem>Speech and Language assessment and where possible observation in education</ListItem>
+        <ListItem>Completion of <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> & autism specific questionnaires – parent, young person and education</ListItem>
+        <ListItem>Multi-disciplinary discussion of assessment findings</ListItem>
+        <ListItem>Feedback appointment with Lead Practitioner</ListItem>
+        <ListItem>Detailed written report outlining each part of the assessment, our understanding of the young person, the diagnostic outcome and recommendations</ListItem>
+        <ListItem>A follow up appointment 3-4 weeks after the report has been shared – this is a chance to reflect on the process of assessment, ask any questions and think about further support</ListItem>
+      </List>
+      <h2>Post diagnostic support</h2>
+      <p>
+        Discovering that you are, or your young person is, autistic or have 
+        <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> can be an emotional process. Having an explanation 
+        for the difficulties that your child/young person has been experiencing can bring a sense of relief. It can also leave 
+        you with lots of questions. There is a wealth of information available to help you learn more about autism / 
+        <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> and what this might mean for you and your young person 
+        / child. We will share some ideas with you in the feedback appointment.
+      </p>
+      <p>
+        Some young people and adults find it helpful to meet with a professional who has experience working with autistic people 
+        to help them make sense of their diagnosis and explore how to embrace this and overcome any challenges they face. 
+        At Making Sense of It we believe that being autistic brings many strengths and we aim to help a young person and their 
+        family to discover all of these aspects of themselves.
+      </p>
+      <p>At Making Sense of It we offer post-diagnostic support services and would be happy to discuss this further with you.</p>
+    </section> 
+    <section class="content-section">
+      <section>
+        <h2>Ongoing therapeutic support</h2>
+        <p>
+          Many autistic children/young people and their families, benefit from having a diagnosis and an understanding of their 
+          profile of strengths and needs. We know that young people who identify as neurodivergent often experience challenges 
+          including high anxiety and low mood. Research has shown that traditional therapeutic approaches often need to be 
+          tailored for young people who are autistic or have <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr>. 
+          Supporting young people who are neurodivergent is an area of specialism for Making Sense of It. Whether you have had an 
+          assessment with us or your diagnosis was received elsewhere, we would welcome you to get in touch if you would like further 
+          support. Some people prefer not to get a formal diagnosis, but may self-identify as neurodivergent. We fully respect this 
+          and a diagnosis is not necessary to access support with us.
+        </p>
+      </section>
+      <img src={childFlying.src} alt="Child pretending to fly through the air" role="presentation" width="250" height="250" />
+    </section>
+    <section>
+      <h2>Further information about autism, <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> and the language we use</h2>
+      <p>
+        <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> and autism are types of neurodivergence or neurodevelopmental
+         difference. There are many different ways to talk about neurodiversity or neurodivergence. These terms are generally considered
+          to be umbrella terms which encompass a range of skills, abilities and also struggles.
+        </p>
+      <p>
+        The term autism (also sometimes referred to as autism spectrum disorder/condition) covers a huge range of presentations, 
+        skills and difficulties. The preferred language around neurodiversity differs within communities and professional services. 
+        Some people prefer to use person-first language (person with autism) others prefer to use identity first language (autistic 
+        person). We are keen to ensure we use the language that feels most comfortable for each family we work with. Children and 
+        young people who might receive a diagnosis of autism typically will have difficulties in three areas: social interaction, 
+        communication and restrictive/repetitive behaviours.
+      </p>
+      <p>
+        Giving an autism diagnosis to a child/young person involves detailed and comprehensive assessment of all areas of their 
+        life. Unfortunately the assessment for a diagnosis of autism is based upon a deficit or ‘difference’ focussed model. 
+        This means that the assessment must overtly focus on areas that are challenging for a young person or with which they 
+        really struggle and compare these to diagnostic thresholds and criterion.
+      </p>
+      <p>
+        <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> is a neurodevelopmental difference. 
+        All of us can have struggles sitting still, paying attention, managing impulses or focusing. Children 
+        and young people who might receive a diagnosis of <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> 
+        may have persistent difficulties in these areas that make daily life tricky. There are three main ways 
+        that <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> presents in young people, which focuses 
+        on whether their struggles are within the area of inattention, over-activity/impulsivity or both.  
+      </p>
+      <p>
+        <a href="https://www.nice.org.uk/guidance/cg128" title="NICE Guidelines for the recognition and management of ADHD (opens in a new tab)" target="_blank">
+          <abbr title="National Institute for Health and Care Excellence">NICE</abbr> guidelines for the recognition and management of <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> <span class="visually-hidden">(opens in a new tab)</span>
+        </a>
+      </p>
+    </section>
+    <section class="extra-top-padding">
+      <Quote cite="S.L. Coelho, 2011">
+        Autism, is part of my child, it's not everything he is. My child is so much more than a diagnosis
+      </Quote>
+    </section>
+  </div>
+</ServicesLayout>

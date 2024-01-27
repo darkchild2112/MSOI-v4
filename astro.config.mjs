@@ -4,5 +4,8 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()]
+  integrations: [react()],
+  redirects: {
+    '/services/autism-assessments': '/services/autism-adhd-assessments'
+  }
 });
