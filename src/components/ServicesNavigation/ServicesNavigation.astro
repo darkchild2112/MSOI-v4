@@ -43,27 +43,14 @@ import { ServicesNavigationData } from './ServicesNavigationData.js'
   }
 </style>
 
-<nav id="servicesNav">
+<nav>
   { 
-    ServicesNavigationData.map((service) => (
-        <a href={service.link}>{service.text}</a>
-      )
+    ServicesNavigationData.map((service) => 
+       (<a 
+          href={service.link} 
+          class={service.link == Astro.props.pathname ? "active" : null}>
+          {service.text}
+        </a>)
     )
   }
 </nav>
-
-<script>
-  const location = window.location.pathname || '';
-  const navigationLinks = document.querySelectorAll('#servicesNav a');
-
-  navigationLinks.forEach((node) => {
-
-    console.log(node.pathname, location);
-
-    if (node.pathname === location) {
-      node.classList.add('active');
-    } else {
-      node.classList.remove('active');
-    }
-  });
-</script>

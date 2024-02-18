@@ -39,7 +39,7 @@ import ServicesNavigation from "../components/ServicesNavigation/ServicesNavigat
   <Container>
     <div class="services-container">
       <section class="nav-wrapper">
-        <ServicesNavigation />
+        <ServicesNavigation pathname={Astro.url.pathname} />
       </section>
       <div class="services-content">
         <slot />
