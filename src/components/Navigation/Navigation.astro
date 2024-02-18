@@ -91,16 +91,19 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
 
   function setActiveLink() {
 
-    const navigation = document.querySelector('#navigation');
+    const navigationLinks = document.querySelectorAll('#navigation a');
 
-    navigation?.childNodes.forEach((node) => {
+    navigationLinks?.forEach((node) => {
 
       let isNodeActive = false;
         
       if(window.location.pathname === '/'){
+
         const hash = node.hash === '#body' ? '#banner' : node.hash;
         if(hash !== ''){
+
           const section = document.querySelector(hash);
+
           isNodeActive = isVisible(section);
 
           if(isNodeActive){

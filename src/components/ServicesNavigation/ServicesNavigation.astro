@@ -54,18 +54,13 @@ import { ServicesNavigationData } from './ServicesNavigationData.js'
 
 <script>
   const location = window.location.pathname || '';
-  const navigation = document.querySelector('#servicesNav');
+  const navigationLinks = document.querySelectorAll('#servicesNav a');
 
-  updateActiveLink();
-
-  function updateActiveLink()
-  {
-    navigation.childNodes.forEach((node) => {
-      if (node.pathname === location) {
-        node.classList.add('active');
-      } else {
-        node.classList.remove('active');
-      }
-    });
-  }
+  navigationLinks.forEach((node) => {
+    if (node.pathname === location) {
+      node.classList.add('active');
+    } else {
+      node.classList.remove('active');
+    }
+  });
 </script>
