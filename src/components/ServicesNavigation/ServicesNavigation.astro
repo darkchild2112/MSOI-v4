@@ -57,6 +57,9 @@ import { ServicesNavigationData } from './ServicesNavigationData.js'
   const navigationLinks = document.querySelectorAll('#servicesNav a');
 
   navigationLinks.forEach((node) => {
+
+    console.log(node.pathname, location);
+
     if (node.pathname === location) {
       node.classList.add('active');
     } else {
