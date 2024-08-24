@@ -28,4 +28,4 @@ export const sendMail = async (htmlTemplate) => {
   });
 }
 
-const getEmail = (isDev) => isDev ? 'info@ben-abbott.co.uk' : 'info@makingsenseofit.org.uk';
+const getEmail = (isDev) => isDev ? 'dev@ben-abbott.co.uk' : 'info@makingsenseofit.org.uk';
