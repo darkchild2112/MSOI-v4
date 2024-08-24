@@ -52,3 +52,49 @@ ul.no-bullet {
   padding-left: 20px;
   list-style-type: none;
 }
+
+ul.no-bullet-padding {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+ul.no-bullet-top-padding {
+  padding: 0px;
+  padding-top: 10px;
+  list-style-type: none;
+}
+
+div.table-overflow {
+  overflow-x: scroll;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: collapse;
+
+  thead {
+    background-color: #27B9E7;
+    color: white;
+    th {
+      padding: 1rem;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #ccc;
+      td {
+        padding: 1rem;
+        vertical-align: top;
+      }
+    }
+  }
+
+}
+
+
+
+
