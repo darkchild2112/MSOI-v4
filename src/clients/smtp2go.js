@@ -5,7 +5,7 @@ export const sendMail = async (htmlTemplate) => {
   const email = getEmail(isDev);
 
   const payload = {
-    api_key: "api-42FEC8125309494BB3194CA24D35D347",
+    api_key: "api-1CE54936098E4216A02249D1F3C2C7A4",
     to: [`Info <${email}>`],
     sender: `MSOI Enquiry Form <${email}>`,
     subject: "MSOI Enquiry Form",
