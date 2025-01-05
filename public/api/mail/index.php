@@ -8,8 +8,8 @@
 
 	if($apiKeyRequestParam == $apiKey && substr($_SERVER['HTTP_REFERER'], 0, strlen($allowedDomain)) == $allowedDomain)
 	{
-		$to = "darkchild2112@googlemail.com";
-		//$to = "info@makingsenseofit.org.uk";
+		//$to = "darkchild2112@googlemail.com";
+		$to = "info@makingsenseofit.org.uk";
 		$from = $_POST['email'];
 		$name = $_POST['name'];
 		$tel = $_POST['telephone'];
