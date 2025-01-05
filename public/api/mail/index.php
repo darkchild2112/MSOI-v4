@@ -40,6 +40,6 @@
 	header("HTTP/1.1 " . $statusCode);
 	header('Content-Type: application/json');
 	//echo encode_json(array("apiKey" => $_POST['apiKey']));
-	echo "{ \"apiKey\": \"" . $_POST['apiKey'] . "\" }";
+	echo "{ \"apiKey\": \"" . $_POST['apiKey'] . "\", \"email\": \"" . $_POST['email'] . "\" }";
 	exit;
 ?>
