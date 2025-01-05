@@ -5,7 +5,9 @@
 	//header('Access-Control-Allow-Origin: *'); // Remove when live
 	$statusCode = "";
 
-	if($_POST['apiKey'] == $apiKey /*&& substr($_SERVER['HTTP_REFERER'], 0, strlen($allowedDomain)) == $allowedDomain*/)
+	$apiKeyRequestParam = $_POST['apiKey'];
+
+	if($apiKeyRequestParam == $apiKey /*&& substr($_SERVER['HTTP_REFERER'], 0, strlen($allowedDomain)) == $allowedDomain*/)
 	{
 		$to = "darkchild2112@googlemail.com";
 		//$to = "info@makingsenseofit.org.uk";
@@ -40,6 +42,6 @@
 	header("HTTP/1.1 " . $statusCode);
 	header('Content-Type: application/json');
 	//echo encode_json(array("apiKey" => $_POST['apiKey']));
-	echo "{ \"apiKey\": \"" . $_POST['apiKey'] . "\", \"email\": \"" . $_POST['email'] . "\" }";
+	echo "{ \"apiKey\": \"" . $apiKeyRequestParam . "\", \"email\": \"" . $_POST['email'] . "\" }";
 	exit;
 ?>
