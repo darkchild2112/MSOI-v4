@@ -40,8 +40,7 @@
 	}
 
 	header("HTTP/1.1 " . $statusCode);
-	header('Content-Type: application/json');
-	//echo encode_json(array("apiKey" => $_POST['apiKey']));
-	echo "{ \"apiKey\": \"" . $apiKeyRequestParam . "\", \"email\": \"" . $_POST['email'] . "\" }";
+	// header('Content-Type: application/json');
+	// echo "{ \"apiKey\": \"" . $apiKeyRequestParam . "\", \"email\": \"" . $_POST['email'] . "\" }";
 	exit;
 ?>
