@@ -5,7 +5,7 @@
 	//header('Access-Control-Allow-Origin: *'); // Remove when live
 	$statusCode = "";
 
-	if($_POST['apiKey'] == $apiKey && substr($_SERVER['HTTP_REFERER'], 0, strlen($allowedDomain)) == $allowedDomain)
+	if($_POST['apiKey'] == $apiKey /*&& substr($_SERVER['HTTP_REFERER'], 0, strlen($allowedDomain)) == $allowedDomain*/)
 	{
 		$to = "darkchild2112@googlemail.com";
 		//$to = "info@makingsenseofit.org.uk";
