@@ -1,6 +1,5 @@
 <?php 
-
-	$apiKey = "6624bb0e-bb78-42c3-83f3-1e95aba0cae0";
+	$apiKey = "6f384e7b-8527-48c7-bf83-62462d02b439";
 	$allowedDomain = "http://www.makingsenseofit.org.uk";
 	header('Access-Control-Allow-Origin: *'); // Remove when live
 	$statusCode = "";

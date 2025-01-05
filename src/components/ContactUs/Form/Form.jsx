@@ -7,7 +7,7 @@ import LoadingIcon from '../../Icons/LoadingIcon';
 
 import './Form.scss'
 
-import { sendMail } from '../../../clients/smtp2go';
+import { sendMail } from '../../../clients/localApi';
 import { htmlEmailTemplate } from './htmlEmailTemplate';
 import { useState } from 'react';
 
@@ -30,8 +30,7 @@ const Form = () => {
     setShowSuccess(false);
     setShowError(false);
 
-    const template = htmlEmailTemplate(formData.name, formData.email, formData.tel, formData.message);
-    const response = await sendMail(template);
+    const response = await sendMail(formData.email, formData.name, formData.tel, formData.message);
 
     setShowSuccess(response.status === 200);
     setShowError(response.status !== 200);
