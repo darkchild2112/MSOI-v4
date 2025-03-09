@@ -1,6 +1,13 @@
 ---
 
 import TextLayout from "../layouts/TextLayout.astro";
+import feeStructure from "../constants/fee-structure";
+
+let gbp = new Intl.NumberFormat('en-gb', {
+    style: 'currency',
+    currency: 'GBP',
+    minimumFractionDigits: 0
+});
 
 ---
 
@@ -25,7 +32,7 @@ import TextLayout from "../layouts/TextLayout.astro";
     help.
   </p>
   <h2>Assessments</h2>
-  <p>Initial assessment – £240</p>
+  <p>Initial assessment – { gbp.format(feeStructure.InitialAssessment) }</p>
   <p>This includes:</p>
   <ul>
     <li>Two 50 minute appointments involving an initial discussion to gather relevant background and developmental history.</li>
@@ -41,14 +48,14 @@ import TextLayout from "../layouts/TextLayout.astro";
     choose to have a follow-up session to discuss the assessment outcome and recommendations more fully.
   </p>
 
-  <p>Assessment Feedback session – £120</p>
+  <p>Assessment Feedback session – { gbp.format(feeStructure.AssessmentFeedbackSession) }</p>
   <p>
     A 50 minute session to discuss the assessment outcome, recommendations and any on-going therapeutic 
     support / interventions. This appointment can be with or without the young person present, depending on 
     circumstances. If ongoing appointments are indicated this will be discussed during the assessment feedback 
     appointment.
   </p>
-  <p>Initial assessment (including review of previous assessments) – £360</p>
+  <p>Initial assessment (including review of previous assessments) – { gbp.format(feeStructure.InitialAssessmentWithPreviousAssessmentsReview) }</p>
   <p>This includes:</p>
   <ul>
     <li>Reading and making sense of previous comprehensive reports/assessments from other professionals prior to your session to inform the assessment process.</li>
@@ -56,9 +63,9 @@ import TextLayout from "../layouts/TextLayout.astro";
     <li>A thorough assessment of the difficulties</li>
     <li>A collaborative plan for treatment/interventions</li>
   </ul> 
-  <p>Assessment Feedback session if requested – £120</p>
+  <p>Assessment Feedback session if requested – { gbp.format(feeStructure.PostAssessmentFollowUpSessions) }</p>
   <h2>On-going Psychological Therapy</h2>
-  <p>50 minute follow up sessions – £120</p>
+  <p>50 minute follow up sessions – { gbp.format(feeStructure.OnGoingTherapyFollowUpSessions) }</p>
   <p>
     The number of psychological therapy sessions will vary according to need and will always be agreed with you in advance, and regularly reviewed with you.
   </p>
@@ -67,7 +74,14 @@ import TextLayout from "../layouts/TextLayout.astro";
     If clinically related telephone, email and report/letter-writing is required there will be a charge for this work. This will discussed with you in advance.
   </p>
   <h2>School / Network Consultation</h2>
-  <p>90 minutes appointment and written summary - £360 - £480</p>
+  <p>90 minutes appointment and written summary - 
+    { 
+      `
+        ${gbp.format(feeStructure.SchoolAppointmentWithWrittenSummaryRange.lower)} - 
+        ${gbp.format(feeStructure.SchoolAppointmentWithWrittenSummaryRange.higher)}
+      `
+    }
+  </p>
   <p>
     This is a meeting within school (or a residential service) with professionals, parents/carers, is designed 
     to explore the areas of difficulty for a specific child, develop a shared understanding and agree a plan with 
@@ -87,7 +101,15 @@ import TextLayout from "../layouts/TextLayout.astro";
     comparisons in skills and abilities between other young people of the same age. This can then be used to 
     guide learning within school or help tailor interventions.
   </p>
-  <p>Cognitive Assessment – £1080</p>
+  <p>
+    Cognitive Assessment – 
+    { 
+      `
+        ${gbp.format(feeStructure.CognitiveAssessmentRange.lower)} - 
+        ${gbp.format(feeStructure.CognitiveAssessmentRange.higher)}
+      `
+    }
+  </p>
   <ul>
     <li>An initial appointment to gather relevant background information and developmental history</li>
     <li>An assessment appointment with your child (approximately 2 hours)</li>
@@ -96,13 +118,30 @@ import TextLayout from "../layouts/TextLayout.astro";
   </ul>
   <p>The format of these assessments will be designed according to each child’s specific needs.</p>
   <h2>Training Packages</h2>
-  <p>Half day - £600 - £800</p>
-  <p>Whole day - £1050 - £1,450</p>
+  <p>
+    Half day - 
+    { 
+      `
+        ${gbp.format(feeStructure.HalfDayTrainingPackageRange.lower)} - 
+        ${gbp.format(feeStructure.HalfDayTrainingPackageRange.higher)}
+      `
+    }
+  </p>
+  <p>
+    Whole day - 
+    { 
+      `
+        ${gbp.format(feeStructure.FullDayTrainingPackageRange.lower)} - 
+        ${gbp.format(feeStructure.FullDayTrainingPackageRange.higher)}
+      `
+    }
+  </p>
   <p>Bespoke packages tailored to your training needs, as discussed in an initial free telephone conversation. 
   Examples of training recently delivered include: managing anxiety/depression, bereavement, dealing with 
   disruptive behaviour, autism, attachment in the classroom, hard to reach children, working with parents.</p>
   <h2>Supervision</h2>
-  <p>£120 per 50 minutes</p>
+  <p>
+    { gbp.format(feeStructure.Supervision) } per 50 minutes</p>
   <p>A range of supervision services can be provided including individual professional supervision, group 
   supervisions and reflective space for staff teams.</p>
   <h2>Travel costs</h2>

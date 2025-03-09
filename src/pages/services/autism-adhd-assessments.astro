@@ -9,6 +9,14 @@ import childFlying from '../../assets/images/child-flying.png'
 import List from '../../components/List/List.astro';
 import ListItem from '../../components/List/ListItem.astro';
 
+import feeStructure from "../../constants/fee-structure";
+
+let gbp = new Intl.NumberFormat('en-gb', {
+    style: 'currency',
+    currency: 'GBP',
+    minimumFractionDigits: 0
+});
+
 ---
 
 <style lang="scss">
@@ -99,7 +107,7 @@ import ListItem from '../../components/List/ListItem.astro';
       <img src={neurodiversityImg.src} alt="Autism Mnemonic; Always, Unique, Totally, Intelligent, Sometimes, Mysterious" role="presentation" width="300" height="330" />
     </section>
     <section>
-      <h2>Neurodevelopmental Screening Assessment: £330</h2>
+      <h2>Neurodevelopmental Screening Assessment: { gbp.format(feeStructure.NeurodevelopmentalScreenAssessment) }</h2>
       <p>
         This takes place before a full diagnostic assessment and is an opportunity to meet with you and your child to 
         explore your concerns, gather background information (also gained via questionnaires sent prior to the appointment) 
@@ -107,7 +115,7 @@ import ListItem from '../../components/List/ListItem.astro';
         We will then decide together which type of further assessment might be best. Below is some further information about 
         what these further assessments might involve and an idea of the costs.
       </p>
-      <h2>Full Multi-disciplinary Autism diagnostic assessment - £2,350</h2>
+      <h2>Full Multi-disciplinary Autism diagnostic assessment - { gbp.format(feeStructure.FullMultiDisciplinaryAutismDiagnosticAssessment) }</h2>
       <p>
         At Making Sense Of It, we have joined with Speech and Language Therapists to develop a multidisciplinary 
         autism assessment and diagnosis service. Our assessments follow the 
@@ -131,7 +139,7 @@ import ListItem from '../../components/List/ListItem.astro';
         <ListItem>A follow up appointment 3-4 weeks after the report has been shared – this is a chance to reflect on the process of assessment, ask any questions and think about further support</ListItem>
       </List>
 
-      <h2>Full ADHD diagnostic assessment - £1,070</h2>
+      <h2>Full ADHD diagnostic assessment - { gbp.format(feeStructure.FullAdhdDiagnosticAssessment) }</h2>
       <p>
         At Making Sense Of It we offer a Clinical Psychology led <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> 
         assessment service. Clinical Psychologists are not able to advise on or prescribe medication, this is within the role of 
@@ -145,7 +153,7 @@ import ListItem from '../../components/List/ListItem.astro';
         <ListItem>Detailed written report outlining each part of the assessment, our understanding of the young person, the diagnostic outcome and recommendations</ListItem>
         <ListItem>A follow up appointment 3-4 weeks after the report has been shared – this is a chance to reflect on the process of assessment, ask any questions and think about further support</ListItem>
       </List>
-      <h2>Combined Autism and <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> diagnostic assessment - £2,930</h2>
+      <h2>Combined Autism and <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> diagnostic assessment - { gbp.format(feeStructure.CombinedAutismAndAdhdDiagnosticAssessment) }</h2>
       <p>
         Where assessment for both <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> and autism is indicated 
         during the screening assessment, a combined assessment can be offered and includes the following:
