@@ -28,17 +28,23 @@
 		$headers .= "X-Priority: 3\r\n";
 		$headers .= "X-Mailer: PHP". phpversion() ."\r\n";
 
-		file_put_contents('messages.txt', "test\n", FILE_APPEND);
-		
-		$success = mail($to,$subject,$message,$headers) == "1" ? true : false;
-		
-		if($success)
-		{
+		try {
+    	$writeFileResult = @file_put_contents('messages.txt', "test\n", FILE_APPEND);
+
+			if ($writeFileResult === false) {
+					throw new Exception('Failed to write to messages.txt');
+			}
+
+			$sendMailResult = mail($to,$subject,$message,$headers) == "1" ? true : false;
+
+			if ($sendMailResult === false) {
+					throw new Exception('Failed to send email');
+			}
+
 			$statusCode = "200 Success";
-		}
-		else
-		{
-			$statusCode = "500 Server Error";
+
+		} catch (Exception $e) {
+				$statusCode = "500 Server Error";
 		}
 	}
 	else
