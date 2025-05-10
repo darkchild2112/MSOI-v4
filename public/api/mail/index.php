@@ -18,7 +18,7 @@
 		
 		$newLine = "\n\n";
 
-		$message = "You have an enquiry from the Making Sense of It Website" . $newLine . "Name: " . $name . $newLine . "Email: " . $from . $newLine . "Telephone: " . $tel . $newLine . "Message: " . $message;
+		$formattedMessage = "You have an enquiry from the Making Sense of It Website" . $newLine . "Name: " . $name . $newLine . "Email: " . $from . $newLine . "Telephone: " . $tel . $newLine . "Message: " . $message;
 
 		$headers .= "From: " . $name . " <" . $from . ">\r\n";
 		$headers .= 'Reply-To: '. $from . "\r\n" ;
@@ -37,7 +37,7 @@
 					throw new Exception('Failed to write to messages.txt');
 			}
 
-			$sendMailResult = mail($to,$subject,$message,$headers) == "1" ? true : false;
+			$sendMailResult = mail($to,$subject,$formattedMessage,$headers) == "1" ? true : false;
 
 			if ($sendMailResult === false) {
 					throw new Exception('Failed to send email');
