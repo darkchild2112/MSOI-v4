@@ -20,7 +20,13 @@
 
 		$message = "You have an enquiry from the Making Sense of It Website" . $newLine . "Name: " . $name . $newLine . "Email: " . $from . $newLine . "Telephone: " . $tel . $newLine . "Message: " . $message;
 
-		$headers = "From: " . $name . " <" . $from . ">";
+		$headers .= "From: " . $name . " <" . $from . "> . \r\n";
+		$headers .= 'Reply-To: '. $to . "\r\n" ;
+		$headers .= "Organization: Sender Organization\r\n";
+		$headers .= "MIME-Version: 1.0\r\n";
+		$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+		$headers .= "X-Priority: 3\r\n";
+		$headers .= "X-Mailer: PHP". phpversion() ."\r\n";
 		
 		$success = mail($to,$subject,$message,$headers) == "1" ? true : false;
 		
