@@ -27,6 +27,8 @@
 		$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 		$headers .= "X-Priority: 3\r\n";
 		$headers .= "X-Mailer: PHP". phpversion() ."\r\n";
+
+		file_put_contents('messages.txt', "test\n", FILE_APPEND);
 		
 		$success = mail($to,$subject,$message,$headers) == "1" ? true : false;
 		
