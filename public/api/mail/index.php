@@ -20,7 +20,7 @@
 
 		$message = "You have an enquiry from the Making Sense of It Website" . $newLine . "Name: " . $name . $newLine . "Email: " . $from . $newLine . "Telephone: " . $tel . $newLine . "Message: " . $message;
 
-		$headers .= "From: " . $name . " <" . $from . "> . \r\n";
+		$headers .= "From: " . $name . " <" . $from . ">\r\n";
 		$headers .= 'Reply-To: '. $from . "\r\n" ;
 		$headers .= "Organization: Sender Organization\r\n";
 		$headers .= "MIME-Version: 1.0\r\n";
