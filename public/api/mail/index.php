@@ -29,7 +29,9 @@
 		$headers .= "X-Mailer: PHP". phpversion() ."\r\n";
 
 		try {
-    	$writeFileResult = @file_put_contents('messages.txt', "test\n", FILE_APPEND);
+			$log_entry = $from . "," . $name . "," . $tel . "," . $message . "," . date("Y-m-d H:i:s") . "\n";
+
+    	$writeFileResult = @file_put_contents('message_log.txt', $log_entry, FILE_APPEND);
 
 			if ($writeFileResult === false) {
 					throw new Exception('Failed to write to messages.txt');
