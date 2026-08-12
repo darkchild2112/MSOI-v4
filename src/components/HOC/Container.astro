@@ -3,7 +3,6 @@ const { id } = Astro.props;
 ---
 
 <style lang="scss">
-
   @import '../../styles/dimensions.scss';
 
   // Container Class - used to replicate Bootstrap's container class.
@@ -22,38 +21,38 @@ const { id } = Astro.props;
       }
     }
 
-    @media screen and (min-width: $breakpoint-xxl) and (max-width: $breakpoint-xxxl){
+    @media screen and (min-width: $breakpoint-xxl) and (max-width: $breakpoint-xxxl) {
       & {
         width: 1400px;
       }
     }
 
-    @media screen and (min-width: $breakpoint-xl) and (max-width: $breakpoint-xxl){
+    @media screen and (min-width: $breakpoint-xl) and (max-width: $breakpoint-xxl) {
       & {
         width: 1200px;
       }
     }
 
-    @media screen and (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl){
+    @media screen and (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
       & {
         width: 1000px;
       }
     }
 
-    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
       & {
         width: 800px;
       }
     }
 
-    @media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md){
+    @media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
       & {
         width: 600px;
       }
     }
 
     // Small and below
-    @media screen and (max-width: $breakpoint-sm){
+    @media screen and (max-width: $breakpoint-sm) {
       & {
         width: 100%;
         padding-left: 5px;
@@ -62,7 +61,6 @@ const { id } = Astro.props;
     }
   }
 </style>
-
 
 <div id={id}>
   <slot />

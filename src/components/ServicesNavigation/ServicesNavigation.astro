@@ -1,8 +1,7 @@
 ---
 // Should I just pull this from the services data file?
-import { ServicesNavigationData } from './ServicesNavigationData.js'
+import { ServicesNavigationData } from './ServicesNavigationData.js';
 ---
-
 
 <style lang="scss">
   nav {
@@ -20,8 +19,8 @@ import { ServicesNavigationData } from './ServicesNavigationData.js'
       text-decoration: none;
 
       &:hover:not(.active) {
-        background-color: #27BBDF;		
-        color: #fff;	
+        background-color: #27bbdf;
+        color: #fff;
         opacity: 0.6;
       }
 
@@ -30,8 +29,8 @@ import { ServicesNavigationData } from './ServicesNavigationData.js'
       }
 
       &.active {
-        background-color: #27BBDF;		
-        color: #fff;	
+        background-color: #27bbdf;
+        color: #fff;
       }
 
       &:focus-visible {
@@ -44,13 +43,11 @@ import { ServicesNavigationData } from './ServicesNavigationData.js'
 </style>
 
 <nav>
-  { 
-    ServicesNavigationData.map((service) => 
-       (<a 
-          href={service.link} 
-          class={service.link == Astro.props.pathname ? "active" : null}>
-          {service.text}
-        </a>)
-    )
+  {
+    ServicesNavigationData.map(service => (
+      <a href={service.link} class={service.link == Astro.props.pathname ? 'active' : null}>
+        {service.text}
+      </a>
+    ))
   }
 </nav>

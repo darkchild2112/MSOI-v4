@@ -3,7 +3,6 @@ const { title, visuallyHiddenTitle } = Astro.props;
 ---
 
 <style lang="scss">
-
   @import '../../styles/colors.scss';
 
   section {
@@ -20,6 +19,6 @@ const { title, visuallyHiddenTitle } = Astro.props;
 </style>
 
 <section>
-  { title && <h2 class={`${visuallyHiddenTitle === true ? 'visually-hidden' : null}`}>{ title }</h2> }
+  {title && <h2 class={`${visuallyHiddenTitle === true ? 'visually-hidden' : null}`}>{title}</h2>}
   <slot />
 </section>

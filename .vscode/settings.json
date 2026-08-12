@@ -1,0 +1,9 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "npm install": true,
+        "/^node -e \"const p=require\\('@typescript-eslint/eslint-plugin'\\); console\\.log\\(Object\\.keys\\(p\\)\\); const r=require\\('eslint-plugin-react'\\); console\\.log\\('react',Object\\.keys\\(r\\)\\); const a=require\\('eslint-plugin-astro'\\); console\\.log\\('astro',Object\\.keys\\(a\\)\\);\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

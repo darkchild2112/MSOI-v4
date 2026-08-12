@@ -1,5 +1,4 @@
 ---
-
 import '../../node_modules/bootstrap-reboot/dist/reboot.min.css';
 import '../styles/styles.scss';
 
@@ -8,37 +7,37 @@ import Main from '../components/Main/Main.astro';
 import Footer from '../components/Footer/Footer.astro';
 
 import companyLogo from '../assets/images/company-logo.png';
-
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<meta name="description" content="Making Sense Of It Ltd provides Psychology Services for children, families and Schools in the Sussex area"/>
-		<meta name="keywords" content="Psychology Services, children, families, Schools, Sussex, West Sussex, East Sussex, Autism, Training, Supervision, Autism Diagnostic Service, Cognitive Assessments, Children with learning disabilities, Child and Family Mental Health"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Making Sense Of It Ltd provides Psychology Services for children, families and Schools in the Sussex area"
+    />
+    <meta
+      name="keywords"
+      content="Psychology Services, children, families, Schools, Sussex, West Sussex, East Sussex, Autism, Training, Supervision, Autism Diagnostic Service, Cognitive Assessments, Children with learning disabilities, Child and Family Mental Health"
+    />
 
-		<link rel="icon" href={companyLogo.src}/>
+    <link rel="icon" href={companyLogo.src} />
 
-  	<title>Making Sense Of It Ltd – Psychology Services for children, families and Schools</title>
-
+    <title>Making Sense Of It Ltd – Psychology Services for children, families and Schools</title>
   </head>
 
   <body id="body">
+    <a href="#content" class="visually-hidden-focusable">Skip to main content</a>
 
-		<a href="#content" class="visually-hidden-focusable">Skip to main content</a>
-		
-		<Header />
+    <Header />
 
-		<Main>
-			<slot />
-		</Main>
-		
-		<Footer />
+    <Main>
+      <slot />
+    </Main>
 
-	</body>
-
+    <Footer />
+  </body>
 </html>
-

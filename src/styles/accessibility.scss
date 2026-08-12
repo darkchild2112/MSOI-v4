@@ -1,37 +1,41 @@
 @import './colors.scss';
 
-.visually-hidden-focusable:not(:focus):not(:focus-within):not(caption), .visually-hidden:not(caption) {
-  position: absolute!important;
+.visually-hidden-focusable:not(:focus):not(:focus-within):not(caption),
+.visually-hidden:not(caption) {
+  position: absolute !important;
 }
-.visually-hidden, .visually-hidden-focusable:not(:focus):not(:focus-within) {
-  width: 1px!important;
-  height: 1px!important;
-  padding: 0!important;
-  margin: -1px!important;
-  overflow: hidden!important;
-  clip: rect(0,0,0,0)!important;
-  white-space: nowrap!important;
-  border: 0!important;
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 // -----------
 
-.visually-hidden-focusable:not(:focus):not(:focus-within):not(caption), .visually-hidden:not(caption) {
-  position: absolute!important;
+.visually-hidden-focusable:not(:focus):not(:focus-within):not(caption),
+.visually-hidden:not(caption) {
+  position: absolute !important;
 }
-.visually-hidden, .visually-hidden-focusable:not(:focus):not(:focus-within) {
-  width: 1px!important;
-  height: 1px!important;
-  padding: 0!important;
-  margin: -1px!important;
-  overflow: hidden!important;
-  clip: rect(0,0,0,0)!important;
-  white-space: nowrap!important;
-  border: 0!important;
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 a {
-  &:focus-visible{
+  &:focus-visible {
     outline: 2px solid $accessibility-highlight;
     outline-offset: -1px;
     background-color: $accessibility-highlight;
@@ -39,8 +43,9 @@ a {
   }
 }
 
-input, textarea {
-  &:focus-visible{
+input,
+textarea {
+  &:focus-visible {
     outline: 3px solid $accessibility-highlight;
     color: $accessibility-text !important;
   }

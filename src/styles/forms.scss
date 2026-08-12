@@ -1,27 +1,29 @@
 label {
-	display: block;
+  display: block;
 }
 
 input {
-	border-radius: 0;
+  border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-input[type="submit"] {
-	display: block;
+input[type='submit'] {
+  display: block;
 }
 
-input[type="text"], input[type="email"], input[type="tel"] {
-	padding: 5px;
-	border: 1px solid #ccc;
+input[type='text'],
+input[type='email'],
+input[type='tel'] {
+  padding: 5px;
+  border: 1px solid #ccc;
 }
 
 textarea {
-	padding: 5px;
-	border: 1px solid #ccc;
-	border-radius: 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
