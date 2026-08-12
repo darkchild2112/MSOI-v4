@@ -1,4 +1,10 @@
-on: push
+on:
+  push:
+    branches:
+      - main
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 name: Publish Website
 jobs:
   build:
@@ -16,7 +22,16 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@octocat'
       - run: npm ci
-      - run: npm run build  
+      - run: npm run build
+      - name: Upload artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-failure-artifacts
+          path: |
+            dist/**
+            npm-debug.log
+          if-no-files-found: warn
       - uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.makingsenseofit.org.uk
