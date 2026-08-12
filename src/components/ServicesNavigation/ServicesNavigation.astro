@@ -42,7 +42,7 @@ import { ServicesNavigationData } from './ServicesNavigationData.js';
   }
 </style>
 
-<nav>
+<nav aria-label="Services">
   {
     ServicesNavigationData.map(service => (
       <a href={service.link} class={service.link == Astro.props.pathname ? 'active' : null}>

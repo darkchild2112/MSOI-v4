@@ -29,6 +29,10 @@ jobs:
         run: npm run lint -- --max-warnings=0
       - name: Build site
         run: npm run build
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Run e2e tests
+        run: npm run test:e2e
       - name: Upload artifacts on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -38,4 +42,5 @@ jobs:
             dist/**
             eslint-report.json
             npm-debug.log
+            playwright-report/**
           if-no-files-found: warn
