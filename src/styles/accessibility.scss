@@ -1,4 +1,17 @@
 @import './colors.scss';
+@import './dimensions.scss';
+
+html {
+  // Offsets anchor-jump targets so the sticky header (Header.astro) doesn't
+  // cover the top of the section being scrolled to.
+  scroll-padding-top: $header-height;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
 .visually-hidden-focusable:not(:focus):not(:focus-within):not(caption),
 .visually-hidden:not(caption) {
