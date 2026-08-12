@@ -22,9 +22,12 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
       padding: 15px 15px 15px 15px;
       line-height: 20px;
       background-color: transparent;
-      transition: background-color 0.2s ease-in-out;
-      transition: color 0.1s ease-in-out;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
       text-decoration: none;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
 
       @media (max-width: $breakpoint-md) {
         padding: 10px;
@@ -80,6 +83,24 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
 <script>
   let scrollTimeout;
 
+  document.querySelectorAll('#navigation a').forEach(link => {
+    link.addEventListener('click', event => {
+      const isInPageSectionLink =
+        window.location.pathname === '/' && link.getAttribute('href')?.startsWith('/#');
+
+      if (!isInPageSectionLink) return;
+
+      const target = document.querySelector(resolveTargetHash(link.hash));
+
+      if (!target) return;
+
+      event.preventDefault();
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
   setTimeout(() => {
     setActiveLink();
     document.addEventListener('scroll', function () {
@@ -88,6 +109,10 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
     });
   }, 500);
 
+  function resolveTargetHash(hash) {
+    return hash === '#body' ? '#banner' : hash;
+  }
+
   function setActiveLink() {
     const navigationLinks = document.querySelectorAll('#navigation a');
 
@@ -95,7 +120,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
       let isNodeActive = false;
 
       if (window.location.pathname === '/') {
-        const hash = node.hash === '#body' ? '#banner' : node.hash;
+        const hash = resolveTargetHash(node.hash);
         if (hash !== '') {
           const section = document.querySelector(hash);
 
