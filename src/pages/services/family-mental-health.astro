@@ -7,6 +7,10 @@ import familyUmbrellaImg from '../../assets/images/family-umbrella.jpg';
 
 import List from '../../components/List/List.astro';
 import ListItem from '../../components/List/ListItem.astro';
+
+const title = 'Child & Family Mental Health Support | Making Sense Of It';
+const description =
+  'Psychological therapy and support for children, young people and families dealing with anxiety, low mood and emotional wellbeing difficulties.';
 ---
 
 <style lang="scss">
@@ -53,7 +57,7 @@ import ListItem from '../../components/List/ListItem.astro';
   }
 </style>
 
-<ServicesLayout>
+<ServicesLayout title={title} description={description}>
   <h1>Child and Family Mental Health</h1>
   <div class="content">
     <section class="content-section">

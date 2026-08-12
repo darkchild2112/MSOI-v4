@@ -15,6 +15,10 @@ let gbp = new Intl.NumberFormat('en-gb', {
   currency: 'GBP',
   minimumFractionDigits: 0,
 });
+
+const title = 'Autism & ADHD Assessment Services | Making Sense Of It';
+const description =
+  'Full multidisciplinary autism diagnostic assessment and ADHD assessment for children and young people in Sussex, plus post-diagnostic support.';
 ---
 
 <style lang="scss">
@@ -78,7 +82,7 @@ let gbp = new Intl.NumberFormat('en-gb', {
   }
 </style>
 
-<ServicesLayout>
+<ServicesLayout title={title} description={description}>
   <h1>
     Autism and <abbr title="Attention deficit hyperactivity disorder">ADHD</abbr> Assessment Service and
     Support

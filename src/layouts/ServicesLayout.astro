@@ -2,6 +2,8 @@
 import BaseLayout from './BaseLayout.astro';
 import Container from '../components/HOC/Container.astro';
 import ServicesNavigation from '../components/ServicesNavigation/ServicesNavigation.astro';
+
+const { title, description } = Astro.props;
 ---
 
 <style lang="scss">
@@ -32,7 +34,7 @@ import ServicesNavigation from '../components/ServicesNavigation/ServicesNavigat
   }
 </style>
 
-<BaseLayout>
+<BaseLayout title={title} description={description}>
   <Container>
     <div class="services-container">
       <section class="nav-wrapper">

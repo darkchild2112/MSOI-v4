@@ -5,6 +5,10 @@ import Quote from '../../components/Quote/Quote.astro';
 
 import List from '../../components/List/List.astro';
 import ListItem from '../../components/List/ListItem.astro';
+
+const title = 'School & Network Consultation | Making Sense Of It';
+const description =
+  'Consultation for schools and professional networks to support children with additional needs, including in-school meetings and written recommendations.';
 ---
 
 <style lang="scss">
@@ -60,7 +64,7 @@ import ListItem from '../../components/List/ListItem.astro';
   }
 </style>
 
-<ServicesLayout>
+<ServicesLayout title={title} description={description}>
   <h1>Schools</h1>
   <div class="content">
     <section class="content-section">
