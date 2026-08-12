@@ -1,93 +1,90 @@
 ---
-import MobileMenuButton from './MobileMenuButton.astro'
-import Navigation from './Navigation.astro'
+import MobileMenuButton from './MobileMenuButton.astro';
+import Navigation from './Navigation.astro';
 ---
 
 <style lang="scss">
+  @import '../../styles/dimensions.scss';
 
-	@import '../../styles/dimensions.scss';
+  .nav-container {
+    @media (max-width: $breakpoint-md) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      display: flex;
+      height: 100vh;
 
-	.nav-container {
+      &.open-nav-menu {
+        animation: slideOpen 0.5s forwards;
+      }
 
-		@media (max-width: $breakpoint-md) {  
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 0;
-			display: flex;
-			height: 100vh;
+      @keyframes slideOpen {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
 
-			&.open-nav-menu {
-				animation: slideOpen .50s forwards;
-			}
+      &.close-nav-menu {
+        animation: slideShut 0.5s forwards;
+      }
 
-			@keyframes slideOpen {
-				0% {
-					width: 0;
-				}
-				100% {
-					width: 100%;
-				}
-			}
+      @keyframes slideShut {
+        0% {
+          width: 100%;
+        }
+        100% {
+          width: 0;
+        }
+      }
+    }
 
-			&.close-nav-menu {
-				animation: slideShut .50s forwards;
-			}
+    .overlay {
+      display: none;
+      @media (max-width: $breakpoint-md) {
+        background-color: #666;
+        opacity: 0.5;
+        display: block;
+        width: 30%;
+      }
+    }
 
-			@keyframes slideShut {
-				0% {
-				width: 100%;
-				}
-				100% {
-					width: 0;
-				}
-			}
-		}
-
-		.overlay {
-			display: none;
-			@media (max-width: $breakpoint-md) {  
-				background-color: #666;
-				opacity: 0.5;
-				display: block;
-				width: 30%;
-			}
-		}
-
-		.hide-me-mobile {
-			width: none;
-		}
-	}
+    .hide-me-mobile {
+      width: none;
+    }
+  }
 </style>
 
 <MobileMenuButton id="menuBtn" />
 
 <div id="nav-container" class="nav-container">
-	<Navigation />
-	<section id="overlay" class="overlay"></section>
+  <Navigation />
+  <section id="overlay" class="overlay"></section>
 </div>
 
 <script>
-	let showMenu = false;
-	const menuBtn = document.querySelector('#menuBtn');
-	const navContainer = document.querySelector('#nav-container');
-	
-	const toggleMenuEventHandler = () => {
-		showMenu = !showMenu;
-		toggleMenu();
-	}
+  let showMenu = false;
+  const menuBtn = document.querySelector('#menuBtn');
+  const navContainer = document.querySelector('#nav-container');
 
-	const toggleMenu = () => {
-		if (showMenu) {
-			navContainer.classList.add('open-nav-menu');
-			navContainer.classList.remove('close-nav-menu');
-		} else {
-			navContainer.classList.add('close-nav-menu');
-			navContainer.classList.remove('open-nav-menu');
-		}
-	}
+  const toggleMenuEventHandler = () => {
+    showMenu = !showMenu;
+    toggleMenu();
+  };
 
-	menuBtn.addEventListener("click", toggleMenuEventHandler);
-	navContainer.addEventListener("click", toggleMenuEventHandler);
+  const toggleMenu = () => {
+    if (showMenu) {
+      navContainer.classList.add('open-nav-menu');
+      navContainer.classList.remove('close-nav-menu');
+    } else {
+      navContainer.classList.add('close-nav-menu');
+      navContainer.classList.remove('open-nav-menu');
+    }
+  };
 
+  menuBtn.addEventListener('click', toggleMenuEventHandler);
+  navContainer.addEventListener('click', toggleMenuEventHandler);
 </script>

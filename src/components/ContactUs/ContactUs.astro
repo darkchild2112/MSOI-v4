@@ -5,9 +5,8 @@ import Form from './Form/Form.jsx';
 ---
 
 <style lang="scss">
-
   @import '../../styles/dimensions.scss';
-  
+
   p {
     @media screen and (max-width: $breakpoint-sm) {
       padding-left: 10px;
@@ -18,8 +17,20 @@ import Form from './Form/Form.jsx';
 
 <Container id="contact">
   <HomePageContentSection title="Contact Us">
-    <p>If you would like to find out more about the services we offer, or discuss an enquiry please contact us via the email below. Alternatively you can complete the form below with some brief details about your enquiry and we will contact you for a brief telephone consultation which is free of charge. This will allow us to find out a bit more about the areas of concern and discuss how we can help.</p>
-    <p>We will not pass your details onto third parties and will only use the information supplied for the purposes of handling your query. Please refer to our <a href="/privacy-policy" title="Privacy Policy">privacy policy</a> for further information about how we handle your data.</p>
-    <Form client:only />
+    <p>
+      If you would like to find out more about the services we offer, or discuss an enquiry please
+      contact us via the email below. Alternatively you can complete the form below with some brief
+      details about your enquiry and we will contact you for a brief telephone consultation which is
+      free of charge. This will allow us to find out a bit more about the areas of concern and
+      discuss how we can help.
+    </p>
+    <p>
+      We will not pass your details onto third parties and will only use the information supplied
+      for the purposes of handling your query. Please refer to our <a
+        href="/privacy-policy"
+        title="Privacy Policy">privacy policy</a
+      > for further information about how we handle your data.
+    </p>
+    <Form client:only="Form" />
   </HomePageContentSection>
 </Container>

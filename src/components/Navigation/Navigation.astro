@@ -1,17 +1,15 @@
 ---
-
 import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigationData.js';
 ---
 
 <style lang="scss">
-
   @import '../../styles/dimensions.scss';
 
   nav {
     display: flex;
     gap: 5px;
 
-    @media (max-width: $breakpoint-md) {  
+    @media (max-width: $breakpoint-md) {
       flex-direction: column;
       width: 70%;
       background-color: #fff;
@@ -28,13 +26,13 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
       transition: color 0.1s ease-in-out;
       text-decoration: none;
 
-      @media (max-width: $breakpoint-md) {  
+      @media (max-width: $breakpoint-md) {
         padding: 10px;
       }
 
       &:hover:not(.active) {
-        background-color: #27BBDF;		
-        color: #fff;	
+        background-color: #27bbdf;
+        color: #fff;
         opacity: 0.6;
       }
 
@@ -43,8 +41,8 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
       }
 
       &.active {
-        background-color: #27BBDF;		
-        color: #fff;	
+        background-color: #27bbdf;
+        color: #fff;
       }
 
       &:focus-visible {
@@ -57,7 +55,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
     .services-link {
       padding-left: 20px;
 
-      @media (min-width: $breakpoint-md) {  
+      @media (min-width: $breakpoint-md) {
         display: none;
       }
     }
@@ -67,11 +65,12 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
 <nav id="navigation">
   <a href="/#body">Home</a>
   <a href="/#services">Services</a>
-  { 
-    ServicesNavigationData.map((service) => (
-        <a href={service.link} class="services-link">{service.text}</a>
-      )
-    )
+  {
+    ServicesNavigationData.map(service => (
+      <a href={service.link} class="services-link">
+        {service.text}
+      </a>
+    ))
   }
   <a href="/#whatWeDo">About Us</a>
   <a href="/#whoWeAre">Who We Are</a>
@@ -90,40 +89,34 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
   }, 500);
 
   function setActiveLink() {
-
     const navigationLinks = document.querySelectorAll('#navigation a');
 
-    navigationLinks?.forEach((node) => {
-
+    navigationLinks?.forEach(node => {
       let isNodeActive = false;
-        
-      if(window.location.pathname === '/'){
 
+      if (window.location.pathname === '/') {
         const hash = node.hash === '#body' ? '#banner' : node.hash;
-        if(hash !== ''){
-
+        if (hash !== '') {
           const section = document.querySelector(hash);
 
           isNodeActive = isVisible(section);
 
-          if(isNodeActive){
+          if (isNodeActive) {
             window.history.replaceState(null, null, hash);
           }
         }
-      }
-      else {
+      } else {
         isNodeActive = node.pathname === window.location.pathname;
       }
 
       setActiveNode(node, isNodeActive);
     });
-  };
+  }
 
   function setActiveNode(node, isNodeActive) {
     if (isNodeActive) {
       node.classList.add('active');
-    } 
-    else {
+    } else {
       node.classList.remove('active');
     }
   }

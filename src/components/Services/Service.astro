@@ -1,12 +1,11 @@
 ---
-import LinkButton from '../LinkButton/LinkButton.astro'
+import LinkButton from '../LinkButton/LinkButton.astro';
 
 const { service } = Astro.props;
 ---
 
 <style lang="scss">
-
-	@import '../../styles/dimensions.scss';
+  @import '../../styles/dimensions.scss';
 
   section {
     width: 360px;
@@ -16,14 +15,14 @@ const { service } = Astro.props;
     align-items: center;
     padding: 0 20px;
 
-    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){
+    @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
       width: 330px;
     }
-    
+
     img {
       border: 1px solid #eee;
       padding: 1px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       margin: 0 auto;
       max-width: 100%;
       vertical-align: middle;
@@ -53,7 +52,13 @@ const { service } = Astro.props;
 
 <section>
   <a href={`/services/${service.slug}`}>
-    <img src={service.image.src} alt={service.imageAlt} role="presentation" width={300} height={300} />
+    <img
+      src={service.image.src}
+      alt={service.imageAlt}
+      role="presentation"
+      width={300}
+      height={300}
+    />
   </a>
   <div>
     <h3>{service.heading}</h3>

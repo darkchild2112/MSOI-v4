@@ -3,35 +3,38 @@
 @import './accessibility.scss';
 @import './colors.scss';
 
-
-body
-{
+body {
   font-weight: 300;
 }
 
-h1, h2, h3, h4 {
-	color: $primary-heading;
+h1,
+h2,
+h3,
+h4 {
+  color: $primary-heading;
 }
 
-h2, h3, h4 {
-	padding-top: 20px;
+h2,
+h3,
+h4 {
+  padding-top: 20px;
 }
 
 a {
-	color: #2D3286;
-	text-decoration: underline;
+  color: #2d3286;
+  text-decoration: underline;
   font-weight: 400;
 
   &:hover {
-    color: #2F3184;
+    color: #2f3184;
   }
 
   &:visited {
-    color: #2D3286;
+    color: #2d3286;
   }
 
   &:active {
-    color: #2F3184;
+    color: #2f3184;
   }
 }
 
@@ -76,7 +79,7 @@ table {
   border-collapse: collapse;
 
   thead {
-    background-color: #27B9E7;
+    background-color: #27b9e7;
     color: white;
     th {
       padding: 1rem;
@@ -92,9 +95,4 @@ table {
       }
     }
   }
-
 }
-
-
-
-

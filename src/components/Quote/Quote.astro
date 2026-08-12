@@ -1,13 +1,11 @@
 ---
-
-import QuoteLeft from "../Icons/QuoteLeft.astro";
-import QuoteRight from "../Icons/QuoteRight.astro";
+import QuoteLeft from '../Icons/QuoteLeft.astro';
+import QuoteRight from '../Icons/QuoteRight.astro';
 
 const { cite } = Astro.props;
 ---
 
 <style lang="scss">
-
   section {
     display: block;
     clear: both;
@@ -41,5 +39,5 @@ const { cite } = Astro.props;
     <slot />
     <QuoteRight />
   </blockquote>
-  <cite>{ cite }</cite>
+  <cite>{cite}</cite>
 </section>

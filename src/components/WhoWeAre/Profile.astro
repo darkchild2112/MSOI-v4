@@ -3,28 +3,26 @@ const { profile } = Astro.props;
 ---
 
 <style lang="scss">
-
   @import '../../styles/dimensions.scss';
 
   div {
     display: flex;
     flex-direction: row;
 
-		@media screen and (max-width: $breakpoint-sm){
-			flex-direction: column;
-		}
+    @media screen and (max-width: $breakpoint-sm) {
+      flex-direction: column;
+    }
 
     &:not(:last-child) {
       margin-bottom: 50px;
     }
 
     .image-container {
-
-      @media screen and (max-width: $breakpoint-sm){
-          margin: 0 auto;
+      @media screen and (max-width: $breakpoint-sm) {
+        margin: 0 auto;
       }
 
-      img	{
+      img {
         margin: 0 50px;
       }
     }
@@ -35,7 +33,7 @@ const { profile } = Astro.props;
         padding: 0 30px 5px 0;
         font-weight: 600;
 
-        @media (max-width: $breakpoint-sm) {  
+        @media (max-width: $breakpoint-sm) {
           padding: 15px 7px 10px 7px;
           text-align: center;
         }
@@ -53,10 +51,16 @@ const { profile } = Astro.props;
 
 <div>
   <section class="image-container">
-    <img src={ profile.image.src } alt={ profile.imageAlt } role="presentation" width={200} height={245} />
+    <img
+      src={profile.image.src}
+      alt={profile.imageAlt}
+      role="presentation"
+      width={200}
+      height={245}
+    />
   </section>
   <section class="text-container">
-    <h3 set:html={profile.name}></h3>
-    <section set:html={profile.blurb}></section>
+    <h3 set:html={profile.name} />
+    <section set:html={profile.blurb} />
   </section>
 </div>
