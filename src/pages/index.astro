@@ -7,9 +7,13 @@ import AboutUs from '../components/AboutUs/AboutUs.astro';
 import WhoWeAre from '../components/WhoWeAre/WhoWeAre.astro';
 import ContactUs from '../components/ContactUs/ContactUs.astro';
 import Acreditations from '../components/Acreditations/Acreditations.astro';
+
+const title = 'Psychology Services for Children & Families in Sussex | Making Sense Of It';
+const description =
+  'Making Sense Of It provides autism/ADHD assessments, cognitive assessments, family mental health support and school consultation for children and families across Sussex.';
 ---
 
-<BaseLayout>
+<BaseLayout title={title} description={description}>
   <Banner />
   <Services />
   <AboutUs />

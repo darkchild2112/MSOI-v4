@@ -7,6 +7,10 @@ import supervisionSignpostImg from '../../assets/images/supervision-signposts.jp
 
 import List from '../../components/List/List.astro';
 import ListItem from '../../components/List/ListItem.astro';
+
+const title = 'Clinical Supervision & Training | Making Sense Of It';
+const description =
+  'Professional and group clinical supervision plus bespoke training packages for schools and organisations on autism, ADHD, attachment and mental health.';
 ---
 
 <style lang="scss">
@@ -62,7 +66,7 @@ import ListItem from '../../components/List/ListItem.astro';
   }
 </style>
 
-<ServicesLayout>
+<ServicesLayout title={title} description={description}>
   <h1>Supervision & Training</h1>
   <div class="content">
     <section class="content-section">

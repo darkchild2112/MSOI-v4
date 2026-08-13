@@ -4,6 +4,10 @@ import Quote from '../../components/Quote/Quote.astro';
 
 // this image needs to be cropped
 import girlWithGlasses from '../../assets/images/girl-with-glasses.jpg';
+
+const title = 'Cognitive Assessments for Children | Making Sense Of It';
+const description =
+  "Standardised cognitive assessments to understand a young person's learning strengths and needs, guiding school support and interventions.";
 ---
 
 <style lang="scss">
@@ -60,7 +64,7 @@ import girlWithGlasses from '../../assets/images/girl-with-glasses.jpg';
   }
 </style>
 
-<ServicesLayout>
+<ServicesLayout title={title} description={description}>
   <h1>Cognitive Assessments</h1>
   <div class="content">
     <section class="content-section">

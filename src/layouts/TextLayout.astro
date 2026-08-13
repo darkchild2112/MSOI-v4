@@ -2,6 +2,8 @@
 import BaseLayout from './BaseLayout.astro';
 
 import Container from '../components/HOC/Container.astro';
+
+const { title, description } = Astro.props;
 ---
 
 <style lang="scss">
@@ -16,7 +18,7 @@ import Container from '../components/HOC/Container.astro';
   }
 </style>
 
-<BaseLayout>
+<BaseLayout title={title} description={description}>
   <Container>
     <div>
       <slot />

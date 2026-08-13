@@ -7,6 +7,10 @@ let gbp = new Intl.NumberFormat('en-gb', {
   currency: 'GBP',
   minimumFractionDigits: 0,
 });
+
+const title = 'Fees & Pricing | Making Sense Of It Psychology Services';
+const description =
+  'Clear pricing for autism/ADHD assessments, cognitive assessments, ongoing therapy, school consultation, supervision and training packages.';
 ---
 
 <style lang="scss">
@@ -23,7 +27,7 @@ let gbp = new Intl.NumberFormat('en-gb', {
   }
 </style>
 
-<TextLayout>
+<TextLayout title={title} description={description}>
   <h1>Fee Structure</h1>
   <p>All fees will be discussed with you at the initial telephone consultation or via email.</p>
   <h2>Initial Telephone Consultation</h2>

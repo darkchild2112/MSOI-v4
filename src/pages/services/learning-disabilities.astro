@@ -7,6 +7,10 @@ import childBlowingFlowerImg from '../../assets/images/child-blowing-flower.png'
 
 import List from '../../components/List/List.astro';
 import ListItem from '../../components/List/ListItem.astro';
+
+const title = 'Support for Children with Learning Disabilities | Making Sense Of It';
+const description =
+  'Specialist psychological assessment and support services for children and young people with learning disabilities and their families.';
 ---
 
 <style lang="scss">
@@ -62,7 +66,7 @@ import ListItem from '../../components/List/ListItem.astro';
   }
 </style>
 
-<ServicesLayout>
+<ServicesLayout title={title} description={description}>
   <h1>Children with Learning Disabilities</h1>
   <div class="content">
     <section class="content-section">
