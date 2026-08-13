@@ -7,7 +7,7 @@ const { title, description } = Astro.props;
 ---
 
 <style lang="scss">
-  @import '../styles/dimensions.scss';
+  @use '../styles/dimensions.scss' as *;
 
   .services-container {
     display: flex;

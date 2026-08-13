@@ -1,7 +1,7 @@
-@import './fonts.scss';
-@import './forms.scss';
-@import './accessibility.scss';
-@import './colors.scss';
+@use './fonts.scss' as *;
+@use './forms.scss' as *;
+@use './accessibility.scss' as *;
+@use './colors.scss' as *;
 
 body {
   font-weight: 300;

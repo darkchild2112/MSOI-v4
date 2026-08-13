@@ -3,7 +3,7 @@ const { id } = Astro.props;
 ---
 
 <style lang="scss">
-  @import '../../styles/dimensions.scss';
+  @use '../../styles/dimensions.scss' as *;
 
   // Container Class - used to replicate Bootstrap's container class.
   // It contains, pads, and centers the content within and also handles the breakpoints for each devive

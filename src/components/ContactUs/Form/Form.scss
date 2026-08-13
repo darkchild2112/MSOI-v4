@@ -1,4 +1,4 @@
-@import '../../../styles/dimensions.scss';
+@use '../../../styles/dimensions.scss' as *;
 
 form {
   .form {
