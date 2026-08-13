@@ -1,5 +1,18 @@
 {
   "permissions": {
-    "allow": ["Bash(git reset *)", "Bash(git restore *)"]
+    "allow": [
+      "Bash(git reset *)",
+      "Bash(git restore *)",
+      "Bash(npm view *)",
+      "Bash(npm outdated *)",
+      "Bash(npm -v)",
+      "Bash(npx --yes @astrojs/upgrade --dry-run)",
+      "WebFetch(domain:docs.astro.build)",
+      "Bash(npx --yes @astrojs/upgrade)",
+      "Bash(npx astro *)",
+      "Bash(echo \"EXITCODE:$?\")",
+      "Bash(jobs -l)",
+      "Bash(ASTRO_PREVIEW_BACKGROUND= CLAUDECODE= npm run test:e2e)"
+    ]
   }
 }
