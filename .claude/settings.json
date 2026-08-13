@@ -12,7 +12,11 @@
       "Bash(npx astro *)",
       "Bash(echo \"EXITCODE:$?\")",
       "Bash(jobs -l)",
-      "Bash(ASTRO_PREVIEW_BACKGROUND= CLAUDECODE= npm run test:e2e)"
+      "Bash(ASTRO_PREVIEW_BACKGROUND= CLAUDECODE= npm run test:e2e)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/sass/package.json'\\).version\\)\")",
+      "Bash(xargs -0 sed -i -E \"s/^\\(\\\\s*\\)@import[[:space:]]+'\\([^']+\\)';/\\\\1@use '\\\\2' as *;/\")",
+      "Bash(powershell -Command \"Get-Process -Id 38016 | Select-Object Id,ProcessName,Path,StartTime\")",
+      "Bash(powershell -Command \"Get-CimInstance Win32_Process -Filter 'ProcessId=38016' | Select-Object ProcessId,CommandLine\")"
     ]
   }
 }

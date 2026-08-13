@@ -1,5 +1,5 @@
-@import './colors.scss';
-@import './dimensions.scss';
+@use './colors.scss' as *;
+@use './dimensions.scss' as *;
 
 html {
   // Offsets anchor-jump targets so the sticky header (Header.astro) doesn't

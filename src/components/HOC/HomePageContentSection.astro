@@ -3,8 +3,8 @@ const { title, visuallyHiddenTitle } = Astro.props;
 ---
 
 <style lang="scss">
-  @import '../../styles/colors.scss';
-  @import '../../styles/dimensions.scss';
+  @use '../../styles/colors.scss' as *;
+  @use '../../styles/dimensions.scss' as *;
 
   section {
     padding-top: 50px;
