@@ -13,13 +13,14 @@
   background-color: #27bbdf;
   border-color: #27bbdf;
   font-weight: bold;
-  color: white;
+  color: #222121;
   border: 1px solid transparent;
 
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
     background-color: #2d3286;
+    color: white;
   }
 
   &:focus-visible {

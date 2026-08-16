@@ -12,7 +12,7 @@ const { destination, fill } = Astro.props;
     letter-spacing: 2px;
     box-shadow: 2px 2px 5px #ccc;
     padding: 12px 12px;
-    font-size: 14px;
+    font-size: 0.875rem;
     display: inline-block;
     text-align: center;
     cursor: pointer;
@@ -23,11 +23,12 @@ const { destination, fill } = Astro.props;
     transition: color 0.1s ease-in-out;
     font-weight: bold;
     background-color: white;
-    color: #27bbdf;
+    color: #222121;
 
     &:hover {
+      background-color: #2d3286;
       border-color: #2d3286;
-      color: #2d3286;
+      color: #fff;
     }
 
     &:focus-visible {

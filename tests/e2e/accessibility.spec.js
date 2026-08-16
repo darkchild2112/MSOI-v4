@@ -7,8 +7,7 @@ for (const path of pagesToCheck) {
   test(`${path} has no automatically detectable accessibility violations`, async ({ page }) => {
     await page.goto(path);
 
-    // color-contrast is tracked separately and intentionally excluded here.
-    const results = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze();
+    const results = await new AxeBuilder({ page }).analyze();
 
     expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
   });
