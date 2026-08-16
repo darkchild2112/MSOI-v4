@@ -26,6 +26,9 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
         background-color 0.3s ease-in-out,
         color 0.3s ease-in-out;
       text-decoration: none;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      font-size: 0.875rem;
 
       @media (prefers-reduced-motion: reduce) {
         transition: none;
@@ -37,8 +40,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
 
       &:hover:not(.active) {
         background-color: #27bbdf;
-        color: #fff;
-        opacity: 0.6;
+        color: #222121;
       }
 
       &:visited {
@@ -47,7 +49,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
 
       &.active {
         background-color: #27bbdf;
-        color: #fff;
+        color: #222121;
       }
 
       &:focus-visible {
@@ -83,7 +85,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
 </nav>
 
 <script>
-  let scrollTimeout;
+  let scrollTimeout: number;
 
   document.querySelectorAll('#navigation a').forEach(link => {
     link.addEventListener('click', event => {
@@ -92,7 +94,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
 
       if (!isInPageSectionLink) return;
 
-      const target = document.querySelector(resolveTargetHash(link.hash));
+      const target = document.querySelector(resolveTargetHash((link as HTMLAnchorElement).hash));
 
       if (!target) return;
 
@@ -111,14 +113,14 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
     });
   }, 500);
 
-  function resolveTargetHash(hash) {
+  function resolveTargetHash(hash: string) {
     return hash === '#body' ? '#banner' : hash;
   }
 
   function setActiveLink() {
-    const navigationLinks = document.querySelectorAll('#navigation a');
+    const navigationLinks = document.querySelectorAll<HTMLAnchorElement>('#navigation a');
 
-    navigationLinks?.forEach(node => {
+    navigationLinks.forEach(node => {
       let isNodeActive = false;
 
       if (window.location.pathname === '/') {
@@ -129,7 +131,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
           isNodeActive = isVisible(section);
 
           if (isNodeActive) {
-            window.history.replaceState(null, null, hash);
+            window.history.replaceState(null, '', hash);
           }
         }
       } else {
@@ -140,7 +142,7 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
     });
   }
 
-  function setActiveNode(node, isNodeActive) {
+  function setActiveNode(node: HTMLAnchorElement, isNodeActive: boolean) {
     if (isNodeActive) {
       node.classList.add('active');
     } else {
@@ -148,7 +150,9 @@ import { ServicesNavigationData } from '../ServicesNavigation/ServicesNavigation
     }
   }
 
-  function isVisible(element) {
+  function isVisible(element: Element | null) {
+    if (!element) return false;
+
     const rect = element.getBoundingClientRect();
     const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
     const verticalCenter = viewHeight / 3;

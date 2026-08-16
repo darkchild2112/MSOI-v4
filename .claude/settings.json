@@ -20,7 +20,8 @@
       "Bash(npm ls *)",
       "Bash(git stash *)",
       "Bash(npm ci *)",
-      "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\);process.stdin.on\\('end',\\(\\)=>{const v=JSON.parse\\(d\\);console.log\\(v.filter\\(x=>x.startsWith\\('5.'\\)\\).slice\\(-10\\)\\);}\\)\")"
+      "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\);process.stdin.on\\('end',\\(\\)=>{const v=JSON.parse\\(d\\);console.log\\(v.filter\\(x=>x.startsWith\\('5.'\\)\\).slice\\(-10\\)\\);}\\)\")",
+      "Bash(node -e ' *)"
     ]
   }
 }

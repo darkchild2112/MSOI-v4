@@ -17,11 +17,10 @@ import { ServicesNavigationData } from './ServicesNavigationData.js';
       transition: background-color 0.2s ease-in-out;
       transition: color 0.1s ease-in-out;
       text-decoration: none;
+      border: 1px solid transparent;
 
       &:hover:not(.active) {
-        background-color: #27bbdf;
-        color: #fff;
-        opacity: 0.6;
+        border-color: #27bbdf;
       }
 
       &:visited {
@@ -30,7 +29,6 @@ import { ServicesNavigationData } from './ServicesNavigationData.js';
 
       &.active {
         background-color: #27bbdf;
-        color: #fff;
       }
 
       &:focus-visible {
