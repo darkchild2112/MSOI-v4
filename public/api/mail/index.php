@@ -29,7 +29,7 @@
 		$headers .= "X-Mailer: PHP". phpversion() ."\r\n";
 
 		try {
-			$log_entry = $from . "," . $name . "," . $tel . "," . $message . "," . date("Y-m-d H:i:s") . "\n";
+			$log_entry = $from . "," . $name . "," . $tel . "," . date("Y-m-d H:i:s") . "\n";
 
     	$writeFileResult = @file_put_contents('message_log.txt', $log_entry, FILE_APPEND);
 
